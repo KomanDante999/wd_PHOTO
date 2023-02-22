@@ -21,10 +21,7 @@ const resources = () => {
 }
 
 const styles = () => {
-  return src('src/styles/**/*.css')
-    .pipe(sourcemaps.init())
-    .pipe(concat('main.css'))
-    .pipe(sourcemaps.write())
+  return src('src/css/*.css')
     .pipe(dest('dist'))
     .pipe(browserSync.stream())
   }
@@ -43,7 +40,7 @@ const styles = () => {
     }
 
   const html = () => {
-    return src('src/**/*.html')
+    return src('Compiled-HTML/index.html')
     .pipe(dest('dist'))
     .pipe(browserSync.stream())
 }
@@ -111,8 +108,8 @@ const watchFailes = () => {
   })
 }
 
-// watch('src/**/*.html', htmlminify)
-// watch('src/styles/**/*.css', styles)
+watch('Compiled-HTML/index.html', html)
+watch('src/css/*.css', styles)
 watch('src/js/**/*.js', scripts)
 watch('src/resources/**', resources)
 watch('src/img/*.{jpg,jpeg,png,svg}', images);
@@ -123,5 +120,5 @@ watch('src/img/svg/**.svg', svgSprites);
 exports.clean = clean
 exports.styles = styles
 exports.scripts = scripts
-exports.default = series(resources, scripts, images, svgSprites, watchFailes)
+exports.default = series(clean, resources, images, svgSprites, scripts, styles, html,  watchFailes)
 exports.prod = series(clean, resources, scriptsProd, images, svgSprites, watchFailes)

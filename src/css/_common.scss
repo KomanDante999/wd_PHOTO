@@ -1,0 +1,14 @@
+@import '_variables.scss';
+
+
+* {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: $containerMaxWidth;
+  margin: 0 auto;
+}

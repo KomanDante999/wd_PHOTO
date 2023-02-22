@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.grid__item {
+  width: 275px;
+  margin-bottom: 23px;
+}
+.grid__item:not(:nth-child(4n)) {
+  margin-right: 23px;
+}/*# sourceMappingURL=style.css.map */

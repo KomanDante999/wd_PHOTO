@@ -1,0 +1,19 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include clearListStyle;
+
+  &__item {
+    width: 275px;
+    margin-bottom: $greedGatter;
+
+    &:not(:nth-child(4n)) {
+      margin-right: $greedGatter;
+    }
+  }
+}
