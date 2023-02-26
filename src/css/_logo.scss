@@ -1,0 +1,17 @@
+@import '_variables.scss';
+
+.logo {
+  width: 190px;
+  height: 31px;
+
+  @media (max-width: $breakpoint-L) {
+    width: 166px;
+    height: 27px;
+  }
+
+  @media (max-width: $breakpoint-MS) {
+    width: 112px;
+    height: 18px;
+  }
+
+}

@@ -1,14 +1,100 @@
 @import '_variables.scss';
 
 
-* {
-  box-sizing: border-box;
-}
-img {
-  max-width: 100%;
+:root {
+  --containerPaddingX: 31px;
+
+  @media (max-width: $breakpoint-L) {
+  }
+
+  @media (max-width: $breakpoint-M) {
+    --containerPaddingX: 27px;
+  }
+
+  @media (max-width: $breakpoint-S) {
+    --containerPaddingX: 21px;
+  }
 }
 
 .container {
   max-width: $containerMaxWidth;
+  padding: {
+    right: var(--containerPaddingX);
+    left: var(--containerPaddingX)
+  }
   margin: 0 auto;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.btn {
+
+}
+
+// mixins
+.contact-phone {
+  font-family: $font-Neue;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: $colorOrange;
+
+  &__contant {
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+  }
+  &__text {
+
+  }
+}
+
+.btn-close {
+  width: 23px;
+  height: 23px;
+
+  @media (max-width: $breakpoint-MS) {
+    width: 18px;
+    height: 18px;
+  }
+
+  & svg {
+    & circle, & rect {
+      transition-property: fill;
+      transition-duration: $duration-btn;
+    }
+  }
+
+  &:focus svg circle {
+    fill: $colorOrange;
+  }
+  &:focus svg rect {
+    fill: $colorBacground-dark;
+  }
+  &:hover svg circle {
+    fill: $colorOrange;
+  }
+  &:hover svg rect {
+    fill: $colorBacground-dark;
+  }
+  &:active svg circle {
+    fill: $colorBacground-gray-light;
+  }
+  &:active svg rect {
+    fill: $colorOrange-intense;
+  }
 }

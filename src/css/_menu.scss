@@ -1,0 +1,98 @@
+@import '_variables.scss';
+
+.menu {
+  @media (max-width: $breakpoint-MX) {
+    margin: {
+      top: 26px;
+      left: calc(var(--containerPaddingX) * -1);
+      right: calc(var(--containerPaddingX) * -1);
+    }
+    padding: {
+      top: 7px;
+      bottom: 7px;
+      // left: var(--containerPaddingX);
+      // right: var(--containerPaddingX);
+    };
+    background-color: $colorBacground-gray;
+  }
+  @media (max-width: $breakpoint-MS) {
+    margin: {
+      top: 22px;
+    }
+    padding: {
+      top: 13px;
+      bottom: 9px;
+      left: var(--containerPaddingX);
+      right: var(--containerPaddingX);
+    };
+  }
+
+  &__btn-open {
+    width: 20px;
+    height: 18px;
+  }
+
+  &__wrap-list {
+    @media (max-width: $breakpoint-MS) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      padding: {
+        top: 13px;
+        bottom: 36px;
+        left: 21px;
+        right: 21px;
+      };
+      background-color: $colorBacground-dark;
+    }
+
+  }
+
+  &__btn-close {
+    margin: {
+      bottom: 16px;
+    };
+  }
+
+  &__list {
+    @media (max-width: $breakpoint-MS) {
+      :not(:last-child) {
+        margin-bottom: 30px;
+      }
+      overflow-y: auto;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 5px;
+    font-family: $font-Neue;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: $clolrText-lite;
+    transition-property: color, background-color;
+    transition-duration: $duration-btn;
+
+    &:hover {
+      color: $colorOrange;
+    }
+    &:focus:not(:active) {
+      color: $clolrText-lite;
+      background-color: $colorOrange-darken;
+    }
+    &:active {
+      color: $colorOrange-intense;
+      background-color: transparent;
+    }
+  }
+
+  &__contact-phone {
+    margin-top: auto;
+  }
+}
+
+
+

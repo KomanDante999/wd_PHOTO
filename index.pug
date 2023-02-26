@@ -1,15 +1,23 @@
-//- <!DOCTYPE html>
-//- <html lang="en">
-//- <head>
-//-     <meta charset="UTF-8">
-//-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-//-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//-     <title>Document</title>
-//- </head>
-//- <body>
+- var menuItems = ['О студии', 'Наши проекты', 'Услуги', 'Мастер-классы', 'Контакты']
 
-//- </body>
-//- </html>
+mixin contactPhone()
+  a(href="tel:+749542423532").contact-phone
+    span.contact-phone__contant
+      svg.contact-phone__icon
+        use(xlink:href="images/sprite.svg#telephone")
+      span.contact-phone__text +7 495 424-23-532
+
+mixin btnClose()
+  button(type='button', class!=attributes.class, id!=attributes.id).btn-close
+    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11.5" cy="11.5" r="11.5" fill="#808080"/>
+      <rect x="7.13818" y="6.32501" width="13.8" height="1.15" transform="rotate(45 7.13818 6.32501)" fill="white"/>
+      <rect x="6.43018" y="16.0832" width="13.8" height="1.15" transform="rotate(-45 6.43018 16.0832)" fill="white"/>
+    </svg>
+
+
+
+
 
 doctype html
 html(lang="ru")
@@ -18,7 +26,34 @@ html(lang="ru")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title PHOTO
+    link(href="fonts/Roboto-Bold.woff2", rel="preload", as="font", type="font/woff2", crossorigin)
+    link(href="fonts/Roboto-Regular.woff2", rel="preload", as="font", type="font/woff2", crossorigin)
+    link(href="fonts/TTFirsNeue-Bold.woff2", rel="preload", as="font", type="font/woff2", crossorigin)
+    link(href="fonts/TTFirsNeue-Medium.woff2", rel="preload", as="font", type="font/woff2", crossorigin)
+    link(href="fonts/TTFirsNeue-Regular.woff2", rel="preload", as="font", type="font/woff2", crossorigin)
     link(rel="stylesheet", href="style.css")
     script(src="main.js", defer)
   body
-    .container
+    header.header
+      .container.header__container.grid.grid-header
+        .header__logo.logo.grid-header__item-1
+          svg.logo__svg
+            use(xlink:href="images/sprite.svg#logo")
+        #burger-menu.header__menu.menu.grid-header__item-2
+          button(type='button')#burger-menu__btn-open.menu__btn-open
+            svg.menu__icon-open
+              use(xlink:href="images/sprite.svg#burger")
+          #burger-menu__wrap-list.menu__wrap-list
+            +btnClose()(id="burger-menu__btn-close", class="menu__btn-close")
+            ul#burger-menu__list.menu__list
+              each item in menuItems
+                li.menu__item
+                  a(href="#").menu__link= item
+            #burger-menu__contact-phone.menu__contact-phone
+              +contactPhone()
+        .header__search.search.grid-header__item-3
+          button(type='button').search__btn-open
+            svg.search__icon
+              use(xlink:href="images/sprite.svg#search")
+          form.search__form
+

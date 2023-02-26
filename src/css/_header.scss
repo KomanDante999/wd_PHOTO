@@ -1,0 +1,31 @@
+@import '_variables.scss';
+
+.header {
+  background-color: $colorBacground-dark;
+
+  &__container {
+    padding: {
+      top: 25px;
+      bottom: 24px;
+    };
+    @media (max-width: $breakpoint-MX) {
+      padding: {
+        bottom: 0;
+      };
+    }
+    @media (max-width: $breakpoint-MS) {
+      padding: {
+        top: 24px;
+      };
+    }
+  }
+  &__logo {
+
+  }
+  &__menu {
+
+  }
+  &__search {
+
+  }
+}

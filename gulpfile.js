@@ -20,6 +20,12 @@ const resources = () => {
   .pipe(dest('dist'))
 }
 
+const html = () => {
+  return src('Compiled-HTML/index.html')
+  .pipe(dest('dist'))
+  .pipe(browserSync.stream())
+}
+
 const styles = () => {
   return src('src/css/*.css')
     .pipe(dest('dist'))
@@ -39,11 +45,33 @@ const styles = () => {
       .pipe(browserSync.stream())
     }
 
-  const html = () => {
-    return src('Compiled-HTML/index.html')
-    .pipe(dest('dist'))
-    .pipe(browserSync.stream())
-}
+    const scripts = () => {
+      return src([
+        'src/js/components/**/*.js',
+        'src/js/main.js',
+      ])
+      .pipe(sourcemaps.init())
+      .pipe(concat('main.js'))
+      .pipe(sourcemaps.write())
+      .pipe(dest('dist'))
+      .pipe(browserSync.stream())
+    }
+
+    const scriptsProd = () => {
+      return src([
+        'src/js/components/**/*.js',
+        'src/js/main.js',
+      ])
+      .pipe(babel({
+        presets: ['@babel/env']
+      }))
+      .pipe(concat('main.js'))
+      .pipe(uglify({
+        toplevel: true
+      }).on('error', notify.onError()))
+      .pipe(dest('dist'))
+      .pipe(browserSync.stream())
+    }
 
 const svgSprites = () => {
   return src('src/img/svg/**/*.svg')
@@ -71,35 +99,6 @@ const images = () => {
   .pipe(dest('dist/images'))
 }
 
-const scripts = () => {
-  return src([
-    'src/js/components/**/*.js',
-    'src/js/main.js',
-  ])
-  .pipe(sourcemaps.init())
-  .pipe(concat('main.js'))
-  .pipe(sourcemaps.write())
-  .pipe(dest('dist'))
-  .pipe(browserSync.stream())
-}
-
-const scriptsProd = () => {
-  return src([
-    'src/js/components/**/*.js',
-    'src/js/main.js',
-  ])
-  .pipe(babel({
-    presets: ['@babel/env']
-  }))
-  .pipe(concat('main.js'))
-  .pipe(uglify({
-    toplevel: true
-  }).on('error', notify.onError()))
-  .pipe(dest('dist'))
-  .pipe(browserSync.stream())
-}
-
-
 const watchFailes = () => {
   browserSync.init({
     server: {
@@ -115,7 +114,6 @@ watch('src/resources/**', resources)
 watch('src/img/*.{jpg,jpeg,png,svg}', images);
 watch('src/img/**/*.{jpg,jpeg,png}', images);
 watch('src/img/svg/**.svg', svgSprites);
-
 
 exports.clean = clean
 exports.styles = styles
