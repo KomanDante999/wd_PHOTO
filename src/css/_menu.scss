@@ -28,8 +28,12 @@
   }
 
   &__btn-open {
+    display: none;
     width: 20px;
     height: 18px;
+    @media (max-width: $breakpoint-MS) {
+      display: block;
+    }
   }
 
   &__wrap-list {
@@ -37,13 +41,15 @@
       position: fixed;
       top: 0;
       left: 0;
+      display: none;
+      flex-direction: column;
       width: 100vw;
       height: 100vh;
       padding: {
         top: 13px;
         bottom: 36px;
         left: 21px;
-        right: 21px;
+        right: 25px;
       };
       background-color: $colorBacground-dark;
     }
@@ -51,16 +57,14 @@
   }
 
   &__btn-close {
+    display: none;
     margin: {
-      bottom: 16px;
+      bottom: 12px;
     };
   }
 
   &__list {
     @media (max-width: $breakpoint-MS) {
-      :not(:last-child) {
-        margin-bottom: 30px;
-      }
       overflow-y: auto;
     }
   }
@@ -90,7 +94,11 @@
   }
 
   &__contact-phone {
-    margin-top: auto;
+    display: none;
+    @media (max-width: $breakpoint-MS) {
+      display: block;
+      margin-top: auto;
+    }
   }
 }
 

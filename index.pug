@@ -46,7 +46,7 @@ html(lang="ru")
               use(xlink:href="images/sprite.svg#burger")
           #burger-menu__wrap-list.menu__wrap-list
             +btnClose()(id="burger-menu__btn-close", class="menu__btn-close")
-            ul#burger-menu__list.menu__list
+            ul#burger-menu__list.menu__list.grid.grid-menu
               each item in menuItems
                 li.menu__item
                   a(href="#").menu__link= item
