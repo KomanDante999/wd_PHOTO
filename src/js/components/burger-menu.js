@@ -1,3 +1,5 @@
+const { pause } = require("browser-sync")
+
 class BurgerMenu {
 
   constructor(params) {
@@ -10,6 +12,14 @@ class BurgerMenu {
     this.$list = document.querySelector(`#${params.list}`)
     this.$links = document.querySelectorAll(`.${params.link}`)
     this.$contactPhone = document.querySelector(`#${params.contactPhone}`)
+
+    var tlSetUnwrapMenu = gsap.timeline({paused: true})
+    tlSetUnwrapMenu
+      .set([this.$btnOpen, this.$btnClose, this.$contactPhone], {dislay: 'none'})
+
+    var tlSetBurgerMenu = gsap.timeline({paused: true})
+    tlSetBurgerMenu
+      .set([this.$btnOpen, this.$btnClose, this.$contactPhone], {dislay: 'none'})
 
     this.setAttributes()
 
