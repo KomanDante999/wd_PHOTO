@@ -140,21 +140,6 @@ th {
   font-style: normal;
   font-display: swap;
 }
-.search__btn-open, .menu__btn-open, .contact-phone {
-  transition-property: color transform;
-  transition-duration: 500ms;
-}
-.search__btn-open:focus:not(:hover), .menu__btn-open:focus:not(:hover), .contact-phone:focus:not(:hover) {
-  color: hsl(18deg, 63%, 45%);
-}
-.search__btn-open:hover, .menu__btn-open:hover, .contact-phone:hover {
-  color: hsl(18deg, 100%, 59%);
-  transform: translate(4px, -4px);
-}
-.search__btn-open:active, .menu__btn-open:active, .contact-phone:active {
-  color: hsl(18deg, 93%, 42%);
-}
-
 :root {
   --containerPaddingX: 31px;
 }
@@ -320,6 +305,21 @@ th {
     padding-top: 24px;
   }
 }
+.search__btn-open, .menu__btn-open, .contact-phone {
+  transition-property: color transform;
+  transition-duration: 500ms;
+}
+.search__btn-open:focus:not(:hover), .menu__btn-open:focus:not(:hover), .contact-phone:focus:not(:hover) {
+  color: hsl(18deg, 63%, 45%);
+}
+.search__btn-open:hover, .menu__btn-open:hover, .contact-phone:hover {
+  color: hsl(18deg, 100%, 59%);
+  transform: translate(4px, -4px);
+}
+.search__btn-open:active, .menu__btn-open:active, .contact-phone:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
 @media (max-width: 962px) {
   .menu {
     margin-top: 26px;
@@ -355,8 +355,6 @@ th {
     position: fixed;
     top: 0;
     left: 0;
-    display: none;
-    flex-direction: column;
     width: 100vw;
     height: 100vh;
     padding-top: 13px;
@@ -367,7 +365,6 @@ th {
   }
 }
 .menu__btn-close {
-  display: none;
   margin-bottom: 12px;
 }
 @media (max-width: 520px) {
@@ -397,12 +394,8 @@ th {
   color: hsl(18deg, 93%, 42%);
   background-color: transparent;
 }
-.menu__contact-phone {
-  display: none;
-}
 @media (max-width: 520px) {
   .menu__contact-phone {
-    display: block;
     margin-top: auto;
   }
 }
