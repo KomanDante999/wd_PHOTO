@@ -5,7 +5,8 @@
   &__btn-open {
     width: 25px;
     height: 25px;
-
+    color: $clolrText-lite;
+    @extend %animation-color-translate;
     @media (max-width: $breakpoint-MS) {
       width: 20px;
       height: 20px;

@@ -140,6 +140,21 @@ th {
   font-style: normal;
   font-display: swap;
 }
+.search__btn-open, .menu__btn-open, .contact-phone {
+  transition-property: color transform;
+  transition-duration: 500ms;
+}
+.search__btn-open:focus:not(:hover), .menu__btn-open:focus:not(:hover), .contact-phone:focus:not(:hover) {
+  color: hsl(18deg, 63%, 45%);
+}
+.search__btn-open:hover, .menu__btn-open:hover, .contact-phone:hover {
+  color: hsl(18deg, 100%, 59%);
+  transform: translate(4px, -4px);
+}
+.search__btn-open:active, .menu__btn-open:active, .contact-phone:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
 :root {
   --containerPaddingX: 31px;
 }
@@ -328,6 +343,7 @@ th {
   display: none;
   width: 20px;
   height: 18px;
+  color: hsl(0deg, 0%, 100%);
 }
 @media (max-width: 520px) {
   .menu__btn-open {
@@ -411,6 +427,7 @@ th {
 .search__btn-open {
   width: 25px;
   height: 25px;
+  color: hsl(0deg, 0%, 100%);
 }
 @media (max-width: 520px) {
   .search__btn-open {

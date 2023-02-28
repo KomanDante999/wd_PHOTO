@@ -16,7 +16,7 @@ class BurgerMenu {
       .set(this.$wrapList, {display: 'flex'})
       .set(this.$items, { opacity: 0})
       .to(this.$wrapList, {opacity: 1, duration: 0.3})
-      .fromTo(this.$items, {y: 100, x: 100}, {y: 0, x: 0, opacity: 1, duration: 0.3})
+      .fromTo(this.$items, {y: -100, x: 100}, {y: 0, x: 0, opacity: 1, duration: 1, stagger: 0.1, ease: "elastic.out(1, 0.3)"})
       .fromTo(this.$btnClose, {y: -100}, {y: 0, opacity: 1, duration: 0.3})
       .fromTo(this.$contactPhone, {y: 100}, {y: 0, opacity: 1, duration: 0.3})
 

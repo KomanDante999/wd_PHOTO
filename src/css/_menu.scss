@@ -31,6 +31,8 @@
     display: none;
     width: 20px;
     height: 18px;
+    color: $clolrText-lite;
+    @extend %animation-color-translate;
     @media (max-width: $breakpoint-MS) {
       display: block;
     }

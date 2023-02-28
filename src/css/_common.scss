@@ -48,7 +48,7 @@
   font-weight: 500;
   line-height: 18px;
   color: $colorOrange;
-
+  @extend %animation-color-translate;
   &__contant {
     display: flex;
     align-items: center;
