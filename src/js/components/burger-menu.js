@@ -12,21 +12,25 @@ class BurgerMenu {
     this.$contactPhone = document.querySelector(`#${params.contactPhone}`)
     this.widthWindow = document.documentElement.clientWidth
 
-    this.tlOpenBurger = gsap.timeline({paused: true})
-      .fromTo(this.$wrapList, {opacity: 0}, {opacity: 1, duration: 0.5, onStart: () => {
-        this.$wrapList.classList.remove('is-hidden')
-        this.$wrapList.classList.add('flex', 'flex-column')
-      }})
-      // .fromTo(this.$items, {y: -100, x: 100}, {y: 0, x: 0, opacity: 1, duration: 0.5, stagger: 0.1})
-      // .fromTo(this.$btnClose, {y: -100}, {y: 0, opacity: 1, duration: 0.3})
-      // .fromTo(this.$contactPhone, {y: 100}, {y: 0, opacity: 1, duration: 0.3, delay: -0.3})
+    this.cleanAttributes(this.$wrapList)
 
-      this.tlCloseBurger = gsap.timeline({paused: true})
-      .to(this.$wrapList, {rotationX: 90, duration: 0.3})
-      .set(this.$wrapList, {rotationX: 0, onComplete: () => {
-        this.$wrapList.classList.add('is-hidden')
-        this.$wrapList.classList.remove('flex', 'flex-column')
-      }})
+    this.tlOpenBurger = gsap.timeline({paused: true})
+    .set(this.$wrapList, {opacity: 0})
+    .to(this.$wrapList, {opacity: 1, duration: 0.5, onStart: () => {
+      this.$wrapList.classList.remove('is-hidden')
+      this.$wrapList.classList.add('flex', 'flex-column')
+    }})
+    .fromTo(this.$items, {x: 200, opacity: 0}, {x: 0, opacity: 1, duration: 0.5, stagger: 0.1, delay: -0.5})
+    .fromTo(this.$btnClose, {y: -20, opacity: 0}, {y: 0, opacity: 1, duration: 0.5})
+    .fromTo(this.$contactPhone, {y: 20, opacity: 0}, {y: 0, opacity: 1, duration: 0.5, delay: -0.5})
+
+    this.tlCloseBurger = gsap.timeline({paused: true})
+    .to(this.$wrapList, {rotationX: 90, duration: 0.3})
+    .set(this.$wrapList, {rotationX: 0, onComplete: () => {
+      this.$wrapList.classList.add('is-hidden')
+      this.$wrapList.classList.remove('flex', 'flex-column')
+      this.cleanAttributes(this.$wrapList)
+    }})
 
 
     // events
@@ -66,6 +70,10 @@ class BurgerMenu {
     this.$wrapList.classList.add('is-hidden')
     this.$btnClose.classList.remove('is-hidden')
     this.$contactPhone.classList.remove('is-hidden')
+  }
+
+  cleanAttributes(elem) {
+    if (elem.hasAttribute('style')) elem.removeAttribute('style')
   }
 
   get widthWindow() {
