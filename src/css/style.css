@@ -341,8 +341,10 @@ th {
 }
 .menu__btn-open {
   display: none;
-  width: 20px;
-  height: 18px;
+  width: 30px;
+  height: 28px;
+  padding: 4px;
+  border: 1px solid transparent;
   color: hsl(0deg, 0%, 100%);
 }
 @media (max-width: 520px) {

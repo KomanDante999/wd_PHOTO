@@ -13,20 +13,20 @@ class BurgerMenu {
     this.widthWindow = document.documentElement.clientWidth
 
     this.tlOpenBurger = gsap.timeline({paused: true})
-      // .set([this.$btnClose, this.$contactPhone], {display: 'block', opacity: 0})
-      // .set(this.$wrapList, {display: 'flex'})
-      // .set(this.$items, { opacity: 0})
-      // .to(this.$wrapList, {opacity: 1, duration: 0.3})
+      .fromTo(this.$wrapList, {opacity: 0}, {opacity: 1, duration: 0.5, onStart: () => {
+        this.$wrapList.classList.remove('is-hidden')
+        this.$wrapList.classList.add('flex', 'flex-column')
+      }})
       // .fromTo(this.$items, {y: -100, x: 100}, {y: 0, x: 0, opacity: 1, duration: 0.5, stagger: 0.1})
       // .fromTo(this.$btnClose, {y: -100}, {y: 0, opacity: 1, duration: 0.3})
       // .fromTo(this.$contactPhone, {y: 100}, {y: 0, opacity: 1, duration: 0.3, delay: -0.3})
 
       this.tlCloseBurger = gsap.timeline({paused: true})
-      // .to(this.$wrapList, {opacity: 0, duration: 0.5})
-      // .set([this.$btnClose, this.$contactPhone], {display: 'none'})
-      // .set(this.$wrapList, {display: 'none'})
-      // .set(this.$wrapList, {opacity: 1})
-      // .set(this.$items, {y: 0, x: 0})
+      .to(this.$wrapList, {rotationX: 90, duration: 0.3})
+      .set(this.$wrapList, {rotationX: 0, onComplete: () => {
+        this.$wrapList.classList.add('is-hidden')
+        this.$wrapList.classList.remove('flex', 'flex-column')
+      }})
 
 
     // events
@@ -36,20 +36,25 @@ class BurgerMenu {
 
 
     this.$btnOpen.addEventListener('click', () => {
-      this.openBurger()
+      this.tlOpenBurger.play()
+      this.tlOpenBurger.restart()
     })
     this.$btnClose.addEventListener('click', () => {
-      this.closeBurger()
+      this.tlCloseBurger.play()
+      this.tlCloseBurger.restart()
     })
 
     for (const link of this.$links) {
       link.addEventListener('click', () => {
+        this.tlCloseBurger.play()
+        this.tlCloseBurger.restart()
       })
     }
 
     this.$contactPhone.addEventListener('click', () => {
+      this.tlCloseBurger.play()
+      this.tlCloseBurger.restart()
     })
-
   }
 
   setUnwrapMenu() {
@@ -58,19 +63,9 @@ class BurgerMenu {
     this.$contactPhone.classList.add('is-hidden')
   }
   setBurgerMenu() {
-    this.$wrapList.classList.add('is-hidden', 'flex', 'flex-column')
+    this.$wrapList.classList.add('is-hidden')
     this.$btnClose.classList.remove('is-hidden')
     this.$contactPhone.classList.remove('is-hidden')
-  }
-
-  openBurger() {
-    this.$wrapList.classList.remove('is-hidden')
-
-  }
-
-  closeBurger() {
-    this.$wrapList.classList.add('is-hidden')
-
   }
 
   get widthWindow() {
