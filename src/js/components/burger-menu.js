@@ -12,17 +12,21 @@ class BurgerMenu {
     this.$contactPhone = document.querySelector(`#${params.contactPhone}`)
     this.widthWindow = document.documentElement.clientWidth
 
-    this.cleanAttributes(this.$wrapList)
-
     this.tlOpenBurger = gsap.timeline({paused: true})
-    .set(this.$wrapList, {opacity: 0})
+    .set([this.$wrapList, this.$items, this.$btnClose, this.$contactPhone], {opacity: 0})
     .to(this.$wrapList, {opacity: 1, duration: 0.5, onStart: () => {
       this.$wrapList.classList.remove('is-hidden')
       this.$wrapList.classList.add('flex', 'flex-column')
     }})
-    .fromTo(this.$items, {x: 200, opacity: 0}, {x: 0, opacity: 1, duration: 0.5, stagger: 0.1, delay: -0.5})
-    .fromTo(this.$btnClose, {y: -20, opacity: 0}, {y: 0, opacity: 1, duration: 0.5})
-    .fromTo(this.$contactPhone, {y: 20, opacity: 0}, {y: 0, opacity: 1, duration: 0.5, delay: -0.5})
+    .fromTo(this.$items, {x: 200}, {x: 0, opacity: 1, duration: 0.5, stagger: 0.1, delay: -0.5})
+    .fromTo(this.$btnClose, {y: -20}, {y: 0, opacity: 1, duration: 0.5})
+    .fromTo(this.$contactPhone, {y: 20}, {y: 0, opacity: 1, duration: 0.5, delay: -0.5, onComplete: () => {
+      this.cleanAttributes(this.$contactPhone)
+      for (const item of this.$items) {
+        this.cleanAttributes(item)
+      }
+
+    }})
 
     this.tlCloseBurger = gsap.timeline({paused: true})
     .to(this.$wrapList, {rotationX: 90, duration: 0.3})
@@ -30,6 +34,10 @@ class BurgerMenu {
       this.$wrapList.classList.add('is-hidden')
       this.$wrapList.classList.remove('flex', 'flex-column')
       this.cleanAttributes(this.$wrapList)
+      this.cleanAttributes(this.$contactPhone)
+      for (const item of this.$items) {
+        this.cleanAttributes(item)
+      }
     }})
 
 
@@ -59,6 +67,13 @@ class BurgerMenu {
       this.tlCloseBurger.play()
       this.tlCloseBurger.restart()
     })
+
+    this.cleanAttributes(this.$wrapList)
+    this.cleanAttributes(this.$contactPhone)
+    for (const item of this.$items) {
+      this.cleanAttributes(item)
+    }
+
   }
 
   setUnwrapMenu() {

@@ -36,6 +36,7 @@
     border: 1px solid transparent;
     color: $clolrText-lite;
     @extend %animation-color-translate;
+
     @media (max-width: $breakpoint-MS) {
       display: block;
     }
