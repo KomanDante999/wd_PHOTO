@@ -44,12 +44,14 @@
 
 // mixins
 .contact-phone {
+  display: inline-block;
   font-family: $font-Neue;
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
   color: $colorOrange;
-  @extend %animation-color-translate;
+  border-bottom: 2px solid transparent;
+  @extend %animation-link-up1;
   &__contant {
     display: flex;
     align-items: center;

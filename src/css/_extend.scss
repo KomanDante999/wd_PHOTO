@@ -1,10 +1,25 @@
 @import '_variables.scss';
 
-%animation-color-translate {
-  transition-property: color transform;
+%animation-link-up1 {
+  transition-property: color border-color transform;
+  transition-duration: $duration-btn;
+  &:focus {
+    border-color: $colorOrange;
+  }
+  &:hover {
+    transform: translate(4px, -4px);
+  }
+  &:active {
+    color: $colorOrange-intense;
+    border-color: $colorOrange-intense;
+  }
+}
+
+%animation-btn-up1 {
+  transition-property: color border-color transform;
   transition-duration: $duration-btn;
   &:focus:not(:hover) {
-    color: $colorOrange-darken;
+    border-color: $colorOrange-darken;
   }
   &:hover {
     color: $colorOrange;
@@ -14,4 +29,3 @@
     color: $colorOrange-intense;
   }
 }
-

@@ -1,16 +1,50 @@
 @import '_variables.scss';
 
 .search {
-
+  display: flex;
   &__btn-open {
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
+    padding: 4px;
+    margin-left: -6px;
+    border: 2px solid transparent;
     color: $clolrText-lite;
-    @extend %animation-color-translate;
+    @extend %animation-btn-up1;
     @media (max-width: $breakpoint-MS) {
-      width: 20px;
-      height: 20px;
+      width: 32px;
+      height: 32px;
     }
+  }
+
+  &__form {
+    position: absolute;
+    top: 10px;
+    right: var(--containerPaddingX);
+    align-items: center;
+    background-color: $colorBacground-dark;
+  }
+  &__input {
+    width: 308px;
+    margin-right: 11px;
+    padding: {
+      top: 4px;
+      bottom: 4px;
+    };
+    font-family: $font-Neue;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    color: $clolrText-lite;
+    background-color: inherit;
+    border-bottom: 1px solid $clolrText-lite;
+    @media (max-width: $breakpoint-MS) {
+      width: 248px;
+    }
+  }
+
+  &__btn-close {
+
 
   }
+
 }

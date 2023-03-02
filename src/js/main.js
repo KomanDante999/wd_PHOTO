@@ -9,5 +9,11 @@ const burgerMenu = new BurgerMenu({
   contactPhone: 'burger-menu__contact-phone',
 });
 
+const headerSearch = new Search({
+  btnOpen: 'header-search__btn-open',
+  btnClose: 'header-search__btn-close',
+  form: 'header-search__form',
+  input: 'header-search__input',
+});
 
 

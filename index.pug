@@ -53,8 +53,10 @@ html(lang="ru")
             #burger-menu__contact-phone.menu__contact-phone
               +contactPhone()
         .header__search.search.grid-header__item-3
-          button(type='button').search__btn-open
+          button#header-search__btn-open(type='button').search__btn-open
             svg.search__icon
               use(xlink:href="images/sprite.svg#search")
-          form.search__form
+          form#header-search__form.search__form.is-hidden
+            input#header-search__input(type="search", name="search", placeholder='Что будем иcкать?').search__input
+            +btnClose()(id="header-search__btn-close", class="search__btn-close")
 

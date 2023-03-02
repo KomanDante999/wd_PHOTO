@@ -30,15 +30,16 @@
 
   &__btn-open {
     display: none;
-    width: 30px;
-    height: 28px;
+    width: 32px;
+    height: 30px;
     padding: 4px;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     color: $clolrText-lite;
-    @extend %animation-color-translate;
+    @extend %animation-btn-up1;
 
     @media (max-width: $breakpoint-MS) {
       display: block;
+      margin-left: -6px;
     }
   }
 

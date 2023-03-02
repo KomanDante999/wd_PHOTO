@@ -29,8 +29,7 @@ class BurgerMenu {
     }})
 
     this.tlCloseBurger = gsap.timeline({paused: true})
-    .to(this.$wrapList, {rotationX: 90, duration: 0.3})
-    .set(this.$wrapList, {rotationX: 0, onComplete: () => {
+    .to(this.$wrapList, {rotationX: 90, duration: 0.3, onComplete: () => {
       this.$wrapList.classList.add('is-hidden')
       this.$wrapList.classList.remove('flex', 'flex-column')
       this.cleanAttributes(this.$wrapList)
@@ -58,8 +57,9 @@ class BurgerMenu {
 
     for (const link of this.$links) {
       link.addEventListener('click', () => {
-        this.tlCloseBurger.play()
-        this.tlCloseBurger.restart()
+        if (this.widthWindow <= 520) {
+          this.tlCloseBurger.play()
+          this.tlCloseBurger.restart()}
       })
     }
 
@@ -73,7 +73,6 @@ class BurgerMenu {
     for (const item of this.$items) {
       this.cleanAttributes(item)
     }
-
   }
 
   setUnwrapMenu() {
@@ -104,5 +103,4 @@ class BurgerMenu {
       this.setUnwrapMenu()
       }
     }
-
 }
