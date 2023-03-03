@@ -56,7 +56,7 @@ html(lang="ru")
           button#header-search__btn-open(type='button').search__btn-open
             svg.search__icon
               use(xlink:href="images/sprite.svg#search")
-          form#header-search__form.search__form.is-hidden
+          form#header-search__form.search__form.display-none
             input#header-search__input(type="search", name="search", placeholder='Что будем иcкать?').search__input
             +btnClose()(id="header-search__btn-close", class="search__btn-close")
 

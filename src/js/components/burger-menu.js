@@ -15,7 +15,7 @@ class BurgerMenu {
     this.tlOpenBurger = gsap.timeline({paused: true})
     .set([this.$wrapList, this.$items, this.$btnClose, this.$contactPhone], {opacity: 0})
     .to(this.$wrapList, {opacity: 1, duration: 0.5, onStart: () => {
-      this.$wrapList.classList.remove('is-hidden')
+      this.$wrapList.classList.remove('display-none')
       this.$wrapList.classList.add('flex', 'flex-column')
     }})
     .fromTo(this.$items, {x: 200}, {x: 0, opacity: 1, duration: 0.5, stagger: 0.1, delay: -0.5})
@@ -30,7 +30,7 @@ class BurgerMenu {
 
     this.tlCloseBurger = gsap.timeline({paused: true})
     .to(this.$wrapList, {rotationX: 90, duration: 0.3, onComplete: () => {
-      this.$wrapList.classList.add('is-hidden')
+      this.$wrapList.classList.add('display-none')
       this.$wrapList.classList.remove('flex', 'flex-column')
       this.cleanAttributes(this.$wrapList)
       this.cleanAttributes(this.$contactPhone)
@@ -76,14 +76,14 @@ class BurgerMenu {
   }
 
   setUnwrapMenu() {
-    this.$wrapList.classList.remove('is-hidden', 'flex', 'flex-column')
-    this.$btnClose.classList.add('is-hidden')
-    this.$contactPhone.classList.add('is-hidden')
+    this.$wrapList.classList.remove('display-none', 'flex', 'flex-column')
+    this.$btnClose.classList.add('display-none')
+    this.$contactPhone.classList.add('display-none')
   }
   setBurgerMenu() {
-    this.$wrapList.classList.add('is-hidden')
-    this.$btnClose.classList.remove('is-hidden')
-    this.$contactPhone.classList.remove('is-hidden')
+    this.$wrapList.classList.add('display-none')
+    this.$btnClose.classList.remove('display-none')
+    this.$contactPhone.classList.remove('display-none')
   }
 
   cleanAttributes(elem) {

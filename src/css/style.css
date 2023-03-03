@@ -205,13 +205,23 @@ th {
 
 .container {
   max-width: 1352px;
+  min-width: 278px;
   padding-right: var(--containerPaddingX);
   padding-left: var(--containerPaddingX);
   margin: 0 auto;
 }
 
-.is-hidden {
+.display-none {
   display: none;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.is-disable {
+  pointer-events: none;
 }
 
 .flex {
@@ -505,8 +515,12 @@ th {
 }
 .search__form {
   position: absolute;
-  top: 10px;
-  right: var(--containerPaddingX);
+  top: 0;
+  right: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: var(--containerPaddingX);
+  padding-left: var(--containerPaddingX);
   align-items: center;
   background-color: hsl(0deg, 0%, 13%);
 }

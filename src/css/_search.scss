@@ -18,8 +18,14 @@
 
   &__form {
     position: absolute;
-    top: 10px;
-    right: var(--containerPaddingX);
+    top: 0;
+    right: 0;
+    padding: {
+      top: 20px;
+      bottom: 20px;
+      right: var(--containerPaddingX);
+      left: var(--containerPaddingX);
+    };
     align-items: center;
     background-color: $colorBacground-dark;
   }

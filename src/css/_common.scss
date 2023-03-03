@@ -19,6 +19,7 @@
 
 .container {
   max-width: $containerMaxWidth;
+  min-width: $containerMinWidth;
   padding: {
     right: var(--containerPaddingX);
     left: var(--containerPaddingX)
@@ -26,8 +27,17 @@
   margin: 0 auto;
 }
 
-.is-hidden {
+.display-none {
   display: none;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.is-disable {
+  pointer-events: none;
 }
 
 .flex {
