@@ -9,13 +9,19 @@ mixin contactPhone()
 
 mixin btnClose()
   button(type='button', class!=attributes.class, id!=attributes.id).btn-close
+mixin btnClose()
+  button(type='button', class!=attributes.class, id!=attributes.id).btn-close
     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="11.5" cy="11.5" r="11.5" fill="#808080"/>
       <rect x="7.13818" y="6.32501" width="13.8" height="1.15" transform="rotate(45 7.13818 6.32501)" fill="white"/>
       <rect x="6.43018" y="16.0832" width="13.8" height="1.15" transform="rotate(-45 6.43018 16.0832)" fill="white"/>
     </svg>
 
+mixin hashTag(linkText)
+  a.hashtag(href=linkText)= linkText
 
+mixin btnPrim(text)
+  button(type='button', class!=attributes.class, id!=attributes.id).btn.btn__prim= text
 
 
 
@@ -25,7 +31,7 @@ html(lang="ru")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title PHOTO
+    title High pass
     link(href="fonts/Roboto-Bold.woff2", rel="preload", as="font", type="font/woff2", crossorigin)
     link(href="fonts/Roboto-Regular.woff2", rel="preload", as="font", type="font/woff2", crossorigin)
     link(href="fonts/TTFirsNeue-Bold.woff2", rel="preload", as="font", type="font/woff2", crossorigin)
@@ -40,11 +46,12 @@ html(lang="ru")
         .header__logo.logo.grid-header__item-1
           svg.logo__svg
             use(xlink:href="images/sprite.svg#logo")
+        h1.visually-hidden фотостудия High pass
         #burger-menu.header__menu.menu.grid-header__item-2
           button(type='button')#burger-menu__btn-open.menu__btn-open
             svg.menu__icon-open
               use(xlink:href="images/sprite.svg#burger")
-          #burger-menu__wrap-list.menu__wrap-list
+          nav#burger-menu__wrap-list.menu__wrap-list
             +btnClose()(id="burger-menu__btn-close", class="menu__btn-close")
             ul#burger-menu__list.menu__list.grid.grid-menu
               each item in menuItems
@@ -59,4 +66,21 @@ html(lang="ru")
           form#header-search__form.search__form.display-none
             input#header-search__input(type="search", name="search", placeholder='Что будем иcкать?').search__input
             +btnClose()(id="header-search__btn-close", class="search__btn-close")
+    main
+      section#master-class.hero
+        .container.hero__container
+          h2.visually-hidden Мастер-классы
+          ul.grid.grid-hero
+            li.grid-hero__item-1.hero__item.hero__item_1
+              +hashTag('#мастеркласс')
+              p.hero__subtitle Мастер-класс от Игоря Робова
+              h3.hero__title Неоновый фотосет 2.0 7 июля 20:00
+              +btnPrim('Узнать больше')(id="master-class", class="hero__btn")
+            li.grid-hero__item-2.hero__item_2
+              h4.hero__title-right Работы участников предыдущего мастер-класса
+            li.grid-hero__item-3.hero__item.hero__item_3
+            li.grid-hero__item-4.hero__item.hero__item_4
+            li.grid-hero__item-5.hero__item.hero__item_5
+
+
 

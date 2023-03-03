@@ -1,0 +1,37 @@
+@import '_variables.scss';
+
+.hero {
+  &__container {
+    padding: {
+      top: 41px;
+      bottom: 68px;
+    };
+  }
+
+  &__item {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__item_1 {
+    background-image: url($urlImages-1920 + 'hero-1.jpg');
+  }
+  &__item_2 {
+
+  }
+  &__title-right {
+
+  }
+
+  &__item_3 {
+    background-image: url($urlImages-1920 + 'hero-3.jpg');
+  }
+  &__item_4 {
+    background-image: url($urlImages-1920 + 'hero-4.jpg');
+  }
+  &__item_5 {
+    background-image: url($urlImages-1920 + 'hero-5.jpg');
+  }
+
+
+}
