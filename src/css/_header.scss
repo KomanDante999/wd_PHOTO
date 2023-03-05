@@ -5,8 +5,8 @@
 
   &__container {
     padding: {
-      top: 25px;
-      bottom: 24px;
+      top: 22px;
+      bottom: 23px;
     };
     @media (max-width: $breakpoint-MX) {
       padding: {
@@ -15,7 +15,7 @@
     }
     @media (max-width: $breakpoint-MS) {
       padding: {
-        top: 24px;
+        top: 19px;
       };
     }
   }
@@ -23,9 +23,18 @@
 
   }
   &__menu {
-
+    @media (max-width: $breakpoint-MX) {
+      margin-top: 26px;
+    }
+    @media (max-width: $breakpoint-M) {
+      margin-top: 23px;
+    }
+    @media (max-width: $breakpoint-MS) {
+      margin-top: 19px;
+    }
   }
   &__search {
+    margin-right: -5px;
 
   }
 }

@@ -1,0 +1,46 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '_extend.scss';
+
+.about {
+  &__container {
+    padding: {
+      top: 30px;
+      bottom: 70px;
+    };
+    background-color: $colorBacground-dark;
+  }
+
+  &__title {
+    @extend %title-h2;
+    color: $colorText-lite;
+  }
+  &__desc {
+    @extend %text-main;
+    line-height: 28px;
+    color: $colorText-gray;
+    @media (max-width: $breakpoint-MS) {
+      line-height: 25px;
+    }
+
+  }
+  &__form {
+
+  }
+}
+
+.form-about {
+
+  &__title {
+
+  }
+  &__wrap-input {
+
+  }
+  &__input-email {
+
+  }
+  &__submit {
+
+  }
+}

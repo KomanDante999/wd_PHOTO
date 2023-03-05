@@ -29,15 +29,6 @@
   opacity: 0;
 }
 
-.container {
-  max-width: $containerMaxWidth;
-  min-width: $containerMinWidth;
-  padding: {
-    right: var(--containerPaddingX);
-    left: var(--containerPaddingX)
-  }
-  margin: 0 auto;
-}
 
 .display-none {
   display: none;
@@ -60,11 +51,85 @@
   flex-direction: column;
 }
 
-.btn {
+.fit-content-childs > * {
+  width: fit-content;
+}
+
+.container {
+  max-width: $containerMaxWidth;
+  min-width: $containerMinWidth;
+  padding: {
+    right: var(--containerPaddingX);
+    left: var(--containerPaddingX)
+  }
+  margin: 0 auto;
+}
+
+.hashtag {
+  padding: 7px 15px;
+  font-family: $font-Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: center;
+  color: $colorText-lite;
+  background-color: $colorBacground-dark;
+  @extend %animation-btn-up1;
+  @media (max-width: $breakpoint-MS) {
+    padding: 4px 7px;
+    font-size: 12px;
+    line-height: 14px;
+  }
 
 }
 
-// mixins
+.btn {
+  padding: 12px 20px;
+  font-family: $font-Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  text-align: center;
+  color: $colorText-lite;
+  border: 3px solid transparent;
+  @extend %transit-c-bc-brd;
+  @media (max-width: $breakpoint-MS) {
+    padding: 9px 20px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+}
+
+.btn__prim {
+  background-color: $colorOrange;
+  &:focus:not(:hover) {
+    border-color: $colorOrange-intense;
+  }
+  &:hover {
+    background-color: $colorOrange-darken;
+  }
+  &:active {
+    background-color: $colorOrange-intense;
+  }
+}
+
+.btn__sec {
+  background-color: transparent;
+  border-color: $colorOrange;
+
+  &:focus:not(:hover) {
+    background-color: $colorOrange-darken;
+  }
+  &:hover {
+    background-color: $colorOrange;
+  }
+  &:active {
+    background-color: $colorOrange-intense;
+    border-color: $colorOrange-intense;
+  }
+}
+
 .contact-phone {
   display: inline-block;
   font-family: $font-Neue;
@@ -82,9 +147,6 @@
     width: 20px;
     height: 20px;
     margin-right: 2px;
-  }
-  &__text {
-
   }
 }
 

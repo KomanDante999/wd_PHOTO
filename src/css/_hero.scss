@@ -1,4 +1,5 @@
 @import '_variables.scss';
+@import '_mixins.scss';
 
 .hero {
   &__container {
@@ -6,32 +7,115 @@
       top: 41px;
       bottom: 68px;
     };
+    @media (max-width: $breakpoint-L) {
+      padding-top: 34px;
+    }
+    @media (max-width: $breakpoint-MS) {
+      padding-top: 30px;
+    }
   }
 
   &__item {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
   }
 
-  &__item_1 {
-    background-image: url($urlImages-1920 + 'hero-1.jpg');
-  }
-  &__item_2 {
+  &__item_main {
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: {
+      top: 15px;
+      bottom: 60px;
+      left: 58px;
+      right: 15px;
+    };
+    @media (max-width: $breakpoint-L) {
+      padding: {
+        bottom: 30px;
+        left: 30px;
+      };
+    }
+    @media (max-width: $breakpoint-L) {
+      padding: {
+        top: 6px;
+        right: 6px;
+        left: 28px;
+        };
+    }
 
   }
-  &__title-right {
 
+  &__hashTag {
+    align-self: flex-end;
+    margin-bottom: auto;
   }
 
-  &__item_3 {
-    background-image: url($urlImages-1920 + 'hero-3.jpg');
-  }
-  &__item_4 {
-    background-image: url($urlImages-1920 + 'hero-4.jpg');
-  }
-  &__item_5 {
-    background-image: url($urlImages-1920 + 'hero-5.jpg');
+  &__desc {
+    margin-bottom: 3px;
+    font-family: $font-Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: $colorText-lite;
+    @media (max-width: $breakpoint-LX) {
+      margin-bottom: 9px;
+    }
+    @media (max-width: $breakpoint-M) {
+      margin-bottom: 15px;
+    }
+    @media (max-width: $breakpoint-MS) {
+      margin-bottom: 9px;
+      font-size: 14px;
+      line-height: 16px;
+    }
   }
 
+  &__title {
+    margin-bottom: 20px;
+    font-family: $font-Neue;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 37px;
+    color: $colorText-lite;
+    @media (max-width: $breakpoint-LX) {
+      margin-bottom: 23px;
+      font-size: 34px;
+      line-height: 34px;
+    }
+    @media (max-width: $breakpoint-M) {
+      margin-bottom: 25px;
+      line-height: 30px;
+    }
+    @media (max-width: ($breakpoint-M - 40)) {
+      font-size: 24px;
+      line-height: 26px;
+      margin: {
+        bottom: 14px;
+        right: 6px;
+      };
+    }
+  }
 
+  &__subtitle {
+    font-family: $font-Neue;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 25px;
+    @media (max-width: $breakpoint-M) {
+      font-size: 22px;
+      line-height: 23px;
+    }
+    @media (max-width: ($breakpoint-M - 40)) {
+      font-size: 18px;
+      line-height: 19px;
+    }
+  }
 }
+
+@include image-inset ($urlImages, $breakpoints-base, 4, 'hero')
+
+
+
+
+

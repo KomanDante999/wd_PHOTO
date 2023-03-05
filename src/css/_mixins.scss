@@ -3,3 +3,23 @@
   padding: 0;
   list-style: none;
 }
+
+@mixin image-inset ($url, $breakpoints, $max, $classParent) {
+  @each $br in $breakpoints {
+    @if $br >= 1920 {
+      @for $i from 1 through $max {
+        .#{$classParent}__img-inset_#{$i} {
+            background-image: url(($url + $br + "/" + $classParent + "-" + $i + ".jpg"));
+        }
+      }
+    }@else {
+      @media (max-width: ($br + "px")) {
+        @for $i from 1 through $max {
+          .#{$classParent}__img-inset_#{$i} {
+              background-image: url(($url + $br + "/" + $classParent + "-" + $i + ".jpg"));
+          }
+        }
+      }
+    }
+  }
+}

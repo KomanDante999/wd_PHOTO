@@ -1,9 +1,13 @@
+$breakpoints-base: 1920, 1024, 768, 520;
+
+$breakpoint-LX: 1110px;
 $breakpoint-L: 1024px;
-$breakpoint-LS: 1110px;
 $breakpoint-MX: 962px;
 $breakpoint-M: 768px;
 $breakpoint-MS: 520px;
 $breakpoint-S: 320px;
+
+
 
 $containerMaxWidth: 1352px;
 $containerMinWidth: 278px;
@@ -15,13 +19,15 @@ $colorBacground-gray-light: hsla(0, 0%, 50%, 1);
 $colorOrange: hsla(18, 100%, 59%, 1);
 $colorOrange-intense: hsla(18, 93%, 42%, 1);
 $colorOrange-darken: hsla(18, 63%, 45%, 1);
-$clolrText-lite: hsla(0, 0%, 100%, 1);
+$colorText-lite: hsla(0, 0%, 100%, 1);
+$colorText-gray: hsla(0, 0%, 79%, 1);
 
 $duration-btn: 500ms;
 
 $font-Neue: "TT Firs Neue";
 $font-Roboto: "Roboto";
 
+$urlImages: 'images/';
 $urlImages-1920: 'images/1920/';
 $urlImages-1024: 'images/1024/';
 $urlImages-768: 'images/768/';

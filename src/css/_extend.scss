@@ -1,8 +1,17 @@
 @import '_variables.scss';
 
-%animation-link-up1 {
+%transit-c-bc-brd {
+  transition-property: color border-color background-color;
+  transition-duration: $duration-btn;
+}
+
+%transit-c-brd-trf {
   transition-property: color border-color transform;
   transition-duration: $duration-btn;
+}
+
+%animation-link-up1 {
+  @extend %transit-c-brd-trf;
   &:focus {
     border-color: $colorOrange;
   }
@@ -16,8 +25,7 @@
 }
 
 %animation-btn-up1 {
-  transition-property: color border-color transform;
-  transition-duration: $duration-btn;
+  @extend %transit-c-brd-trf;
   &:focus:not(:hover) {
     border-color: $colorOrange-darken;
   }
@@ -27,5 +35,28 @@
   }
   &:active {
     color: $colorOrange-intense;
+  }
+}
+
+
+%title-h2 {
+  font-family: $font-Neue;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  @media (max-width: $breakpoint-MS) {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+%text-main {
+  font-family: $font-Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  @media (max-width: $breakpoint-MS) {
+    font-size: 14px;
+    line-height: 18px;
   }
 }

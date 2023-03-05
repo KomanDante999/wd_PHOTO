@@ -6,9 +6,8 @@
     width: 35px;
     height: 35px;
     padding: 4px;
-    margin-left: -6px;
     border: 2px solid transparent;
-    color: $clolrText-lite;
+    color: $colorText-lite;
     @extend %animation-btn-up1;
     @media (max-width: $breakpoint-MS) {
       width: 32px;
@@ -40,17 +39,11 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 21px;
-    color: $clolrText-lite;
+    color: $colorText-lite;
     background-color: inherit;
-    border-bottom: 1px solid $clolrText-lite;
+    border-bottom: 1px solid $colorText-lite;
     @media (max-width: $breakpoint-MS) {
       width: 248px;
     }
   }
-
-  &__btn-close {
-
-
-  }
-
 }
