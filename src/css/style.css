@@ -170,6 +170,28 @@ th {
   transition-duration: 500ms;
 }
 
+.form-about__input-email::-moz-placeholder {
+  -moz-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email:-ms-input-placeholder {
+  -ms-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email::placeholder {
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email {
+  transition-property: border-color;
+  transition-duration: 500ms;
+}
+
 .contact-phone:focus {
   border-color: hsl(18deg, 100%, 59%);
 }
@@ -192,16 +214,35 @@ th {
   color: hsl(18deg, 93%, 42%);
 }
 
-.about__title {
+.img-set--cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: hsl(0deg, 0%, 29%);
+}
+
+.projects__title, .about__title {
   font-family: "TT Firs Neue";
   font-size: 24px;
   font-weight: 700;
   line-height: 31px;
 }
 @media (max-width: 520px) {
-  .about__title {
+  .projects__title, .about__title {
     font-size: 18px;
     line-height: 23px;
+  }
+}
+
+.form-about__title {
+  font-family: "TT Firs Neue";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .form-about__title {
+    font-size: 18px;
   }
 }
 
@@ -216,6 +257,50 @@ th {
     font-size: 14px;
     line-height: 18px;
   }
+}
+
+.form-about__input-email {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.form-about__input-email {
+  width: 100%;
+  padding: 15px 23px;
+  border: 1px solid transparent;
+}
+.form-about__input-email::-moz-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email::placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:focus:not(:hover) {
+  border-color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::-moz-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover:-ms-input-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+@media (max-width: 520px) {
+  .form-about__input-email {
+    padding: 10px 22px;
+  }
+}
+
+.form-about__input-email {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0deg, 0%, 29%);
 }
 
 :root {
@@ -298,6 +383,9 @@ th {
 }
 
 .btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 12px 20px;
   font-family: "Roboto";
   font-size: 16px;
@@ -398,12 +486,12 @@ th {
 .grid {
   display: grid;
   width: 100%;
+  grid-auto-flow: row;
 }
 .grid-header {
   grid-template-columns: minmax(190px, 0fr) minmax(0, 1fr) minmax(800px, 0fr) minmax(0, 1.39fr) minmax(25px, 0fr);
   grid-template-rows: auto;
   align-items: center;
-  grid-auto-flow: row;
 }
 .grid-header__item-1 {
   grid-column: 1/span 1;
@@ -443,7 +531,6 @@ th {
 .grid-menu {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
-  grid-auto-flow: row;
   gap: 7px 20px;
   justify-items: center;
   align-items: center;
@@ -463,7 +550,6 @@ th {
 .grid-hero {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 18px 300px 30px 257px;
-  grid-auto-flow: row;
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
@@ -525,7 +611,21 @@ th {
     grid-row: 7/span 1;
   }
 }
-
+.grid-about {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+@media (max-width: 728px) {
+  .grid-about {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    row-gap: 22px;
+  }
+}
 .header {
   background-color: hsl(0deg, 0%, 13%);
 }
@@ -572,6 +672,28 @@ th {
   transition-duration: 500ms;
 }
 
+.form-about__input-email::-moz-placeholder {
+  -moz-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email:-ms-input-placeholder {
+  -ms-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email::placeholder {
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email {
+  transition-property: border-color;
+  transition-duration: 500ms;
+}
+
 .contact-phone:focus {
   border-color: hsl(18deg, 100%, 59%);
 }
@@ -594,16 +716,35 @@ th {
   color: hsl(18deg, 93%, 42%);
 }
 
-.about__title {
+.img-set--cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: hsl(0deg, 0%, 29%);
+}
+
+.projects__title, .about__title {
   font-family: "TT Firs Neue";
   font-size: 24px;
   font-weight: 700;
   line-height: 31px;
 }
 @media (max-width: 520px) {
-  .about__title {
+  .projects__title, .about__title {
     font-size: 18px;
     line-height: 23px;
+  }
+}
+
+.form-about__title {
+  font-family: "TT Firs Neue";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .form-about__title {
+    font-size: 18px;
   }
 }
 
@@ -618,6 +759,50 @@ th {
     font-size: 14px;
     line-height: 18px;
   }
+}
+
+.form-about__input-email {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.form-about__input-email {
+  width: 100%;
+  padding: 15px 23px;
+  border: 1px solid transparent;
+}
+.form-about__input-email::-moz-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email::placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:focus:not(:hover) {
+  border-color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::-moz-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover:-ms-input-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+@media (max-width: 520px) {
+  .form-about__input-email {
+    padding: 10px 22px;
+  }
+}
+
+.form-about__input-email {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0deg, 0%, 29%);
 }
 
 @media (max-width: 962px) {
@@ -764,6 +949,149 @@ th {
   }
 }
 
+.btn {
+  transition-property: color border-color background-color;
+  transition-duration: 500ms;
+}
+
+.hashtag, .contact-phone, .menu__btn-open, .search__btn-open {
+  transition-property: color border-color transform;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email::-moz-placeholder {
+  -moz-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email:-ms-input-placeholder {
+  -ms-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email::placeholder {
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email {
+  transition-property: border-color;
+  transition-duration: 500ms;
+}
+
+.contact-phone:focus {
+  border-color: hsl(18deg, 100%, 59%);
+}
+.contact-phone:hover {
+  transform: translate(4px, -4px);
+}
+.contact-phone:active {
+  color: hsl(18deg, 93%, 42%);
+  border-color: hsl(18deg, 93%, 42%);
+}
+
+.hashtag:focus:not(:hover), .menu__btn-open:focus:not(:hover), .search__btn-open:focus:not(:hover) {
+  border-color: hsl(18deg, 63%, 45%);
+}
+.hashtag:hover, .menu__btn-open:hover, .search__btn-open:hover {
+  color: hsl(18deg, 100%, 59%);
+  transform: translate(4px, -4px);
+}
+.hashtag:active, .menu__btn-open:active, .search__btn-open:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
+.img-set--cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: hsl(0deg, 0%, 29%);
+}
+
+.projects__title, .about__title {
+  font-family: "TT Firs Neue";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+}
+@media (max-width: 520px) {
+  .projects__title, .about__title {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+.form-about__title {
+  font-family: "TT Firs Neue";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .form-about__title {
+    font-size: 18px;
+  }
+}
+
+.about__desc {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .about__desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.form-about__input-email {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.form-about__input-email {
+  width: 100%;
+  padding: 15px 23px;
+  border: 1px solid transparent;
+}
+.form-about__input-email::-moz-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email::placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:focus:not(:hover) {
+  border-color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::-moz-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover:-ms-input-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+@media (max-width: 520px) {
+  .form-about__input-email {
+    padding: 10px 22px;
+  }
+}
+
+.form-about__input-email {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0deg, 0%, 29%);
+}
+
 .hero__container {
   padding-top: 41px;
   padding-bottom: 68px;
@@ -776,12 +1104,8 @@ th {
 @media (max-width: 520px) {
   .hero__container {
     padding-top: 30px;
+    padding-bottom: 50px;
   }
-}
-.hero__item {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
 }
 .hero__item_main {
   justify-content: flex-end;
@@ -949,6 +1273,28 @@ th {
   transition-duration: 500ms;
 }
 
+.form-about__input-email::-moz-placeholder {
+  -moz-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email:-ms-input-placeholder {
+  -ms-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email::placeholder {
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email {
+  transition-property: border-color;
+  transition-duration: 500ms;
+}
+
 .contact-phone:focus {
   border-color: hsl(18deg, 100%, 59%);
 }
@@ -971,16 +1317,35 @@ th {
   color: hsl(18deg, 93%, 42%);
 }
 
-.about__title {
+.img-set--cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: hsl(0deg, 0%, 29%);
+}
+
+.projects__title, .about__title {
   font-family: "TT Firs Neue";
   font-size: 24px;
   font-weight: 700;
   line-height: 31px;
 }
 @media (max-width: 520px) {
-  .about__title {
+  .projects__title, .about__title {
     font-size: 18px;
     line-height: 23px;
+  }
+}
+
+.form-about__title {
+  font-family: "TT Firs Neue";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .form-about__title {
+    font-size: 18px;
   }
 }
 
@@ -997,13 +1362,74 @@ th {
   }
 }
 
+.form-about__input-email {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.form-about__input-email {
+  width: 100%;
+  padding: 15px 23px;
+  border: 1px solid transparent;
+}
+.form-about__input-email::-moz-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email::placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:focus:not(:hover) {
+  border-color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::-moz-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover:-ms-input-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+@media (max-width: 520px) {
+  .form-about__input-email {
+    padding: 10px 22px;
+  }
+}
+
+.form-about__input-email {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0deg, 0%, 29%);
+}
+
 .about__container {
   padding-top: 30px;
-  padding-bottom: 70px;
+  padding-bottom: 69px;
   background-color: hsl(0deg, 0%, 13%);
+}
+@media (max-width: 1024px) {
+  .about__container {
+    padding-bottom: 83px;
+  }
+}
+@media (max-width: 768px) {
+  .about__container {
+    padding-bottom: 62px;
+  }
+}
+@media (max-width: 520px) {
+  .about__container {
+    padding-top: 32px;
+    padding-bottom: 60px;
+  }
 }
 .about__title {
   color: hsl(0deg, 0%, 100%);
+  margin-bottom: 5px;
 }
 .about__desc {
   line-height: 28px;
@@ -1013,4 +1439,227 @@ th {
   .about__desc {
     line-height: 25px;
   }
+}
+.about__img-1 {
+  width: 100%;
+  height: 255px;
+  margin-top: 33px;
+  margin-bottom: 25px;
+}
+@media (max-width: 1024px) {
+  .about__img-1 {
+    height: 332px;
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .about__img-1 {
+    height: 569px;
+  }
+}
+@media (max-width: 728px) {
+  .about__img-1 {
+    margin-top: 0;
+  }
+}
+@media (max-width: 520px) {
+  .about__img-1 {
+    height: 278px;
+    margin-bottom: 26px;
+  }
+}
+
+.about__img-inset_1 {
+  background-image: url("images/1920/about-1.jpg");
+}
+
+@media (max-width: 1024px) {
+  .about__img-inset_1 {
+    background-image: url("images/1024/about-1.jpg");
+  }
+}
+@media (max-width: 768px) {
+  .about__img-inset_1 {
+    background-image: url("images/768/about-1.jpg");
+  }
+}
+@media (max-width: 520px) {
+  .about__img-inset_1 {
+    background-image: url("images/520/about-1.jpg");
+  }
+}
+.form-about__title {
+  margin-bottom: 16px;
+  color: hsl(0deg, 0%, 100%);
+}
+@media (max-width: 520px) {
+  .form-about__title {
+    margin-bottom: 14px;
+  }
+}
+@media (max-width: 1024px) {
+  .form-about__wrap-input {
+    flex-direction: column;
+  }
+}
+.form-about__input-email {
+  margin-right: 30px;
+}
+@media (max-width: 1024px) {
+  .form-about__input-email {
+    max-width: 342px;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+}
+
+.btn {
+  transition-property: color border-color background-color;
+  transition-duration: 500ms;
+}
+
+.hashtag, .contact-phone, .menu__btn-open, .search__btn-open {
+  transition-property: color border-color transform;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email::-moz-placeholder {
+  -moz-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email:-ms-input-placeholder {
+  -ms-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email::placeholder {
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email {
+  transition-property: border-color;
+  transition-duration: 500ms;
+}
+
+.contact-phone:focus {
+  border-color: hsl(18deg, 100%, 59%);
+}
+.contact-phone:hover {
+  transform: translate(4px, -4px);
+}
+.contact-phone:active {
+  color: hsl(18deg, 93%, 42%);
+  border-color: hsl(18deg, 93%, 42%);
+}
+
+.hashtag:focus:not(:hover), .menu__btn-open:focus:not(:hover), .search__btn-open:focus:not(:hover) {
+  border-color: hsl(18deg, 63%, 45%);
+}
+.hashtag:hover, .menu__btn-open:hover, .search__btn-open:hover {
+  color: hsl(18deg, 100%, 59%);
+  transform: translate(4px, -4px);
+}
+.hashtag:active, .menu__btn-open:active, .search__btn-open:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
+.img-set--cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: hsl(0deg, 0%, 29%);
+}
+
+.projects__title, .about__title {
+  font-family: "TT Firs Neue";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+}
+@media (max-width: 520px) {
+  .projects__title, .about__title {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+.form-about__title {
+  font-family: "TT Firs Neue";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .form-about__title {
+    font-size: 18px;
+  }
+}
+
+.about__desc {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .about__desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.form-about__input-email {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.form-about__input-email {
+  width: 100%;
+  padding: 15px 23px;
+  border: 1px solid transparent;
+}
+.form-about__input-email::-moz-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email::placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:focus:not(:hover) {
+  border-color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::-moz-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover:-ms-input-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+@media (max-width: 520px) {
+  .form-about__input-email {
+    padding: 10px 22px;
+  }
+}
+
+.form-about__input-email {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0deg, 0%, 29%);
+}
+
+.projects__container {
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+.projects__title {
+  margin-bottom: 12px;
 }/*# sourceMappingURL=style.css.map */

@@ -13,7 +13,7 @@
         bottom: 0;
       };
     }
-    @media (max-width: $breakpoint-MS) {
+    @media (max-width: $breakpoint-S) {
       padding: {
         top: 19px;
       };
@@ -29,7 +29,7 @@
     @media (max-width: $breakpoint-M) {
       margin-top: 23px;
     }
-    @media (max-width: $breakpoint-MS) {
+    @media (max-width: $breakpoint-S) {
       margin-top: 19px;
     }
   }

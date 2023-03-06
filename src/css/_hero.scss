@@ -1,5 +1,6 @@
 @import '_variables.scss';
 @import '_mixins.scss';
+@import '_extend.scss';
 
 .hero {
   &__container {
@@ -10,15 +11,12 @@
     @media (max-width: $breakpoint-L) {
       padding-top: 34px;
     }
-    @media (max-width: $breakpoint-MS) {
-      padding-top: 30px;
+    @media (max-width: $breakpoint-S) {
+      padding: {
+        top: 30px;
+        bottom: 50px;
+      };
     }
-  }
-
-  &__item {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
   }
 
   &__item_main {
@@ -64,7 +62,7 @@
     @media (max-width: $breakpoint-M) {
       margin-bottom: 15px;
     }
-    @media (max-width: $breakpoint-MS) {
+    @media (max-width: $breakpoint-S) {
       margin-bottom: 9px;
       font-size: 14px;
       line-height: 16px;

@@ -73,33 +73,48 @@ html(lang="ru")
         .container.hero__container
           h2.visually-hidden Мастер-классы
           ul.grid.grid-hero.hero__list
-            li.grid-hero__item-1.hero__item.hero__item_main.hero__img-inset_1.flex.flex-column.fit-content-childs
+            li.grid-hero__item-1.img-set--cover.hero__item_main.hero__img-inset_1.flex.flex-column.fit-content-childs
               +hashTag('#мастеркласс')(class="hero__hashTag")
               p.hero__desc Мастер-класс от Игоря Робова
               h3.hero__title Неоновый фотосет&nbsp;2.0 7 июля 20:00
               +btnPrim('Узнать больше')(id="master-class", class="hero__btn")
             li.grid-hero__item-subtitle
               h4.hero__subtitle Работы участников предыдущего мастер-класса
-            li.grid-hero__item-2.hero__item.hero__img-inset_2
-            li.grid-hero__item-3.hero__item.hero__img-inset_3
-            li.grid-hero__item-4.hero__item.hero__img-inset_4
+            li.grid-hero__item-2.img-set--cover.hero__img-inset_2
+            li.grid-hero__item-3.img-set--cover.hero__img-inset_3
+            li.grid-hero__item-4.img-set--cover.hero__img-inset_4
 
       section#about.about
         .container.about__container
-          .grid.grid__about
-            .grid__about_left
+          .grid.grid-about
+            .grid-about__left
               .about__articl-left.flex.flex-column
                 h2.about__title О студии
                 p.about__desc В рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует необходимость распределения внутренних резервов и ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально-технической и кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и нарушающими общечеловеческие нормы этики.
-            .grid__about_right
+            .grid-about__right
               .about__articl-right.flex.flex-column
-                .about__img-inset_1
+                .about__img-1.img-set--cover.about__img-inset_1
                 form(id="about-form", class="about__form, form-about")
-                  p.form-about__title Подписаться на рассылку
+                  h4.form-about__title Подписаться на рассылку
                   .form-about__wrap-input.flex
-                    input#about-form__input(type="email", name="").form-about__input-email
+                    input#about-form__input(type="email", name="", placeholder='Email').form-about__input-email
                     +btnPrim('Отправить')(id="about-form__submit", class="form-about__submit", type="submit")
 
+      section#projects.projects
+        .container.projects__container
+          h2.projects__title Наши проекты
+          ul.grid.grid-projects
+            li.grid-projects__item-1
+                .projects__item_small
+                  .projects__img_small.img-set--cover.projects__img-inset_1
+                    +hashTag('#мастеркласс')(class="projects__hashTag")
+                  p.projects__desc_small
+            li.grid-projects__item-2
+            li.grid-projects__item-3
+            li.grid-projects__item-4
+            li.grid-projects__item-5
+            li.grid-projects__item-6
+            li.grid-projects__item-7
 
 
 

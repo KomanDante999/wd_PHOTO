@@ -4,8 +4,9 @@ $breakpoint-LX: 1110px;
 $breakpoint-L: 1024px;
 $breakpoint-MX: 962px;
 $breakpoint-M: 768px;
-$breakpoint-MS: 520px;
-$breakpoint-S: 320px;
+$breakpoint-MS: 728px;
+$breakpoint-S: 520px;
+$breakpoint-SS: 320px;
 
 
 
@@ -15,7 +16,8 @@ $containerPaddingX: 31px;
 
 $colorBacground-dark: hsla(0, 0%, 13%, 1);
 $colorBacground-gray: hsla(0, 0%, 29%, 1);
-$colorBacground-gray-light: hsla(0, 0%, 50%, 1);
+$colorBacground-gray-50: hsla(0, 0%, 50%, 1);
+$colorBacground-gray-90: hsla(0, 0%, 91%, 1);
 $colorOrange: hsla(18, 100%, 59%, 1);
 $colorOrange-intense: hsla(18, 93%, 42%, 1);
 $colorOrange-darken: hsla(18, 63%, 45%, 1);

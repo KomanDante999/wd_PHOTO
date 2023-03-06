@@ -9,7 +9,7 @@
     border: 2px solid transparent;
     color: $colorText-lite;
     @extend %animation-btn-up1;
-    @media (max-width: $breakpoint-MS) {
+    @media (max-width: $breakpoint-S) {
       width: 32px;
       height: 32px;
     }
@@ -42,7 +42,7 @@
     color: $colorText-lite;
     background-color: inherit;
     border-bottom: 1px solid $colorText-lite;
-    @media (max-width: $breakpoint-MS) {
+    @media (max-width: $breakpoint-S) {
       width: 248px;
     }
   }

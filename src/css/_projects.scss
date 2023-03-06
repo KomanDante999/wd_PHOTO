@@ -1,0 +1,19 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '_extend.scss';
+
+.projects {
+
+  &__container {
+    padding: {
+      top: 68px;
+      bottom: 68px;
+    };
+  }
+  &__title {
+    @extend %title-h2;
+    margin-bottom: 12px;
+  }
+  &__item-1 {}
+}
+

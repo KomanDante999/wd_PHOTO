@@ -10,6 +10,16 @@
   transition-duration: $duration-btn;
 }
 
+%transit-c {
+  transition-property: color;
+  transition-duration: $duration-btn;
+}
+
+%transit-brd {
+  transition-property: border-color;
+  transition-duration: $duration-btn;
+}
+
 %animation-link-up1 {
   @extend %transit-c-brd-trf;
   &:focus {
@@ -39,14 +49,31 @@
 }
 
 
+%image-set--cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: $colorBacground-gray;
+}
+
 %title-h2 {
   font-family: $font-Neue;
   font-size: 24px;
   font-weight: 700;
   line-height: 31px;
-  @media (max-width: $breakpoint-MS) {
+  @media (max-width: $breakpoint-S) {
     font-size: 18px;
     line-height: 23px;
+  }
+}
+
+%title-h4 {
+  font-family: $font-Neue;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 22px;
+  @media (max-width: $breakpoint-S) {
+    font-size: 18px;
   }
 }
 
@@ -55,8 +82,47 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
-  @media (max-width: $breakpoint-MS) {
+  @media (max-width: $breakpoint-S) {
     font-size: 14px;
     line-height: 18px;
   }
+}
+
+%text-input {
+  font-family: $font-Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+%input {
+  width: 100%;
+  padding: 15px 23px;
+  @extend %text-input;
+  border: 1px solid transparent;
+  @extend %transit-brd;
+  &::placeholder {
+    color: $colorText-gray;
+    @extend %transit-c;
+  }
+  &:focus:not(:hover) {
+    border-color: $colorOrange;
+  }
+  &:hover::placeholder {
+    color: $colorOrange;
+  }
+  @media (max-width: $breakpoint-S) {
+    padding: 10px 22px;
+  }
+}
+
+%input-dark {
+  @extend %input;
+  color: $colorText-lite;
+  background-color: $colorBacground-gray;
+}
+
+%input-light {
+  @extend %input;
+  background-color: $colorBacground-gray-90;
 }
