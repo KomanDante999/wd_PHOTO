@@ -14,6 +14,20 @@
     @extend %title-h2;
     margin-bottom: 12px;
   }
-  &__item-1 {}
+  &__hashTag {
+
+  }
+  &__img_small {
+    justify-content: flex-end;
+    padding: 7px;
+  }
+  &__desc_small {
+    @extend %text-small;
+  }
+  &__calendar {
+
+  }
 }
+
+@include image-inset ($urlImages, $breakpoints-base, 7, 'projects')
 

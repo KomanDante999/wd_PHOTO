@@ -70,6 +70,7 @@
 }
 
 .hashtag {
+  width: fit-content;
   padding: 7px 15px;
   font-family: $font-Roboto;
   font-size: 14px;
@@ -84,7 +85,23 @@
     font-size: 12px;
     line-height: 14px;
   }
+}
 
+.calendar {
+  width: fit-content;
+  align-items: center;
+  &__icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+  }
+  &__date {
+    font-family: $font-Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22px;
+    color: $colorText-gray-60;
+  }
 }
 
 .btn {
