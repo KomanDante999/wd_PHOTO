@@ -67,6 +67,17 @@
   }
 }
 
+%title-h3 {
+  font-family: $font-Neue;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  @media (max-width: $breakpoint-S) {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
 %title-h4 {
   font-family: $font-Neue;
   font-size: 24px;

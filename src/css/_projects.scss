@@ -14,19 +14,50 @@
     @extend %title-h2;
     margin-bottom: 12px;
   }
-  &__hashTag {
-
-  }
   &__img_small {
+    height: 184px;
     justify-content: flex-end;
     padding: 7px;
+    margin-bottom: 18px;
   }
   &__desc_small {
+    margin: {
+      top: auto;
+      bottom: 13px;
+    };
     @extend %text-small;
   }
-  &__calendar {
-
+  &__item-big {
+    padding: {
+      top: 7px;
+      right: 7px;
+      bottom: 30px;
+      left: 30px;
+    };
   }
+  &__hashTag_big {
+    margin-left: auto;
+  }
+  &__calendar_big {
+    margin-top: -14px;
+    color: $colorText-lite;
+  }
+  &__subtitle {
+    max-width: 292px;
+    margin-bottom: 5px;
+    @extend %title-h3;
+    color: $colorText-lite;
+  }
+  &__desc_big {
+    max-width: 292px;
+    margin-bottom: 5px;
+    @extend %text-small;
+    color: $colorText-lite;
+  }
+  &__btn {
+    margin-top: auto;
+  }
+
 }
 
 @include image-inset ($urlImages, $breakpoints-base, 7, 'projects')

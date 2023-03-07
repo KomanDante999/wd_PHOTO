@@ -26,7 +26,7 @@ mixin btnSec(text)
   button(type='button', class!=attributes.class, id!=attributes.id).btn.btn__sec= text
 
 mixin calendar(date)
-  .calendar.flex
+  .calendar.flex(class!=attributes.class)
     svg.calendar__icon
       use(xlink:href="images/sprite.svg#calendar")
     .calendar__date= date
@@ -109,45 +109,39 @@ html(lang="ru")
         .container.projects__container
           h2.projects__title Наши проекты
           ul.grid.grid-projects
-            li.grid-projects__item-1
-                .flex.flex-column
-                  .projects__img_small.img-set--cover.projects__img-inset_1.flex
-                    +hashTag('#пейзаж')(class="projects__hashTag")
-                  p.projects__desc_small Синтетически, смешаны с не уникальными данными до степени…
-                  +calendar('16 июня')(class="projects__calendar")
-            li.grid-projects__item-2
-                .flex.flex-column
-                  .projects__img_small.img-set--cover.projects__img-inset_2.flex
-                    +hashTag('#портрет')(class="projects__hashTag")
-                  p.projects__desc_small В своём стремлении улучшить опыт мы упускаем, что явные...
-                  +calendar('28 мая')(class="projects__calendar")
-            li.grid-projects__item-3
-                .flex.flex-column
-                  .projects__img_small.img-set--cover.projects__img-inset_3.flex
-                    +hashTag('#предмет')(class="projects__hashTag")
-                  p.projects__desc_small Равным образом, высокое качество позиционных…
-                  +calendar('14 мая')(class="projects__calendar")
-            li.grid-projects__item-4
-              .projects__item-big.img-set--cover.projects__img-inset_4.flex.flex-column
-                +hashTag('#fuji')(class="projects__hashTag-big")
-                +calendar('9 апреля')(class="projects__calendar-big")
-                h3.projects__title Cемантический разбор
+            li.grid-projects__item-1.flex.flex-column
+                .projects__img_small.img-set--cover.projects__img-inset_1.flex
+                  +hashTag('#пейзаж')
+                p.projects__desc_small Синтетически, смешаны с не уникальными данными до степени…
+                +calendar('16 июня')
+            li.grid-projects__item-2.flex.flex-column
+                .projects__img_small.img-set--cover.projects__img-inset_2.flex
+                  +hashTag('#портрет')
+                p.projects__desc_small В своём стремлении улучшить опыт мы упускаем, что явные...
+                +calendar('28 мая')
+            li.grid-projects__item-3.flex.flex-column
+                .projects__img_small.img-set--cover.projects__img-inset_3.flex
+                  +hashTag('#предмет')
+                p.projects__desc_small Равным образом, высокое качество позиционных…
+                +calendar('14 мая')
+            li.grid-projects__item-4.projects__item-big.img-set--cover.projects__img-inset_4.flex.flex-column
+                +hashTag('#fuji')(class="projects__hashTag_big")
+                +calendar('9 апреля')(class="projects__calendar_big")
+                h3.projects__subtitle Cемантический разбор
                 p.projects__desc_big В рамках спецификации современных стандартов, интерактивные прототипы
                 +btnSec('О проекте')(id="projects-fuji", class="projects__btn")
-            li.grid-projects__item-5
-              .projects__item-big.img-set--cover.projects__img-inset_5.flex.flex-column
-                +hashTag('#проектзабвение')(class="projects__hashTag-big")
-                +calendar('20 марта')(class="projects__calendar-big")
-                h3.projects__title Забвение
+            li.grid-projects__item-5.projects__item-big.img-set--cover.projects__img-inset_5.flex.flex-column
+                +hashTag('#проектзабвение')(class="projects__hashTag_big")
+                +calendar('20 марта')(class="projects__calendar_big")
+                h3.projects__subtitle Забвение
                 p.projects__desc_big Играет важную роль в формировании глубокомысленных рассуждений
                 +btnSec('О проекте')(id="projects-oblivion", class="projects__btn")
-            li.grid-projects__item-6
-                .flex.flex-column
-                  .projects__img_small.img-set--cover.projects__img-inset_6.flex
-                    +hashTag('#ретушь')(class="projects__hashTag")
-                  p.projects__desc_small Как принято считать, многие известные личности и по сей день остаются уделом либералов…
-                  +calendar('9 марта')(class="projects__calendar")
-            li.grid-projects__item-7
+            li.grid-projects__item-6.flex.flex-column
+                .projects__img_small.img-set--cover.projects__img-inset_6.flex
+                  +hashTag('#ретушь')(class="projects__hashTag")
+                p.projects__desc_small Как принято считать, многие известные личности и по сей день остаются уделом либералов…
+                +calendar('9 марта')(class="projects__calendar")
+            li.grid-projects__item-7.flex.flex-column
                   .projects__img_small.img-set--cover.projects__img-inset_7.flex
                     +hashTag('#портрет')(class="projects__hashTag")
                   p.projects__desc_small С учётом сложившейся международной обстановки, новая модель организационной…
