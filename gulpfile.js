@@ -27,7 +27,7 @@ const html = () => {
 }
 
 const styles = () => {
-  return src('src/css/*.css')
+  return src(['src/css/*.css', 'src/css/*.map'])
     .pipe(dest('dist'))
     .pipe(browserSync.stream())
   }
@@ -109,6 +109,7 @@ const watchFailes = () => {
 
 watch('Compiled-HTML/index.html', html)
 watch('src/css/*.css', styles)
+watch('src/css/*.map', styles)
 watch('src/js/**/*.js', scripts)
 watch('src/resources/**', resources)
 watch('src/img/*.{jpg,jpeg,png,svg}', images);

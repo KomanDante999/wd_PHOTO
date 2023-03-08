@@ -4,6 +4,14 @@
   list-style: none;
 }
 
+@mixin line-clamp ($n-string) {
+  display: -webkit-box;
+  -webkit-line-clamp: $n-string;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+}
+
 @mixin image-inset ($url, $breakpoints, $max, $classParent) {
   @each $br in $breakpoints {
     @if $br >= 1920 {

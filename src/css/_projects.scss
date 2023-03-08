@@ -3,29 +3,39 @@
 @import '_extend.scss';
 
 .projects {
-
   &__container {
     padding: {
-      top: 68px;
-      bottom: 68px;
-    };
+      top: 71px;
+      bottom: 30px;
+    }
+    @media (max-width: $breakpoint-L) {
+      padding-top: 70px;
+    }
   }
   &__title {
-    @extend %title-h2;
-    margin-bottom: 12px;
+    @extend %Neue-bold-m-129;
+    margin-bottom: 10px;
   }
-  &__img_small {
+  &__img-container {
     height: 184px;
-    justify-content: flex-end;
     padding: 7px;
-    margin-bottom: 18px;
+    margin-bottom: 4px;
   }
-  &__desc_small {
+  &__desc-small {
     margin: {
       top: auto;
-      bottom: 13px;
-    };
-    @extend %text-small;
+      bottom: 10px;
+    }
+    @include line-clamp (3);
+    @extend %Roboto-reg-sl-22;
+    @media (max-width: $breakpoint-L) {
+      margin-bottom: 18px;
+    }
+    &_camp2 {
+      @media (max-width: $breakpoint-L) {
+        @include line-clamp (2);
+      }
+    }
   }
   &__item-big {
     padding: {
@@ -33,32 +43,40 @@
       right: 7px;
       bottom: 30px;
       left: 30px;
-    };
+    }
+    // @media (max-width: $breakpoint-L) {
+    //   padding-bottom: 37px;
+    // }
   }
-  &__hashTag_big {
+  &__hashtag {
     margin-left: auto;
   }
-  &__calendar_big {
-    margin-top: -14px;
+  &__calendar {
+    margin: {
+      top: -15px;
+      bottom: 2px;
+    }
     color: $colorText-lite;
+    @media (max-width: $breakpoint-L) {
+      margin-top: -9px;
+    }
+
   }
   &__subtitle {
     max-width: 292px;
     margin-bottom: 5px;
-    @extend %title-h3;
+    @extend %Neue-bold-m-lh24;
     color: $colorText-lite;
   }
-  &__desc_big {
+  &__desc-big {
     max-width: 292px;
     margin-bottom: 5px;
-    @extend %text-small;
+    @extend %Roboto-reg-sl-22_low;
     color: $colorText-lite;
   }
   &__btn {
     margin-top: auto;
   }
-
 }
-
 @include image-inset ($urlImages, $breakpoints-base, 7, 'projects')
 

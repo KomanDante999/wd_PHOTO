@@ -48,7 +48,6 @@
   }
 }
 
-
 %image-set--cover {
   background-repeat: no-repeat;
   background-size: cover;
@@ -56,72 +55,160 @@
   background-color: $colorBacground-gray;
 }
 
-%title-h2 {
+// tipography  size: l-36, m-24, sl-16, s-14, ss-12
+// --- Neue
+%Neue-bold {
   font-family: $font-Neue;
-  font-size: 24px;
   font-weight: 700;
-  line-height: 31px;
+}
+
+%Neue-bold-l {
+  @extend %Neue-bold;
+  font-size: 36px;
+  line-height: 104%;
+  @media (max-width: $breakpoint-L) {
+    font-size: 34px;
+  }
   @media (max-width: $breakpoint-S) {
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 24px;
   }
 }
 
-%title-h3 {
-  font-family: $font-Neue;
+%Neue-bold-m {
+  @extend %Neue-bold;
   font-size: 24px;
-  font-weight: 700;
-  line-height: 24px;
+}
+
+%Neue-bold-m-129 {
+  @extend %Neue-bold-m;
+  line-height: 129%;
   @media (max-width: $breakpoint-S) {
     font-size: 18px;
-    line-height: 23px;
   }
 }
 
-%title-h4 {
+%Neue-bold-m-104 {
+  @extend %Neue-bold-m;
+  line-height: 104%;
+  @media (max-width: $breakpoint-M) {
+    font-size: 22px;
+  }
+  @media (max-width: $breakpoint-S) {
+    font-size: 18px;
+  }
+}
+
+%Neue-bold-m-lh24 {
+  @extend %Neue-bold-m;
+  line-height: 100%;
+}
+
+%Neue-med-sl-129 {
   font-family: $font-Neue;
-  font-size: 24px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 129%;
+  @media (max-width: $breakpoint-S) {
+    font-size: 14px;
+  }
+}
+
+%Neue-reg {
+  font-family: $font-Neue;
   font-weight: 400;
+}
+%Neue-reg-m {
+  @extend %Neue-reg;
+  font-size: 24px;
   line-height: 22px;
   @media (max-width: $breakpoint-S) {
     font-size: 18px;
   }
 }
-
-%text-main {
-  font-family: $font-Roboto;
+%Neue-reg-sl {
+  @extend %Neue-reg;
   font-size: 16px;
+  line-height: 129%
+}
+%Neue-reg-s {
+  @extend %Neue-reg;
+  font-size: 14px;
+  line-height: 129%;
+  @media (max-width: $breakpoint-S) {
+    font-size: 10px;
+  }
+}
+// ---Roboto
+%Roboto-bold {
+  font-family: $font-Roboto;
+  font-weight: 700;
+}
+%Roboto-bold-sl-117 {
+  @extend %Roboto-bold;
+  font-size: 16px;
+  line-height: 117%;
+  @media (max-width: $breakpoint-S) {
+    font-size: 14px;
+  }
+}
+
+%Roboto-reg {
+  font-family: $font-Roboto;
   font-weight: 400;
+}
+%Roboto-reg-sl {
+  @extend %Roboto-reg;
+  font-size: 16px;
+}
+
+%Roboto-reg-sl-28 {
+  @extend %Roboto-reg-sl;
+  line-height: 28px;
+  @media (max-width: $breakpoint-S) {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+
+%Roboto-reg-sl-22 {
+  @extend %Roboto-reg-sl;
+  line-height: 22px;
+}
+
+%Roboto-reg-sl-22_low {
+  @extend %Roboto-reg-sl;
   line-height: 22px;
   @media (max-width: $breakpoint-S) {
     font-size: 14px;
-    line-height: 18px;
+    line-height: 16px;
   }
 }
-
-%text-small {
-  font-family: $font-Roboto;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
-
+%Roboto-reg-sl-117 {
+  @extend %Roboto-reg-sl;
+  line-height: 117%;
   @media (max-width: $breakpoint-S) {
     font-size: 14px;
-    line-height: 18px;
   }
 }
-
-%text-input {
-  font-family: $font-Roboto;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19px;
+%Roboto-reg-s-117 {
+  @extend %Roboto-reg;
+  font-size: 14px;
+  line-height: 117%;
+  @media (max-width: $breakpoint-S) {
+    font-size: 12px;
+  }
 }
+%Roboto-reg-ss-22 {
+  @extend %Roboto-reg;
+  font-size: 12px;
+  line-height: 22px;
+}
+
 
 %input {
   width: 100%;
   padding: 15px 23px;
-  @extend %text-input;
+  @extend %Roboto-reg-sl-117;
   border: 1px solid transparent;
   @extend %transit-brd;
   &::placeholder {

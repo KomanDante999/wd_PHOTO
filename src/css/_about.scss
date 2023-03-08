@@ -5,12 +5,12 @@
 .about {
   &__container {
     padding: {
-      top: 30px;
-      bottom: 69px;
-    };
+      top: 32px;
+      bottom: 68px;
+    }
     background-color: $colorBacground-dark;
     @media (max-width: $breakpoint-L) {
-      padding-bottom: 83px;
+      padding-bottom: 81px;
     }
     @media (max-width: $breakpoint-M) {
       padding-bottom: 62px;
@@ -19,30 +19,25 @@
       padding: {
         top: 32px;
         bottom: 60px;
-      };
+      }
     }
   }
-
   &__title {
-    @extend %title-h2;
+    @extend %Neue-bold-m-129;
     color: $colorText-lite;
     margin-bottom: 5px;
   }
   &__desc {
-    @extend %text-main;
-    line-height: 28px;
+    @extend %Roboto-reg-sl-28;
     color: $colorText-gray;
-    @media (max-width: $breakpoint-S) {
-      line-height: 25px;
-    }
   }
   &__img-1 {
     width: 100%;
     height: 255px;
     margin: {
-      top: 33px;
+      top: 31px;
       bottom: 25px;
-    };
+    }
     @media (max-width: $breakpoint-L) {
       height: 332px;
       margin-bottom: 24px;
@@ -53,22 +48,19 @@
     @media (max-width: $breakpoint-MS) {
       margin-top: 0;
     }
-
     @media (max-width: $breakpoint-S) {
       height: 278px;
       margin-bottom: 26px;
     }
-
   }
 }
 
 @include image-inset ($urlImages, $breakpoints-base, 1, 'about');
 
 .form-about {
-
   &__title {
     margin-bottom: 16px;
-    @extend %title-h4;
+    @extend %Neue-reg-m;
     color: $colorText-lite;
     @media (max-width: $breakpoint-S) {
       margin-bottom: 14px;
@@ -87,7 +79,7 @@
       margin: {
         right: auto;
         bottom: 20px;
-      };
+      }
     }
   }
 }
