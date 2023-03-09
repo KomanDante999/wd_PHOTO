@@ -221,7 +221,7 @@ th {
   background-color: hsl(0deg, 0%, 29%);
 }
 
-.projects__subtitle, .hero__subtitle, .projects__title, .about__title, .hero__title {
+.projects__subtitle, .hero__subtitle, .contacts__title, .projects__title, .about__title, .hero__title {
   font-family: "TT Firs Neue";
   font-weight: 700;
 }
@@ -241,15 +241,15 @@ th {
   }
 }
 
-.projects__subtitle, .hero__subtitle, .projects__title, .about__title {
+.projects__subtitle, .hero__subtitle, .contacts__title, .projects__title, .about__title {
   font-size: 24px;
 }
 
-.projects__title, .about__title {
+.contacts__title, .projects__title, .about__title {
   line-height: 129%;
 }
 @media (max-width: 520px) {
-  .projects__title, .about__title {
+  .contacts__title, .projects__title, .about__title {
     font-size: 18px;
   }
 }
@@ -767,6 +767,14 @@ th {
     row-gap: 0;
   }
 }
+@media (max-width: 520px) {
+  .grid-projects {
+    grid-template-columns: 1fr;
+    grid-template-rows: 297px 25px 278px 25px 278px 23px 422px 26px 300px 25px 300px 25px 422px;
+    -moz-column-gap: 0;
+         column-gap: 0;
+  }
+}
 .grid-projects__item-1 {
   grid-column: 1/span 2;
   grid-row: 1/span 1;
@@ -854,6 +862,54 @@ th {
     grid-column: 4/span 3;
     grid-row: 5/span 1;
   }
+}
+@media (max-width: 520px) {
+  .grid-projects__item-1 {
+    grid-column: 1/span 1;
+    grid-row: 1/span 1;
+  }
+  .grid-projects__item-2 {
+    grid-column: 1/span 1;
+    grid-row: 3/span 1;
+  }
+  .grid-projects__item-3 {
+    grid-column: 1/span 1;
+    grid-row: 5/span 1;
+  }
+  .grid-projects__item-4 {
+    grid-column: 1/span 1;
+    grid-row: 7/span 1;
+  }
+  .grid-projects__item-5 {
+    grid-column: 1/span 1;
+    grid-row: 13/span 1;
+  }
+  .grid-projects__item-6 {
+    grid-column: 1/span 1;
+    grid-row: 9/span 1;
+  }
+  .grid-projects__item-7 {
+    grid-column: 1/span 1;
+    grid-row: 11/span 1;
+  }
+}
+.grid-contacts {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 460px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+.grid-contacts__map {
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+}
+.grid-contacts__card {
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+}
+.grid-contacts__form {
+  grid-column: 3/span 1;
+  grid-row: 1/span 1;
 }
 
 .header {
@@ -953,7 +1009,7 @@ th {
   background-color: hsl(0deg, 0%, 29%);
 }
 
-.hero__title, .projects__title, .about__title, .hero__subtitle, .projects__subtitle {
+.hero__title, .contacts__title, .projects__title, .about__title, .hero__subtitle, .projects__subtitle {
   font-family: "TT Firs Neue";
   font-weight: 700;
 }
@@ -973,15 +1029,15 @@ th {
   }
 }
 
-.projects__title, .about__title, .hero__subtitle, .projects__subtitle {
+.contacts__title, .projects__title, .about__title, .hero__subtitle, .projects__subtitle {
   font-size: 24px;
 }
 
-.projects__title, .about__title {
+.contacts__title, .projects__title, .about__title {
   line-height: 129%;
 }
 @media (max-width: 520px) {
-  .projects__title, .about__title {
+  .contacts__title, .projects__title, .about__title {
     font-size: 18px;
   }
 }
@@ -1285,6 +1341,259 @@ th {
   }
 }
 
+.btn {
+  transition-property: color border-color background-color;
+  transition-duration: 500ms;
+}
+
+.hashtag, .contact-phone, .menu__btn-open, .search__btn-open {
+  transition-property: color border-color transform;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email::-moz-placeholder {
+  -moz-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email:-ms-input-placeholder {
+  -ms-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email::placeholder {
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email {
+  transition-property: border-color;
+  transition-duration: 500ms;
+}
+
+.contact-phone:focus {
+  border-color: hsl(18deg, 100%, 59%);
+}
+.contact-phone:hover {
+  transform: translate(4px, -4px);
+}
+.contact-phone:active {
+  color: hsl(18deg, 93%, 42%);
+  border-color: hsl(18deg, 93%, 42%);
+}
+
+.hashtag:focus:not(:hover), .menu__btn-open:focus:not(:hover), .search__btn-open:focus:not(:hover) {
+  border-color: hsl(18deg, 63%, 45%);
+}
+.hashtag:hover, .menu__btn-open:hover, .search__btn-open:hover {
+  color: hsl(18deg, 100%, 59%);
+  transform: translate(4px, -4px);
+}
+.hashtag:active, .menu__btn-open:active, .search__btn-open:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
+.img-set--cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: hsl(0deg, 0%, 29%);
+}
+
+.hero__title, .contacts__title, .projects__title, .about__title, .hero__subtitle, .projects__subtitle {
+  font-family: "TT Firs Neue";
+  font-weight: 700;
+}
+
+.hero__title {
+  font-size: 36px;
+  line-height: 104%;
+}
+@media (max-width: 1024px) {
+  .hero__title {
+    font-size: 34px;
+  }
+}
+@media (max-width: 520px) {
+  .hero__title {
+    font-size: 24px;
+  }
+}
+
+.contacts__title, .projects__title, .about__title, .hero__subtitle, .projects__subtitle {
+  font-size: 24px;
+}
+
+.contacts__title, .projects__title, .about__title {
+  line-height: 129%;
+}
+@media (max-width: 520px) {
+  .contacts__title, .projects__title, .about__title {
+    font-size: 18px;
+  }
+}
+
+.hero__subtitle {
+  line-height: 104%;
+}
+@media (max-width: 768px) {
+  .hero__subtitle {
+    font-size: 22px;
+  }
+}
+@media (max-width: 520px) {
+  .hero__subtitle {
+    font-size: 18px;
+  }
+}
+
+.projects__subtitle {
+  line-height: 100%;
+}
+
+.contact-phone {
+  font-family: "TT Firs Neue";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 129%;
+}
+@media (max-width: 520px) {
+  .contact-phone {
+    font-size: 14px;
+  }
+}
+
+.form-about__title, .menu__link {
+  font-family: "TT Firs Neue";
+  font-weight: 400;
+}
+
+.form-about__title {
+  font-size: 24px;
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .form-about__title {
+    font-size: 18px;
+  }
+}
+
+.menu__link {
+  font-size: 16px;
+  line-height: 129%;
+}
+
+.btn {
+  font-family: "Roboto";
+  font-weight: 700;
+}
+
+.btn {
+  font-size: 16px;
+  line-height: 117%;
+}
+@media (max-width: 520px) {
+  .btn {
+    font-size: 14px;
+  }
+}
+
+.about__desc, .projects__desc-small, .projects__desc-big, .hero__desc, .form-about__input-email, .hashtag, .calendar__date {
+  font-family: "Roboto";
+  font-weight: 400;
+}
+
+.about__desc, .projects__desc-small, .projects__desc-big, .hero__desc, .form-about__input-email {
+  font-size: 16px;
+}
+
+.about__desc {
+  line-height: 28px;
+}
+@media (max-width: 520px) {
+  .about__desc {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+
+.projects__desc-small {
+  line-height: 22px;
+}
+
+.projects__desc-big {
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .projects__desc-big {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.hero__desc, .form-about__input-email {
+  line-height: 117%;
+}
+@media (max-width: 520px) {
+  .hero__desc, .form-about__input-email {
+    font-size: 14px;
+  }
+}
+
+.hashtag {
+  font-size: 14px;
+  line-height: 117%;
+}
+@media (max-width: 520px) {
+  .hashtag {
+    font-size: 12px;
+  }
+}
+
+.calendar__date {
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.form-about__input-email {
+  width: 100%;
+  padding: 15px 23px;
+  border: 1px solid transparent;
+}
+.form-about__input-email::-moz-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email::placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:focus:not(:hover) {
+  border-color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::-moz-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover:-ms-input-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+@media (max-width: 520px) {
+  .form-about__input-email {
+    padding: 10px 22px;
+  }
+}
+
+.form-about__input-email {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0deg, 0%, 29%);
+}
+
 .hero__container {
   padding-top: 41px;
   padding-bottom: 68px;
@@ -1318,6 +1627,12 @@ th {
   .hero__item_main {
     padding-bottom: 30px;
     padding-left: 30px;
+  }
+}
+@media (max-width: 520px) {
+  .hero__item_main {
+    padding-top: 6px;
+    padding-right: 6px;
   }
 }
 .hero__hashTag {
@@ -1356,6 +1671,11 @@ th {
   .hero__title {
     margin-bottom: 14px;
     margin-right: 6px;
+  }
+}
+@media (max-width: 520px) {
+  .hero__title {
+    margin-bottom: 17px;
   }
 }
 .hero__img-inset_1 {
@@ -1477,7 +1797,7 @@ th {
   background-color: hsl(0deg, 0%, 29%);
 }
 
-.projects__title, .about__title, .projects__subtitle, .hero__title, .hero__subtitle {
+.contacts__title, .projects__title, .about__title, .projects__subtitle, .hero__title, .hero__subtitle {
   font-family: "TT Firs Neue";
   font-weight: 700;
 }
@@ -1497,15 +1817,15 @@ th {
   }
 }
 
-.projects__title, .about__title, .projects__subtitle, .hero__subtitle {
+.contacts__title, .projects__title, .about__title, .projects__subtitle, .hero__subtitle {
   font-size: 24px;
 }
 
-.projects__title, .about__title {
+.contacts__title, .projects__title, .about__title {
   line-height: 129%;
 }
 @media (max-width: 520px) {
-  .projects__title, .about__title {
+  .contacts__title, .projects__title, .about__title {
     font-size: 18px;
   }
 }
@@ -1681,13 +2001,12 @@ th {
 }
 @media (max-width: 768px) {
   .about__container {
-    padding-bottom: 62px;
+    padding-bottom: 60px;
   }
 }
 @media (max-width: 520px) {
   .about__container {
     padding-top: 32px;
-    padding-bottom: 60px;
   }
 }
 .about__title {
@@ -1751,7 +2070,7 @@ th {
 }
 @media (max-width: 520px) {
   .form-about__title {
-    margin-bottom: 14px;
+    margin-bottom: 17px;
   }
 }
 @media (max-width: 1024px) {
@@ -1831,7 +2150,7 @@ th {
   background-color: hsl(0deg, 0%, 29%);
 }
 
-.projects__title, .projects__subtitle, .hero__title, .hero__subtitle, .about__title {
+.contacts__title, .projects__title, .projects__subtitle, .hero__title, .hero__subtitle, .about__title {
   font-family: "TT Firs Neue";
   font-weight: 700;
 }
@@ -1851,15 +2170,15 @@ th {
   }
 }
 
-.projects__title, .projects__subtitle, .hero__subtitle, .about__title {
+.contacts__title, .projects__title, .projects__subtitle, .hero__subtitle, .about__title {
   font-size: 24px;
 }
 
-.projects__title, .about__title {
+.contacts__title, .projects__title, .about__title {
   line-height: 129%;
 }
 @media (max-width: 520px) {
-  .projects__title, .about__title {
+  .contacts__title, .projects__title, .about__title {
     font-size: 18px;
   }
 }
@@ -2032,12 +2351,22 @@ th {
     padding-top: 70px;
   }
 }
+@media (max-width: 520px) {
+  .projects__container {
+    padding-top: 50px;
+  }
+}
 .projects__title {
   margin-bottom: 10px;
 }
+@media (max-width: 520px) {
+  .projects__title {
+    margin-bottom: 16px;
+  }
+}
 .projects__img-container {
   height: 184px;
-  padding: 7px;
+  padding: 6px;
   margin-bottom: 4px;
 }
 .projects__desc-small {
@@ -2053,10 +2382,28 @@ th {
     margin-bottom: 18px;
   }
 }
+@media (max-width: 768px) {
+  .projects__desc-small {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 520px) {
+  .projects__desc-small {
+    margin-bottom: 6px;
+  }
+}
 @media (max-width: 1024px) {
   .projects__desc-small_camp2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+@media (max-width: 768px) {
+  .projects__desc-small_camp2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -2070,6 +2417,12 @@ th {
 .projects__hashtag {
   margin-left: auto;
 }
+@media (max-width: 520px) {
+  .projects__hashtag {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
 .projects__calendar {
   margin-top: -15px;
   margin-bottom: 2px;
@@ -2080,18 +2433,44 @@ th {
     margin-top: -9px;
   }
 }
+@media (max-width: 768px) {
+  .projects__calendar {
+    margin-top: -7px;
+  }
+}
+@media (max-width: 520px) {
+  .projects__calendar {
+    margin-top: auto;
+    margin-bottom: 7px;
+  }
+}
 .projects__subtitle {
   max-width: 292px;
   margin-bottom: 5px;
   color: hsl(0deg, 0%, 100%);
+}
+@media (max-width: 520px) {
+  .projects__subtitle {
+    margin-bottom: 12px;
+  }
 }
 .projects__desc-big {
   max-width: 292px;
   margin-bottom: 5px;
   color: hsl(0deg, 0%, 100%);
 }
+@media (max-width: 520px) {
+  .projects__desc-big {
+    margin-bottom: 20px;
+  }
+}
 .projects__btn {
   margin-top: auto;
+}
+@media (max-width: 520px) {
+  .projects__btn {
+    margin-top: 0;
+  }
 }
 
 .projects__img-inset_1 {
@@ -2190,4 +2569,282 @@ th {
   .projects__img-inset_7 {
     background-image: url("images/520/projects-7.jpg");
   }
+}
+.btn {
+  transition-property: color border-color background-color;
+  transition-duration: 500ms;
+}
+
+.hashtag, .contact-phone, .menu__btn-open, .search__btn-open {
+  transition-property: color border-color transform;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email::-moz-placeholder {
+  -moz-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email:-ms-input-placeholder {
+  -ms-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email::placeholder {
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email {
+  transition-property: border-color;
+  transition-duration: 500ms;
+}
+
+.contact-phone:focus {
+  border-color: hsl(18deg, 100%, 59%);
+}
+.contact-phone:hover {
+  transform: translate(4px, -4px);
+}
+.contact-phone:active {
+  color: hsl(18deg, 93%, 42%);
+  border-color: hsl(18deg, 93%, 42%);
+}
+
+.hashtag:focus:not(:hover), .menu__btn-open:focus:not(:hover), .search__btn-open:focus:not(:hover) {
+  border-color: hsl(18deg, 63%, 45%);
+}
+.hashtag:hover, .menu__btn-open:hover, .search__btn-open:hover {
+  color: hsl(18deg, 100%, 59%);
+  transform: translate(4px, -4px);
+}
+.hashtag:active, .menu__btn-open:active, .search__btn-open:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
+.img-set--cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: hsl(0deg, 0%, 29%);
+}
+
+.contacts__title, .hero__title, .hero__subtitle, .about__title, .projects__title, .projects__subtitle {
+  font-family: "TT Firs Neue";
+  font-weight: 700;
+}
+
+.hero__title {
+  font-size: 36px;
+  line-height: 104%;
+}
+@media (max-width: 1024px) {
+  .hero__title {
+    font-size: 34px;
+  }
+}
+@media (max-width: 520px) {
+  .hero__title {
+    font-size: 24px;
+  }
+}
+
+.contacts__title, .hero__subtitle, .about__title, .projects__title, .projects__subtitle {
+  font-size: 24px;
+}
+
+.contacts__title, .about__title, .projects__title {
+  line-height: 129%;
+}
+@media (max-width: 520px) {
+  .contacts__title, .about__title, .projects__title {
+    font-size: 18px;
+  }
+}
+
+.hero__subtitle {
+  line-height: 104%;
+}
+@media (max-width: 768px) {
+  .hero__subtitle {
+    font-size: 22px;
+  }
+}
+@media (max-width: 520px) {
+  .hero__subtitle {
+    font-size: 18px;
+  }
+}
+
+.projects__subtitle {
+  line-height: 100%;
+}
+
+.contact-phone {
+  font-family: "TT Firs Neue";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 129%;
+}
+@media (max-width: 520px) {
+  .contact-phone {
+    font-size: 14px;
+  }
+}
+
+.menu__link, .form-about__title {
+  font-family: "TT Firs Neue";
+  font-weight: 400;
+}
+
+.form-about__title {
+  font-size: 24px;
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .form-about__title {
+    font-size: 18px;
+  }
+}
+
+.menu__link {
+  font-size: 16px;
+  line-height: 129%;
+}
+
+.btn {
+  font-family: "Roboto";
+  font-weight: 700;
+}
+
+.btn {
+  font-size: 16px;
+  line-height: 117%;
+}
+@media (max-width: 520px) {
+  .btn {
+    font-size: 14px;
+  }
+}
+
+.hashtag, .calendar__date, .hero__desc, .about__desc, .form-about__input-email, .projects__desc-small, .projects__desc-big {
+  font-family: "Roboto";
+  font-weight: 400;
+}
+
+.hero__desc, .about__desc, .form-about__input-email, .projects__desc-small, .projects__desc-big {
+  font-size: 16px;
+}
+
+.about__desc {
+  line-height: 28px;
+}
+@media (max-width: 520px) {
+  .about__desc {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+
+.projects__desc-small {
+  line-height: 22px;
+}
+
+.projects__desc-big {
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .projects__desc-big {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.hero__desc, .form-about__input-email {
+  line-height: 117%;
+}
+@media (max-width: 520px) {
+  .hero__desc, .form-about__input-email {
+    font-size: 14px;
+  }
+}
+
+.hashtag {
+  font-size: 14px;
+  line-height: 117%;
+}
+@media (max-width: 520px) {
+  .hashtag {
+    font-size: 12px;
+  }
+}
+
+.calendar__date {
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.form-about__input-email {
+  width: 100%;
+  padding: 15px 23px;
+  border: 1px solid transparent;
+}
+.form-about__input-email::-moz-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email::placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:focus:not(:hover) {
+  border-color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::-moz-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover:-ms-input-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+@media (max-width: 520px) {
+  .form-about__input-email {
+    padding: 10px 22px;
+  }
+}
+
+.form-about__input-email {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0deg, 0%, 29%);
+}
+
+.contacts__container {
+  padding-top: 20px;
+  padding-bottom: 69px;
+}
+.contacts__title {
+  margin-bottom: 22px;
+}
+
+.map__container {
+  width: 100%;
+  height: 100%;
+}
+
+[class*=ground-pane] {
+  filter: grayscale(1);
+}
+
+.contact-card {
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0deg, 0%, 13%);
+}
+.contact-card__wrap {
+  max-width: 300px;
 }/*# sourceMappingURL=style.css.map */

@@ -45,6 +45,7 @@ html(lang="ru")
     link(href="fonts/TTFirsNeue-Medium.woff2", rel="preload", as="font", type="font/woff2", crossorigin)
     link(href="fonts/TTFirsNeue-Regular.woff2", rel="preload", as="font", type="font/woff2", crossorigin)
     link(rel="stylesheet", href="style.css")
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU",type="text/javascript", defer)
     script(src="js/gsap.min.js", defer)
     script(src="main.js", defer)
   body
@@ -147,5 +148,17 @@ html(lang="ru")
                   p.projects__desc-small С учётом сложившейся международной обстановки, новая модель организационной улучшить опыт мы упускаем, что явные улучшить опыт мы упускаем, что явные
                   +calendar('1 марта')
 
+      section#contacts.contacts
+        .container.contacts__container
+          h2.contacts__title Контакты
+          .grid.grid-contacts
+            .map.grid-contacts__map
+              #map.map__container
+            .contact-card.grid-contacts__card.flex
+              .contact-card__wrap
+                h4.contact-card__title Студия «High pass»
+                address.contact-card__address 107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82
+                +contactPhone()
+            .application-form.grid-contacts__form
 
 

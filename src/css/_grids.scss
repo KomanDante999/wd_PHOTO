@@ -153,6 +153,11 @@
       grid-template-rows: 300px 25px 300px 30px 307px 24px 300px;
       row-gap: 0;
     }
+    @media (max-width: $breakpoint-S) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 297px 25px 278px 25px 278px 23px 422px 26px 300px 25px 300px 25px 422px;
+      column-gap: 0;
+    }
 
     &__item-1{
       grid-column: 1/span 2;
@@ -242,9 +247,56 @@
         grid-row: 5/span 1;
       }
     }
+    @media (max-width: $breakpoint-S) {
+      &__item-1{
+        grid-column: 1/span 1;
+        grid-row: 1/span 1;
+      }
+      &__item-2{
+        grid-column: 1/span 1;
+        grid-row: 3/span 1;
+      }
+      &__item-3{
+        grid-column: 1/span 1;
+        grid-row: 5/span 1;
+      }
+      &__item-4{
+        grid-column: 1/span 1;
+        grid-row: 7/span 1;
+      }
+      &__item-5{
+        grid-column: 1/span 1;
+        grid-row: 13/span 1;
+      }
+      &__item-6{
+        grid-column: 1/span 1;
+        grid-row: 9/span 1;
+      }
+      &__item-7{
+        grid-column: 1/span 1;
+        grid-row: 11/span 1;
+      }
+    }
 
   }
 
+  &-contacts {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 460px;
+    column-gap: 30px;
 
+    &__map {
+      grid-column: 1/span 1;
+      grid-row: 1/span 1;
+    }
+    &__card {
+      grid-column: 2/span 1;
+      grid-row: 1/span 1;
+    }
+    &__form {
+      grid-column: 3/span 1;
+      grid-row: 1/span 1;
+    }
+  }
 }
 

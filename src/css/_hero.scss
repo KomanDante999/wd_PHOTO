@@ -1,6 +1,6 @@
-// @import '_variables.scss';
+@import '_variables.scss';
 @import '_mixins.scss';
-// @import '_extend.scss';
+@import '_extend.scss';
 
 .hero {
   &__container {
@@ -40,6 +40,12 @@
         left: 30px;
       };
     }
+    @media (max-width: $breakpoint-S) {
+      padding: {
+        top: 6px;
+        right: 6px;
+      };
+    }
   }
 
   &__hashTag {
@@ -73,6 +79,11 @@
       margin: {
         bottom: 14px;
         right: 6px;
+      };
+    }
+    @media (max-width: ($breakpoint-S)) {
+      margin: {
+        bottom: 17px;
       };
     }
   }

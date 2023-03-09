@@ -1,0 +1,47 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '_extend.scss';
+
+.contacts {
+  &__container {
+    padding: {
+      top: 20px;
+      bottom: 69px;
+    };
+  }
+  &__title {
+    @extend %Neue-bold-m-129;
+    margin-bottom: 22px;
+  }
+}
+
+
+.map {
+  &__container {
+    width: 100%;
+    height: 100%;
+  }
+}
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+.contact-card {
+  justify-content: center;
+  align-items: center;
+  background-color: $colorBacground-dark;
+  &__wrap {
+    max-width: 300px;
+  }
+  &__title {
+
+  }
+  &__address {
+
+  }
+}
+
+.application-form {
+
+}
+

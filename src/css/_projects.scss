@@ -11,14 +11,20 @@
     @media (max-width: $breakpoint-L) {
       padding-top: 70px;
     }
+    @media (max-width: $breakpoint-S) {
+      padding-top: 50px;
+    }
   }
   &__title {
     @extend %Neue-bold-m-129;
     margin-bottom: 10px;
+    @media (max-width: $breakpoint-S) {
+      margin-bottom: 16px;
+    }
   }
   &__img-container {
     height: 184px;
-    padding: 7px;
+    padding: 6px;
     margin-bottom: 4px;
   }
   &__desc-small {
@@ -31,9 +37,18 @@
     @media (max-width: $breakpoint-L) {
       margin-bottom: 18px;
     }
+    @media (max-width: $breakpoint-M) {
+      margin-bottom: 10px;
+    }
+    @media (max-width: $breakpoint-S) {
+      margin-bottom: 6px;
+    }
     &_camp2 {
       @media (max-width: $breakpoint-L) {
         @include line-clamp (2);
+      }
+      @media (max-width: $breakpoint-M) {
+        @include line-clamp (3);
       }
     }
   }
@@ -44,12 +59,15 @@
       bottom: 30px;
       left: 30px;
     }
-    // @media (max-width: $breakpoint-L) {
-    //   padding-bottom: 37px;
-    // }
   }
   &__hashtag {
     margin-left: auto;
+    @media (max-width: $breakpoint-S) {
+      padding: {
+        left: 14px;
+        right: 14px;
+      };
+    }
   }
   &__calendar {
     margin: {
@@ -60,22 +78,40 @@
     @media (max-width: $breakpoint-L) {
       margin-top: -9px;
     }
-
+    @media (max-width: $breakpoint-M) {
+      margin-top: -7px;
+    }
+    @media (max-width: $breakpoint-S) {
+      margin: {
+        top: auto;
+        bottom: 7px;
+      }
+    }
   }
   &__subtitle {
     max-width: 292px;
     margin-bottom: 5px;
     @extend %Neue-bold-m-lh24;
     color: $colorText-lite;
+    @media (max-width: $breakpoint-S) {
+      margin-bottom: 12px;
+    }
   }
   &__desc-big {
     max-width: 292px;
     margin-bottom: 5px;
     @extend %Roboto-reg-sl-22_low;
     color: $colorText-lite;
+    @media (max-width: $breakpoint-S) {
+      margin-bottom: 20px;
+    }
   }
   &__btn {
     margin-top: auto;
+    @media (max-width: $breakpoint-S) {
+      margin-top: 0;
+    }
+
   }
 }
 @include image-inset ($urlImages, $breakpoints-base, 7, 'projects')
