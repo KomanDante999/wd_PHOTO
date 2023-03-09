@@ -5,7 +5,7 @@
 .contacts {
   &__container {
     padding: {
-      top: 20px;
+      top: 38px;
       bottom: 69px;
     };
   }
@@ -27,21 +27,51 @@
 }
 
 .contact-card {
+  z-index: 100;
+  position: relative;
   justify-content: center;
   align-items: center;
-  background-color: $colorBacground-dark;
+  padding: 20px;
+  background-color: transparentize($colorBacground-dark, 0.15) ;
+  &__btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+  }
   &__wrap {
     max-width: 300px;
   }
   &__title {
-
+    margin-bottom: 5px;
+    @extend %Neue-reg-m;
+    color: $colorText-lite;
   }
   &__address {
-
+    margin-bottom: 5px;
+    @extend %Roboto-reg-sl-28;
+    font-style: normal;
+    color: $colorText-gray;
   }
 }
 
 .application-form {
-
+  &__title {
+    @extend %Neue-reg-m;
+    margin-bottom: 5px;
+  }
+  &__desc {
+    @extend %Roboto-reg-sl-22_low;
+    color: $colorText-gray-60;
+    margin-bottom: 14px;
+  }
+  &__input {
+    @extend %input-light;
+    margin-bottom: 20px;
+  }
+  &__input_comments {
+    height: 150px;
+  }
 }
 

@@ -16,4 +16,8 @@ const headerSearch = new Search({
   input: 'header-search__input',
 });
 
+const contactCard = new Card({
+  btnClose: 'contact-card__btn-close',
+  card: 'contact-card',
+});
 
