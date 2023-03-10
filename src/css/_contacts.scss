@@ -8,6 +8,14 @@
       top: 38px;
       bottom: 69px;
     };
+    @media (max-width: $breakpoint-L) {
+      padding: {
+        top: 40px;
+        // bottom: 69px;
+      };
+
+    }
+
   }
   &__title {
     @extend %Neue-bold-m-129;
@@ -31,8 +39,18 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: {
+    top: 43px;
+    bottom: 15px;
+    left: 30px;
+    right: 20px;
+  };
   background-color: transparentize($colorBacground-dark, 0.15) ;
+  @media (max-width: $breakpoint-L) {
+    justify-content: start;
+    padding-top: 20px;
+  }
+
   &__btn-close {
     position: absolute;
     top: 20px;
@@ -42,10 +60,13 @@
   }
   &__wrap {
     max-width: 300px;
+    @media (max-width: $breakpoint-L) {
+      max-width: 400px;
+    }
   }
   &__title {
     margin-bottom: 5px;
-    @extend %Neue-reg-m;
+    @extend %Neue-reg-m-22;
     color: $colorText-lite;
   }
   &__address {
@@ -59,7 +80,8 @@
 .application-form {
   &__title {
     @extend %Neue-reg-m;
-    margin-bottom: 5px;
+    line-height: 10px;
+    margin-bottom: 11px;
   }
   &__desc {
     @extend %Roboto-reg-sl-22_low;
@@ -70,8 +92,9 @@
     @extend %input-light;
     margin-bottom: 20px;
   }
-  &__input_comments {
-    height: 150px;
+  &__submit {
+    margin-top: auto;
   }
 }
+
 

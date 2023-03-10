@@ -5,7 +5,7 @@ function init() {
     "map",
     {
       center: [55.75846806898367, 37.60108849999989],
-      zoom: 14,
+      zoom: 16,
       controls: [
         // 'geolocationControl',
         // 'zoomControl'
@@ -31,7 +31,7 @@ function init() {
       iconLayout: "default#image",
       iconImageHref: "images/point-map.svg",
       iconImageSize: [12, 12],
-      iconImageOffset: [-20, -40],
+      iconImageOffset: [190, -140],
     }
   );
 

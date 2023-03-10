@@ -59,7 +59,7 @@
 .form-about {
   &__title {
     margin-bottom: 16px;
-    @extend %Neue-reg-m;
+    @extend %Neue-reg-m-22;
     color: $colorText-lite;
     @media (max-width: $breakpoint-S) {
       margin-bottom: 17px;

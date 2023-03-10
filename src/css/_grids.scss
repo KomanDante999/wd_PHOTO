@@ -284,6 +284,12 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 460px;
     column-gap: 30px;
+    @media (max-width: $breakpoint-L) {
+      grid-template-columns:
+        minmax(100px, 1fr)
+        minmax(342px, 0fr);
+      grid-template-rows: 303px 157px;
+    }
 
     &__map {
       grid-column: 1/span 2;
@@ -297,6 +303,21 @@
       grid-column: 3/span 1;
       grid-row: 1/span 1;
     }
+    @media (max-width: $breakpoint-L) {
+      &__map {
+        grid-column: 1/span 1;
+        grid-row: 1/span 2;
+      }
+      &__card {
+        grid-column: 1/span 1;
+        grid-row: 2/span 1;
+      }
+      &__form {
+        grid-column: 2/span 1;
+        grid-row: 1/span 2;
+      }
+    }
+
   }
 }
 

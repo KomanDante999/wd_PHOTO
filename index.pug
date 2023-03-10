@@ -154,21 +154,20 @@ html(lang="ru")
           .grid.grid-contacts
             .map.grid-contacts__map
               #map.map__container
-            #contact-card.contact-card.grid-contacts__card.flex.flex-column
+            #contact-card.contact-card.grid-contacts__card.flex
               +btnClose()(id="contact-card__btn-close", class="contact-card__btn-close")
               .contact-card__wrap
                 h4.contact-card__title Студия «High pass»
                 address.contact-card__address 107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82
                 +contactPhone()
-            .application-form.grid-contacts__form
-              form(id="application-form", class="application-form__form")
-                .flex.flex-column
-                  h4.application-form__title Оставить заявку
-                  p.application-form__desc Оставьте ваши данные, указав в графе «Комментарий» желаемые время и дату съёмки или другого мероприятия
-                  input#application-form__input-name(type="text", name="", placeholder='Имя').application-form__input
-                  input#application-form__input-email(type="email", name="", placeholder='Email').application-form__input
-                  input#application-form__input-comments(type="email", name="", placeholder='Комментарий').application-form__input.application-form__input_comments
-                  +btnPrim('Отправить')(id="application-form__submit", class="application-form__submit", type="submit")
+            .grid-contacts__form
+              form(id="application-form", class="application-form__form, flex, flex-column")
+                h4.application-form__title Оставить заявку
+                p.application-form__desc Оставьте ваши данные, указав в графе «Комментарий» желаемые время и дату съёмки или другого мероприятия
+                input#application-form__input-name(type="text", name="", placeholder='Имя').application-form__input
+                input#application-form__input-email(type="email", name="", placeholder='Email').application-form__input
+                textarea#application-form__input-comments(name="", cols="30", rows="6", placeholder='Комментарий').application-form__input.application-form__input_comments
+                +btnPrim('Отправить')(id="application-form__submit", class="application-form__submit", type="submit")
 
 
 

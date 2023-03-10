@@ -291,12 +291,15 @@ th {
 
 .application-form__title, .contact-card__title, .form-about__title {
   font-size: 24px;
-  line-height: 22px;
 }
 @media (max-width: 520px) {
   .application-form__title, .contact-card__title, .form-about__title {
     font-size: 18px;
   }
+}
+
+.contact-card__title, .form-about__title {
+  line-height: 22px;
 }
 
 .menu__link {
@@ -903,6 +906,12 @@ th {
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
+@media (max-width: 1024px) {
+  .grid-contacts {
+    grid-template-columns: minmax(100px, 1fr) minmax(342px, 0fr);
+    grid-template-rows: 303px 157px;
+  }
+}
 .grid-contacts__map {
   grid-column: 1/span 2;
   grid-row: 1/span 1;
@@ -914,6 +923,20 @@ th {
 .grid-contacts__form {
   grid-column: 3/span 1;
   grid-row: 1/span 1;
+}
+@media (max-width: 1024px) {
+  .grid-contacts__map {
+    grid-column: 1/span 1;
+    grid-row: 1/span 2;
+  }
+  .grid-contacts__card {
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+  }
+  .grid-contacts__form {
+    grid-column: 2/span 1;
+    grid-row: 1/span 2;
+  }
 }
 
 .header {
@@ -1083,12 +1106,15 @@ th {
 
 .application-form__title, .contact-card__title, .form-about__title {
   font-size: 24px;
-  line-height: 22px;
 }
 @media (max-width: 520px) {
   .application-form__title, .contact-card__title, .form-about__title {
     font-size: 18px;
   }
+}
+
+.contact-card__title, .form-about__title {
+  line-height: 22px;
 }
 
 .menu__link {
@@ -1480,12 +1506,15 @@ th {
 
 .application-form__title, .contact-card__title, .form-about__title {
   font-size: 24px;
-  line-height: 22px;
 }
 @media (max-width: 520px) {
   .application-form__title, .contact-card__title, .form-about__title {
     font-size: 18px;
   }
+}
+
+.contact-card__title, .form-about__title {
+  line-height: 22px;
 }
 
 .menu__link {
@@ -1879,12 +1908,15 @@ th {
 
 .application-form__title, .contact-card__title, .form-about__title {
   font-size: 24px;
-  line-height: 22px;
 }
 @media (max-width: 520px) {
   .application-form__title, .contact-card__title, .form-about__title {
     font-size: 18px;
   }
+}
+
+.contact-card__title, .form-about__title {
+  line-height: 22px;
 }
 
 .menu__link {
@@ -2236,12 +2268,15 @@ th {
 
 .application-form__title, .contact-card__title, .form-about__title {
   font-size: 24px;
-  line-height: 22px;
 }
 @media (max-width: 520px) {
   .application-form__title, .contact-card__title, .form-about__title {
     font-size: 18px;
   }
+}
+
+.contact-card__title, .form-about__title {
+  line-height: 22px;
 }
 
 .menu__link {
@@ -2721,12 +2756,15 @@ th {
 
 .application-form__title, .contact-card__title, .form-about__title {
   font-size: 24px;
-  line-height: 22px;
 }
 @media (max-width: 520px) {
   .application-form__title, .contact-card__title, .form-about__title {
     font-size: 18px;
   }
+}
+
+.contact-card__title, .form-about__title {
+  line-height: 22px;
 }
 
 .menu__link {
@@ -2851,6 +2889,11 @@ th {
   padding-top: 38px;
   padding-bottom: 69px;
 }
+@media (max-width: 1024px) {
+  .contacts__container {
+    padding-top: 40px;
+  }
+}
 .contacts__title {
   margin-bottom: 22px;
 }
@@ -2869,8 +2912,17 @@ th {
   position: relative;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding-top: 43px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 20px;
   background-color: rgba(33, 33, 33, 0.85);
+}
+@media (max-width: 1024px) {
+  .contact-card {
+    justify-content: start;
+    padding-top: 20px;
+  }
 }
 .contact-card__btn-close {
   position: absolute;
@@ -2881,6 +2933,11 @@ th {
 }
 .contact-card__wrap {
   max-width: 300px;
+}
+@media (max-width: 1024px) {
+  .contact-card__wrap {
+    max-width: 400px;
+  }
 }
 .contact-card__title {
   margin-bottom: 5px;
@@ -2893,7 +2950,8 @@ th {
 }
 
 .application-form__title {
-  margin-bottom: 5px;
+  line-height: 10px;
+  margin-bottom: 11px;
 }
 .application-form__desc {
   color: hsl(0deg, 0%, 60%);
@@ -2902,6 +2960,6 @@ th {
 .application-form__input {
   margin-bottom: 20px;
 }
-.application-form__input_comments {
-  height: 150px;
+.application-form__submit {
+  margin-top: auto;
 }/*# sourceMappingURL=style.css.map */
