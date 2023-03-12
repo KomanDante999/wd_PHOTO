@@ -44,6 +44,10 @@ ol {
   list-style: none;
 }
 
+li {
+  line-height: 0;
+}
+
 fieldset,
 select,
 input,
@@ -182,7 +186,7 @@ th {
   transition-duration: 500ms;
 }
 
-.application-form__input::placeholder, .form-about__input-email::placeholder {
+.application-form__input::placeholder, .form-about__input-email::placeholder, .footer__social-link {
   transition-property: color;
   transition-duration: 500ms;
 }
@@ -211,6 +215,16 @@ th {
   transform: translate(4px, -4px);
 }
 .search__btn-open:active, .menu__btn-open:active, .hashtag:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
+.footer__social-link:focus:not(:hover) {
+  color: hsl(18deg, 63%, 45%);
+}
+.footer__social-link:hover {
+  color: hsl(18deg, 100%, 59%);
+}
+.footer__social-link:active {
   color: hsl(18deg, 93%, 42%);
 }
 
@@ -284,7 +298,7 @@ th {
   }
 }
 
-.menu__link, .application-form__title, .contact-card__title, .form-about__title {
+.footer__logo-desc, .menu__link, .application-form__title, .contact-card__title, .form-about__title {
   font-family: "TT Firs Neue";
   font-weight: 400;
 }
@@ -307,6 +321,16 @@ th {
   line-height: 129%;
 }
 
+.footer__logo-desc {
+  font-size: 14px;
+  line-height: 129%;
+}
+@media (max-width: 520px) {
+  .footer__logo-desc {
+    font-size: 10px;
+  }
+}
+
 .btn {
   font-family: "Roboto";
   font-weight: 700;
@@ -322,34 +346,54 @@ th {
   }
 }
 
-.calendar__date, .hashtag, .hero__desc, .application-form__input, .form-about__input-email, .application-form__desc, .projects__desc-big, .projects__desc-small, .contact-card__address, .about__desc {
+.calendar__date, .hashtag, .hero__desc, .application-form__input, .form-about__input-email, .projects__desc-big, .application-form__desc, .footer__social-desc, .footer__slogan, .projects__desc-small, .contact-card__address, .about__desc {
   font-family: "Roboto";
   font-weight: 400;
 }
 
-.hero__desc, .application-form__input, .form-about__input-email, .application-form__desc, .projects__desc-big, .projects__desc-small, .contact-card__address, .about__desc {
+.hero__desc, .application-form__input, .form-about__input-email, .projects__desc-big, .application-form__desc, .footer__social-desc, .footer__slogan, .projects__desc-small, .contact-card__address, .about__desc {
   font-size: 16px;
 }
 
-.contact-card__address, .about__desc {
+.about__desc {
   line-height: 28px;
 }
 @media (max-width: 520px) {
-  .contact-card__address, .about__desc {
+  .about__desc {
     font-size: 14px;
     line-height: 25px;
   }
 }
 
-.projects__desc-small {
+.contact-card__address {
+  line-height: 28px;
+}
+@media (max-width: 520px) {
+  .contact-card__address {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.footer__social-desc, .footer__slogan, .projects__desc-small {
   line-height: 22px;
 }
 
-.application-form__desc, .projects__desc-big {
+.application-form__desc {
   line-height: 22px;
 }
 @media (max-width: 520px) {
-  .application-form__desc, .projects__desc-big {
+  .application-form__desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.projects__desc-big {
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .projects__desc-big {
     font-size: 14px;
     line-height: 16px;
   }
@@ -428,7 +472,7 @@ th {
     --containerPaddingX: 27px;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 520px) {
   :root {
     --containerPaddingX: 21px;
   }
@@ -608,6 +652,20 @@ th {
 }
 .btn-close:active svg rect {
   fill: hsl(18deg, 93%, 42%);
+}
+
+.form__label {
+  position: relative;
+}
+
+.invalid-empty::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 20px;
+  background-color: blueviolet;
+  top: 0;
+  left: 0;
 }
 
 .grid {
@@ -908,8 +966,21 @@ th {
 }
 @media (max-width: 1024px) {
   .grid-contacts {
-    grid-template-columns: minmax(100px, 1fr) minmax(342px, 0fr);
-    grid-template-rows: 303px 157px;
+    grid-template-columns: 1fr 342px;
+    grid-template-rows: 303px 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .grid-contacts {
+    grid-template-columns: 1fr;
+    grid-template-rows: 303px 1fr 30px 440px;
+    -moz-column-gap: 0;
+         column-gap: 0;
+  }
+}
+@media (max-width: 520px) {
+  .grid-contacts {
+    grid-template-rows: 315px 1fr 23px 429px;
   }
 }
 .grid-contacts__map {
@@ -936,6 +1007,71 @@ th {
   .grid-contacts__form {
     grid-column: 2/span 1;
     grid-row: 1/span 2;
+  }
+}
+@media (max-width: 768px) {
+  .grid-contacts__map {
+    grid-column: 1/span 1;
+    grid-row: 1/span 2;
+  }
+  .grid-contacts__card {
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+  }
+  .grid-contacts__form {
+    grid-column: 1/span 1;
+    grid-row: 4/span 1;
+  }
+}
+.grid-footer {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  align-items: center;
+}
+@media (max-width: 1024px) {
+  .grid-footer {
+    grid-template-columns: 263px 1fr 161px;
+    justify-items: center;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+}
+@media (max-width: 520px) {
+  .grid-footer {
+    grid-template-columns: 1fr;
+    grid-template-rows: 123px 62px;
+    -moz-column-gap: 0;
+         column-gap: 0;
+  }
+}
+.grid-footer__logo {
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+}
+.grid-footer__slogan {
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+}
+.grid-footer__social {
+  grid-column: 3/span 1;
+  grid-row: 1/span 1;
+  justify-self: end;
+}
+@media (max-width: 520px) {
+  .grid-footer__logo {
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+    justify-self: center;
+  }
+  .grid-footer__social {
+    grid-column: 1/span 1;
+    grid-row: 1/span 1;
+    justify-self: center;
+  }
+  .grid-footer__slogan {
+    display: none;
   }
 }
 
@@ -997,7 +1133,7 @@ th {
   transition-duration: 500ms;
 }
 
-.form-about__input-email::placeholder, .application-form__input::placeholder {
+.footer__social-link, .form-about__input-email::placeholder, .application-form__input::placeholder {
   transition-property: color;
   transition-duration: 500ms;
 }
@@ -1026,6 +1162,16 @@ th {
   transform: translate(4px, -4px);
 }
 .search__btn-open:active, .menu__btn-open:active, .hashtag:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
+.footer__social-link:focus:not(:hover) {
+  color: hsl(18deg, 63%, 45%);
+}
+.footer__social-link:hover {
+  color: hsl(18deg, 100%, 59%);
+}
+.footer__social-link:active {
   color: hsl(18deg, 93%, 42%);
 }
 
@@ -1099,7 +1245,7 @@ th {
   }
 }
 
-.application-form__title, .contact-card__title, .form-about__title, .menu__link {
+.application-form__title, .contact-card__title, .form-about__title, .menu__link, .footer__logo-desc {
   font-family: "TT Firs Neue";
   font-weight: 400;
 }
@@ -1122,6 +1268,16 @@ th {
   line-height: 129%;
 }
 
+.footer__logo-desc {
+  font-size: 14px;
+  line-height: 129%;
+}
+@media (max-width: 520px) {
+  .footer__logo-desc {
+    font-size: 10px;
+  }
+}
+
 .btn {
   font-family: "Roboto";
   font-weight: 700;
@@ -1137,34 +1293,54 @@ th {
   }
 }
 
-.contact-card__address, .about__desc, .projects__desc-small, .application-form__desc, .projects__desc-big, .hero__desc, .form-about__input-email, .application-form__input, .hashtag, .calendar__date {
+.about__desc, .contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .hero__desc, .form-about__input-email, .application-form__input, .hashtag, .calendar__date {
   font-family: "Roboto";
   font-weight: 400;
 }
 
-.contact-card__address, .about__desc, .projects__desc-small, .application-form__desc, .projects__desc-big, .hero__desc, .form-about__input-email, .application-form__input {
+.about__desc, .contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .hero__desc, .form-about__input-email, .application-form__input {
   font-size: 16px;
 }
 
-.contact-card__address, .about__desc {
+.about__desc {
   line-height: 28px;
 }
 @media (max-width: 520px) {
-  .contact-card__address, .about__desc {
+  .about__desc {
     font-size: 14px;
     line-height: 25px;
   }
 }
 
-.projects__desc-small {
+.contact-card__address {
+  line-height: 28px;
+}
+@media (max-width: 520px) {
+  .contact-card__address {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.footer__social-desc, .footer__slogan, .projects__desc-small {
   line-height: 22px;
 }
 
-.application-form__desc, .projects__desc-big {
+.application-form__desc {
   line-height: 22px;
 }
 @media (max-width: 520px) {
-  .application-form__desc, .projects__desc-big {
+  .application-form__desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.projects__desc-big {
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .projects__desc-big {
     font-size: 14px;
     line-height: 16px;
   }
@@ -1397,7 +1573,7 @@ th {
   transition-duration: 500ms;
 }
 
-.form-about__input-email::placeholder, .application-form__input::placeholder {
+.footer__social-link, .form-about__input-email::placeholder, .application-form__input::placeholder {
   transition-property: color;
   transition-duration: 500ms;
 }
@@ -1426,6 +1602,16 @@ th {
   transform: translate(4px, -4px);
 }
 .hashtag:active, .menu__btn-open:active, .search__btn-open:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
+.footer__social-link:focus:not(:hover) {
+  color: hsl(18deg, 63%, 45%);
+}
+.footer__social-link:hover {
+  color: hsl(18deg, 100%, 59%);
+}
+.footer__social-link:active {
   color: hsl(18deg, 93%, 42%);
 }
 
@@ -1499,7 +1685,7 @@ th {
   }
 }
 
-.application-form__title, .contact-card__title, .form-about__title, .menu__link {
+.application-form__title, .contact-card__title, .form-about__title, .footer__logo-desc, .menu__link {
   font-family: "TT Firs Neue";
   font-weight: 400;
 }
@@ -1522,6 +1708,16 @@ th {
   line-height: 129%;
 }
 
+.footer__logo-desc {
+  font-size: 14px;
+  line-height: 129%;
+}
+@media (max-width: 520px) {
+  .footer__logo-desc {
+    font-size: 10px;
+  }
+}
+
 .btn {
   font-family: "Roboto";
   font-weight: 700;
@@ -1537,34 +1733,54 @@ th {
   }
 }
 
-.contact-card__address, .about__desc, .projects__desc-small, .application-form__desc, .projects__desc-big, .hero__desc, .form-about__input-email, .application-form__input, .hashtag, .calendar__date {
+.about__desc, .contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .hero__desc, .form-about__input-email, .application-form__input, .hashtag, .calendar__date {
   font-family: "Roboto";
   font-weight: 400;
 }
 
-.contact-card__address, .about__desc, .projects__desc-small, .application-form__desc, .projects__desc-big, .hero__desc, .form-about__input-email, .application-form__input {
+.about__desc, .contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .hero__desc, .form-about__input-email, .application-form__input {
   font-size: 16px;
 }
 
-.contact-card__address, .about__desc {
+.about__desc {
   line-height: 28px;
 }
 @media (max-width: 520px) {
-  .contact-card__address, .about__desc {
+  .about__desc {
     font-size: 14px;
     line-height: 25px;
   }
 }
 
-.projects__desc-small {
+.contact-card__address {
+  line-height: 28px;
+}
+@media (max-width: 520px) {
+  .contact-card__address {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.footer__social-desc, .footer__slogan, .projects__desc-small {
   line-height: 22px;
 }
 
-.application-form__desc, .projects__desc-big {
+.application-form__desc {
   line-height: 22px;
 }
 @media (max-width: 520px) {
-  .application-form__desc, .projects__desc-big {
+  .application-form__desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.projects__desc-big {
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .projects__desc-big {
     font-size: 14px;
     line-height: 16px;
   }
@@ -1799,7 +2015,7 @@ th {
   transition-duration: 500ms;
 }
 
-.form-about__input-email::placeholder, .application-form__input::placeholder {
+.footer__social-link, .form-about__input-email::placeholder, .application-form__input::placeholder {
   transition-property: color;
   transition-duration: 500ms;
 }
@@ -1828,6 +2044,16 @@ th {
   transform: translate(4px, -4px);
 }
 .hashtag:active, .menu__btn-open:active, .search__btn-open:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
+.footer__social-link:focus:not(:hover) {
+  color: hsl(18deg, 63%, 45%);
+}
+.footer__social-link:hover {
+  color: hsl(18deg, 100%, 59%);
+}
+.footer__social-link:active {
   color: hsl(18deg, 93%, 42%);
 }
 
@@ -1901,7 +2127,7 @@ th {
   }
 }
 
-.application-form__title, .contact-card__title, .form-about__title, .menu__link {
+.application-form__title, .contact-card__title, .form-about__title, .footer__logo-desc, .menu__link {
   font-family: "TT Firs Neue";
   font-weight: 400;
 }
@@ -1924,6 +2150,16 @@ th {
   line-height: 129%;
 }
 
+.footer__logo-desc {
+  font-size: 14px;
+  line-height: 129%;
+}
+@media (max-width: 520px) {
+  .footer__logo-desc {
+    font-size: 10px;
+  }
+}
+
 .btn {
   font-family: "Roboto";
   font-weight: 700;
@@ -1939,34 +2175,54 @@ th {
   }
 }
 
-.contact-card__address, .about__desc, .projects__desc-small, .application-form__desc, .projects__desc-big, .form-about__input-email, .application-form__input, .hashtag, .calendar__date, .hero__desc {
+.about__desc, .contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .form-about__input-email, .application-form__input, .hashtag, .calendar__date, .hero__desc {
   font-family: "Roboto";
   font-weight: 400;
 }
 
-.contact-card__address, .about__desc, .projects__desc-small, .application-form__desc, .projects__desc-big, .form-about__input-email, .application-form__input, .hero__desc {
+.about__desc, .contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .form-about__input-email, .application-form__input, .hero__desc {
   font-size: 16px;
 }
 
-.contact-card__address, .about__desc {
+.about__desc {
   line-height: 28px;
 }
 @media (max-width: 520px) {
-  .contact-card__address, .about__desc {
+  .about__desc {
     font-size: 14px;
     line-height: 25px;
   }
 }
 
-.projects__desc-small {
+.contact-card__address {
+  line-height: 28px;
+}
+@media (max-width: 520px) {
+  .contact-card__address {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.footer__social-desc, .footer__slogan, .projects__desc-small {
   line-height: 22px;
 }
 
-.application-form__desc, .projects__desc-big {
+.application-form__desc {
   line-height: 22px;
 }
 @media (max-width: 520px) {
-  .application-form__desc, .projects__desc-big {
+  .application-form__desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.projects__desc-big {
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .projects__desc-big {
     font-size: 14px;
     line-height: 16px;
   }
@@ -2159,7 +2415,7 @@ th {
   transition-duration: 500ms;
 }
 
-.application-form__input::placeholder, .form-about__input-email::placeholder {
+.footer__social-link, .application-form__input::placeholder, .form-about__input-email::placeholder {
   transition-property: color;
   transition-duration: 500ms;
 }
@@ -2188,6 +2444,16 @@ th {
   transform: translate(4px, -4px);
 }
 .hashtag:active, .menu__btn-open:active, .search__btn-open:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
+.footer__social-link:focus:not(:hover) {
+  color: hsl(18deg, 63%, 45%);
+}
+.footer__social-link:hover {
+  color: hsl(18deg, 100%, 59%);
+}
+.footer__social-link:active {
   color: hsl(18deg, 93%, 42%);
 }
 
@@ -2261,7 +2527,7 @@ th {
   }
 }
 
-.application-form__title, .contact-card__title, .menu__link, .form-about__title {
+.application-form__title, .contact-card__title, .footer__logo-desc, .menu__link, .form-about__title {
   font-family: "TT Firs Neue";
   font-weight: 400;
 }
@@ -2284,6 +2550,16 @@ th {
   line-height: 129%;
 }
 
+.footer__logo-desc {
+  font-size: 14px;
+  line-height: 129%;
+}
+@media (max-width: 520px) {
+  .footer__logo-desc {
+    font-size: 10px;
+  }
+}
+
 .btn {
   font-family: "Roboto";
   font-weight: 700;
@@ -2299,34 +2575,54 @@ th {
   }
 }
 
-.contact-card__address, .projects__desc-small, .application-form__desc, .projects__desc-big, .application-form__input, .hashtag, .calendar__date, .hero__desc, .about__desc, .form-about__input-email {
+.contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .application-form__input, .hashtag, .calendar__date, .hero__desc, .about__desc, .form-about__input-email {
   font-family: "Roboto";
   font-weight: 400;
 }
 
-.contact-card__address, .projects__desc-small, .application-form__desc, .projects__desc-big, .application-form__input, .hero__desc, .about__desc, .form-about__input-email {
+.contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .application-form__input, .hero__desc, .about__desc, .form-about__input-email {
   font-size: 16px;
 }
 
-.contact-card__address, .about__desc {
+.about__desc {
   line-height: 28px;
 }
 @media (max-width: 520px) {
-  .contact-card__address, .about__desc {
+  .about__desc {
     font-size: 14px;
     line-height: 25px;
   }
 }
 
-.projects__desc-small {
+.contact-card__address {
+  line-height: 28px;
+}
+@media (max-width: 520px) {
+  .contact-card__address {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.footer__social-desc, .footer__slogan, .projects__desc-small {
   line-height: 22px;
 }
 
-.application-form__desc, .projects__desc-big {
+.application-form__desc {
   line-height: 22px;
 }
 @media (max-width: 520px) {
-  .application-form__desc, .projects__desc-big {
+  .application-form__desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.projects__desc-big {
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .projects__desc-big {
     font-size: 14px;
     line-height: 16px;
   }
@@ -2409,6 +2705,7 @@ th {
 @media (max-width: 520px) {
   .projects__container {
     padding-top: 50px;
+    padding-bottom: 20px;
   }
 }
 .projects__title {
@@ -2647,7 +2944,7 @@ th {
   transition-duration: 500ms;
 }
 
-.application-form__input::placeholder, .form-about__input-email::placeholder {
+.footer__social-link, .application-form__input::placeholder, .form-about__input-email::placeholder {
   transition-property: color;
   transition-duration: 500ms;
 }
@@ -2676,6 +2973,16 @@ th {
   transform: translate(4px, -4px);
 }
 .hashtag:active, .menu__btn-open:active, .search__btn-open:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
+.footer__social-link:focus:not(:hover) {
+  color: hsl(18deg, 63%, 45%);
+}
+.footer__social-link:hover {
+  color: hsl(18deg, 100%, 59%);
+}
+.footer__social-link:active {
   color: hsl(18deg, 93%, 42%);
 }
 
@@ -2749,7 +3056,7 @@ th {
   }
 }
 
-.application-form__title, .contact-card__title, .menu__link, .form-about__title {
+.application-form__title, .contact-card__title, .footer__logo-desc, .menu__link, .form-about__title {
   font-family: "TT Firs Neue";
   font-weight: 400;
 }
@@ -2772,6 +3079,16 @@ th {
   line-height: 129%;
 }
 
+.footer__logo-desc {
+  font-size: 14px;
+  line-height: 129%;
+}
+@media (max-width: 520px) {
+  .footer__logo-desc {
+    font-size: 10px;
+  }
+}
+
 .btn {
   font-family: "Roboto";
   font-weight: 700;
@@ -2787,34 +3104,54 @@ th {
   }
 }
 
-.contact-card__address, .application-form__desc, .application-form__input, .hashtag, .calendar__date, .hero__desc, .about__desc, .form-about__input-email, .projects__desc-small, .projects__desc-big {
+.contact-card__address, .footer__social-desc, .footer__slogan, .application-form__desc, .application-form__input, .hashtag, .calendar__date, .hero__desc, .about__desc, .form-about__input-email, .projects__desc-small, .projects__desc-big {
   font-family: "Roboto";
   font-weight: 400;
 }
 
-.contact-card__address, .application-form__desc, .application-form__input, .hero__desc, .about__desc, .form-about__input-email, .projects__desc-small, .projects__desc-big {
+.contact-card__address, .footer__social-desc, .footer__slogan, .application-form__desc, .application-form__input, .hero__desc, .about__desc, .form-about__input-email, .projects__desc-small, .projects__desc-big {
   font-size: 16px;
 }
 
-.contact-card__address, .about__desc {
+.about__desc {
   line-height: 28px;
 }
 @media (max-width: 520px) {
-  .contact-card__address, .about__desc {
+  .about__desc {
     font-size: 14px;
     line-height: 25px;
   }
 }
 
-.projects__desc-small {
+.contact-card__address {
+  line-height: 28px;
+}
+@media (max-width: 520px) {
+  .contact-card__address {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.footer__social-desc, .footer__slogan, .projects__desc-small {
   line-height: 22px;
 }
 
-.application-form__desc, .projects__desc-big {
+.application-form__desc {
   line-height: 22px;
 }
 @media (max-width: 520px) {
-  .application-form__desc, .projects__desc-big {
+  .application-form__desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.projects__desc-big {
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .projects__desc-big {
     font-size: 14px;
     line-height: 16px;
   }
@@ -2887,20 +3224,39 @@ th {
 
 .contacts__container {
   padding-top: 38px;
-  padding-bottom: 69px;
+  padding-bottom: 68px;
 }
 @media (max-width: 1024px) {
   .contacts__container {
     padding-top: 40px;
+    padding-bottom: 69px;
+  }
+}
+@media (max-width: 962px) {
+  .contacts__container {
+    padding-bottom: 67px;
+  }
+}
+@media (max-width: 520px) {
+  .contacts__container {
+    padding-top: 13px;
+    padding-bottom: 50px;
   }
 }
 .contacts__title {
   margin-bottom: 22px;
 }
+@media (max-width: 520px) {
+  .contacts__title {
+    margin-bottom: 12px;
+  }
+}
 
-.map__container {
-  width: 100%;
-  height: 100%;
+@media (max-width: 520px) {
+  .map {
+    margin-left: calc(var(--containerPaddingX) * -1);
+    margin-right: calc(var(--containerPaddingX) * -1);
+  }
 }
 
 [class*=ground-pane] {
@@ -2924,6 +3280,24 @@ th {
     padding-top: 20px;
   }
 }
+@media (max-width: 768px) {
+  .contact-card {
+    padding-top: 22px;
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 520px) {
+  .contact-card {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-left: calc(var(--containerPaddingX) * -1);
+    margin-right: calc(var(--containerPaddingX) * -1);
+    padding-top: 26px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+  }
+}
 .contact-card__btn-close {
   position: absolute;
   top: 20px;
@@ -2939,27 +3313,439 @@ th {
     max-width: 400px;
   }
 }
+@media (max-width: 520px) {
+  .contact-card__wrap {
+    max-width: 268px;
+  }
+}
 .contact-card__title {
   margin-bottom: 5px;
   color: hsl(0deg, 0%, 100%);
+}
+@media (max-width: 520px) {
+  .contact-card__title {
+    margin-bottom: 11px;
+  }
 }
 .contact-card__address {
   margin-bottom: 5px;
   font-style: normal;
   color: hsl(0deg, 0%, 79%);
 }
+@media (max-width: 520px) {
+  .contact-card__address {
+    margin-bottom: 11px;
+  }
+}
 
+.application-form__form {
+  height: 100%;
+}
+@media (max-width: 1024px) {
+  .application-form__form {
+    max-width: 466px;
+  }
+}
 .application-form__title {
   line-height: 10px;
   margin-bottom: 11px;
+}
+@media (max-width: 520px) {
+  .application-form__title {
+    margin-bottom: 9px;
+    line-height: 22px;
+  }
 }
 .application-form__desc {
   color: hsl(0deg, 0%, 60%);
   margin-bottom: 14px;
 }
-.application-form__input {
+@media (max-width: 520px) {
+  .application-form__desc {
+    line-height: 18px;
+    margin-bottom: 15px;
+  }
+}
+.application-form__lable {
   margin-bottom: 20px;
+}
+@media (max-width: 520px) {
+  .application-form__input {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
 }
 .application-form__submit {
   margin-top: auto;
+}
+
+.btn {
+  transition-property: color border-color background-color;
+  transition-duration: 500ms;
+}
+
+.hashtag, .contact-phone, .menu__btn-open, .search__btn-open {
+  transition-property: color border-color transform;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email::-moz-placeholder, .application-form__input::-moz-placeholder {
+  -moz-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email:-ms-input-placeholder, .application-form__input:-ms-input-placeholder {
+  -ms-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.footer__social-link, .form-about__input-email::placeholder, .application-form__input::placeholder {
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.form-about__input-email, .application-form__input {
+  transition-property: border-color;
+  transition-duration: 500ms;
+}
+
+.contact-phone:focus {
+  border-color: hsl(18deg, 100%, 59%);
+}
+.contact-phone:hover {
+  transform: translate(4px, -4px);
+}
+.contact-phone:active {
+  color: hsl(18deg, 93%, 42%);
+  border-color: hsl(18deg, 93%, 42%);
+}
+
+.hashtag:focus:not(:hover), .menu__btn-open:focus:not(:hover), .search__btn-open:focus:not(:hover) {
+  border-color: hsl(18deg, 63%, 45%);
+}
+.hashtag:hover, .menu__btn-open:hover, .search__btn-open:hover {
+  color: hsl(18deg, 100%, 59%);
+  transform: translate(4px, -4px);
+}
+.hashtag:active, .menu__btn-open:active, .search__btn-open:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
+.footer__social-link:focus:not(:hover) {
+  color: hsl(18deg, 63%, 45%);
+}
+.footer__social-link:hover {
+  color: hsl(18deg, 100%, 59%);
+}
+.footer__social-link:active {
+  color: hsl(18deg, 93%, 42%);
+}
+
+.img-set--cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: hsl(0deg, 0%, 29%);
+}
+
+.hero__title, .hero__subtitle, .about__title, .projects__title, .projects__subtitle, .contacts__title {
+  font-family: "TT Firs Neue";
+  font-weight: 700;
+}
+
+.hero__title {
+  font-size: 36px;
+  line-height: 104%;
+}
+@media (max-width: 1024px) {
+  .hero__title {
+    font-size: 34px;
+  }
+}
+@media (max-width: 520px) {
+  .hero__title {
+    font-size: 24px;
+  }
+}
+
+.hero__subtitle, .about__title, .projects__title, .projects__subtitle, .contacts__title {
+  font-size: 24px;
+}
+
+.about__title, .projects__title, .contacts__title {
+  line-height: 129%;
+}
+@media (max-width: 520px) {
+  .about__title, .projects__title, .contacts__title {
+    font-size: 18px;
+  }
+}
+
+.hero__subtitle {
+  line-height: 104%;
+}
+@media (max-width: 768px) {
+  .hero__subtitle {
+    font-size: 22px;
+  }
+}
+@media (max-width: 520px) {
+  .hero__subtitle {
+    font-size: 18px;
+  }
+}
+
+.projects__subtitle {
+  line-height: 100%;
+}
+
+.contact-phone {
+  font-family: "TT Firs Neue";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 129%;
+}
+@media (max-width: 520px) {
+  .contact-phone {
+    font-size: 14px;
+  }
+}
+
+.footer__logo-desc, .menu__link, .form-about__title, .contact-card__title, .application-form__title {
+  font-family: "TT Firs Neue";
+  font-weight: 400;
+}
+
+.form-about__title, .contact-card__title, .application-form__title {
+  font-size: 24px;
+}
+@media (max-width: 520px) {
+  .form-about__title, .contact-card__title, .application-form__title {
+    font-size: 18px;
+  }
+}
+
+.form-about__title, .contact-card__title {
+  line-height: 22px;
+}
+
+.menu__link {
+  font-size: 16px;
+  line-height: 129%;
+}
+
+.footer__logo-desc {
+  font-size: 14px;
+  line-height: 129%;
+}
+@media (max-width: 520px) {
+  .footer__logo-desc {
+    font-size: 10px;
+  }
+}
+
+.btn {
+  font-family: "Roboto";
+  font-weight: 700;
+}
+
+.btn {
+  font-size: 16px;
+  line-height: 117%;
+}
+@media (max-width: 520px) {
+  .btn {
+    font-size: 14px;
+  }
+}
+
+.footer__social-desc, .footer__slogan, .hashtag, .calendar__date, .hero__desc, .about__desc, .form-about__input-email, .projects__desc-small, .projects__desc-big, .contact-card__address, .application-form__desc, .application-form__input {
+  font-family: "Roboto";
+  font-weight: 400;
+}
+
+.footer__social-desc, .footer__slogan, .hero__desc, .about__desc, .form-about__input-email, .projects__desc-small, .projects__desc-big, .contact-card__address, .application-form__desc, .application-form__input {
+  font-size: 16px;
+}
+
+.about__desc {
+  line-height: 28px;
+}
+@media (max-width: 520px) {
+  .about__desc {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+
+.contact-card__address {
+  line-height: 28px;
+}
+@media (max-width: 520px) {
+  .contact-card__address {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.footer__social-desc, .footer__slogan, .projects__desc-small {
+  line-height: 22px;
+}
+
+.application-form__desc {
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .application-form__desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.projects__desc-big {
+  line-height: 22px;
+}
+@media (max-width: 520px) {
+  .projects__desc-big {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.hero__desc, .form-about__input-email, .application-form__input {
+  line-height: 117%;
+}
+@media (max-width: 520px) {
+  .hero__desc, .form-about__input-email, .application-form__input {
+    font-size: 14px;
+  }
+}
+
+.hashtag {
+  font-size: 14px;
+  line-height: 117%;
+}
+@media (max-width: 520px) {
+  .hashtag {
+    font-size: 12px;
+  }
+}
+
+.calendar__date {
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.form-about__input-email, .application-form__input {
+  width: 100%;
+  padding: 15px 23px;
+  border: 1px solid transparent;
+}
+.form-about__input-email::-moz-placeholder, .application-form__input::-moz-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:-ms-input-placeholder, .application-form__input:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email::placeholder, .application-form__input::placeholder {
+  color: hsl(0deg, 0%, 79%);
+}
+.form-about__input-email:focus:not(:hover), .application-form__input:focus:not(:hover) {
+  border-color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::-moz-placeholder, .application-form__input:hover::-moz-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover:-ms-input-placeholder, .application-form__input:hover:-ms-input-placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+.form-about__input-email:hover::placeholder, .application-form__input:hover::placeholder {
+  color: hsl(18deg, 100%, 59%);
+}
+@media (max-width: 520px) {
+  .form-about__input-email, .application-form__input {
+    padding: 10px 22px;
+  }
+}
+
+.form-about__input-email {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0deg, 0%, 29%);
+}
+
+.application-form__input {
+  background-color: hsl(0deg, 0%, 91%);
+}
+
+.footer {
+  background-color: hsl(0deg, 0%, 13%);
+}
+.footer__container {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+@media (max-width: 1024px) {
+  .footer__container {
+    padding-top: 23px;
+    padding-bottom: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .footer__container {
+    padding-top: 25px;
+    padding-bottom: 21px;
+  }
+}
+@media (max-width: 520px) {
+  .footer__container {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.footer__logo {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 520px) {
+  .footer__logo {
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0deg, 0%, 29%);
+  }
+}
+.footer__logo-icon {
+  margin-bottom: 6px;
+}
+.footer__logo-desc {
+  color: hsl(0deg, 0%, 91%);
+}
+.footer__slogan-container {
+  max-width: 361px;
+}
+@media (max-width: 768px) {
+  .footer__slogan-container {
+    display: none;
+  }
+}
+.footer__slogan {
+  color: hsl(0deg, 0%, 79%);
+}
+.footer__social-desc {
+  color: hsl(0deg, 0%, 79%);
+  margin-bottom: 8px;
+}
+.footer__social-list {
+  justify-content: center;
+}
+.footer__social-item:not(:last-child) {
+  margin-right: 20px;
+}
+.footer__social-link {
+  width: 30px;
+  height: 30px;
+  color: hsl(0deg, 0%, 79%);
 }/*# sourceMappingURL=style.css.map */

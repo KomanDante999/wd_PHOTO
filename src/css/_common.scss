@@ -12,7 +12,7 @@
     --containerPaddingX: 27px;
   }
 
-  @media (max-width: $breakpoint-SS) {
+  @media (max-width: $breakpoint-S) {
     --containerPaddingX: 21px;
   }
 }
@@ -200,4 +200,28 @@
   &:active svg rect {
     fill: $colorOrange-intense;
   }
+}
+
+.form {
+  &__label {
+    position: relative;
+  }
+
+}
+
+.invalid-empty {
+  &::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    background-color: blueviolet;
+    top: 0;
+    left: 0;
+
+  }
+}
+
+.invalid-contant {
+
 }

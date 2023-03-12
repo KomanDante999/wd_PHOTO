@@ -21,3 +21,10 @@ const contactCard = new Card({
   card: 'contact-card',
 });
 
+const contactForm = new InputForm({
+  form: 'application-form',
+  inputName: 'application-form__input-name',
+  inputEmail: 'application-form__input-email',
+  inputComment: 'application-form__input-comments',
+  btnSubmit: 'application-form__submit',
+})

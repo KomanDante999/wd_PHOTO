@@ -9,7 +9,6 @@
   -webkit-line-clamp: $n-string;
   -webkit-box-orient: vertical;
   overflow: hidden;
-
 }
 
 @mixin image-inset ($url, $breakpoints, $max, $classParent) {
@@ -30,4 +29,11 @@
       }
     }
   }
+}
+
+@mixin full-wight {
+  margin: {
+    left: calc(var(--containerPaddingX)* -1);
+    right: calc(var(--containerPaddingX)* -1);
+  };
 }

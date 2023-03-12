@@ -285,11 +285,17 @@
     grid-template-rows: 460px;
     column-gap: 30px;
     @media (max-width: $breakpoint-L) {
-      grid-template-columns:
-        minmax(100px, 1fr)
-        minmax(342px, 0fr);
-      grid-template-rows: 303px 157px;
-    }
+      grid-template-columns: 1fr 342px;
+      grid-template-rows: 303px 1fr;
+      }
+      @media (max-width: $breakpoint-M) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 303px 1fr 30px 440px;
+        column-gap: 0;
+      }
+      @media (max-width: $breakpoint-S) {
+        grid-template-rows: 315px 1fr 23px 429px;
+      }
 
     &__map {
       grid-column: 1/span 2;
@@ -316,6 +322,67 @@
         grid-column: 2/span 1;
         grid-row: 1/span 2;
       }
+    }
+    @media (max-width: $breakpoint-M) {
+      &__map {
+        grid-column: 1/span 1;
+        grid-row: 1/span 2;
+      }
+      &__card {
+        grid-column: 1/span 1;
+        grid-row: 2/span 1;
+      }
+      &__form {
+        grid-column: 1/span 1;
+        grid-row: 4/span 1;
+      }
+    }
+  }
+
+  &-footer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 30px;
+    align-items: center;
+    @media (max-width: $breakpoint-L) {
+      grid-template-columns: 263px 1fr 161px;
+      justify-items: center;
+      column-gap: 20px;
+    }
+    @media (max-width: $breakpoint-S) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 123px 62px;
+      column-gap: 0;
+    }
+
+    &__logo {
+      grid-column: 1/span 1;
+      grid-row: 1/span 1;
+    }
+    &__slogan {
+      grid-column: 2/span 1;
+      grid-row: 1/span 1;
+    }
+    &__social {
+      grid-column: 3/span 1;
+      grid-row: 1/span 1;
+      justify-self: end;
+    }
+    @media (max-width: $breakpoint-S) {
+      &__logo {
+        grid-column: 1/span 1;
+        grid-row: 2/span 1;
+        justify-self: center;
+      }
+      &__social {
+        grid-column: 1/span 1;
+        grid-row: 1/span 1;
+        justify-self: center;
+      }
+      &__slogan {
+        display: none;
+      }
+
     }
 
   }

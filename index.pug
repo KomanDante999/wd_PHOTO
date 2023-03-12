@@ -1,5 +1,9 @@
 - var menuItems = ['О студии', 'Наши проекты', 'Услуги', 'Мастер-классы', 'Контакты']
 
+mixin logo()
+  svg(class!=attributes.class).logo
+    use(xlink:href="images/sprite.svg#logo")
+
 mixin contactPhone()
   a(href="tel:+749542423532").contact-phone
     span.contact-phone__contant
@@ -21,9 +25,9 @@ mixin hashTag(linkText)
   a.hashtag(class!=attributes.class, href=linkText)= linkText
 
 mixin btnPrim(text)
-  button(type='button', class!=attributes.class, id!=attributes.id).btn.btn__prim= text
+  button(type!=attributes.type, class!=attributes.class, id!=attributes.id).btn.btn__prim= text
 mixin btnSec(text)
-  button(type='button', class!=attributes.class, id!=attributes.id).btn.btn__sec= text
+  button(type!=attributes.type, class!=attributes.class, id!=attributes.id).btn.btn__sec= text
 
 mixin calendar(date)
   .calendar.flex(class!=attributes.class)
@@ -39,6 +43,7 @@ html(lang="ru")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title High pass
+    link(rel="shortcut icon", href="images/favicon.png", type="image/x-icon")
     link(href="fonts/Roboto-Bold.woff2", rel="preload", as="font", type="font/woff2", crossorigin)
     link(href="fonts/Roboto-Regular.woff2", rel="preload", as="font", type="font/woff2", crossorigin)
     link(href="fonts/TTFirsNeue-Bold.woff2", rel="preload", as="font", type="font/woff2", crossorigin)
@@ -52,8 +57,7 @@ html(lang="ru")
     header.header
       .container.header__container.grid.grid-header
         .header__logo.logo.grid-header__item-1
-          svg.logo__svg
-            use(xlink:href="images/sprite.svg#logo")
+          +logo()
         h1.visually-hidden фотостудия High pass
         #burger-menu.header__menu.menu.grid-header__item-2
           button(type='button')#burger-menu__btn-open.menu__btn-open
@@ -83,7 +87,7 @@ html(lang="ru")
               +hashTag('#мастеркласс')(class="hero__hashTag")
               p.hero__desc Мастер-класс от Игоря Робова
               h3.hero__title Неоновый фотосет&nbsp;2.0 7 июля 20:00
-              +btnPrim('Узнать больше')(id="master-class", class="hero__btn")
+              +btnPrim('Узнать больше')(id="master-class", class="hero__btn", type="button")
             li.grid-hero__item-subtitle
               h4.hero__subtitle Работы участников предыдущего мастер-класса
             li.grid-hero__item-2.img-set--cover.hero__img-inset_2
@@ -100,7 +104,7 @@ html(lang="ru")
             .grid-about__right
               .about__articl-right.flex.flex-column
                 .about__img-1.img-set--cover.about__img-inset_1
-                form(id="about-form", class="about__form, form-about")
+                form(id="about-form", class="about__form, form-about", novalidate)
                   h4.form-about__title Подписаться на рассылку
                   .form-about__wrap-input.flex
                     input#about-form__input(type="email", name="", placeholder='Email').form-about__input-email
@@ -130,13 +134,13 @@ html(lang="ru")
                 +calendar('9 апреля')(class="projects__calendar")
                 h3.projects__subtitle Cемантический разбор
                 p.projects__desc-big В рамках спецификации современных стандартов, интерактивные прототипы
-                +btnSec('О проекте')(id="projects-fuji", class="projects__btn")
+                +btnSec('О проекте')(id="projects-fuji", class="projects__btn", type="button")
             li.grid-projects__item-5.projects__item-big.img-set--cover.projects__img-inset_5.flex.flex-column
                 +hashTag('#проектзабвение')(class="projects__hashtag")
                 +calendar('20 марта')(class="projects__calendar")
                 h3.projects__subtitle Забвение
                 p.projects__desc-big Играет важную роль в формировании глубокомысленных рассуждений
-                +btnSec('О проекте')(id="projects-oblivion", class="projects__btn")
+                +btnSec('О проекте')(id="projects-oblivion", class="projects__btn", type="button")
             li.grid-projects__item-6.flex.flex-column
                 .projects__img-container.img-set--cover.projects__img-inset_6.flex
                   +hashTag('#ретушь')(class="projects__hashtag")
@@ -152,8 +156,7 @@ html(lang="ru")
         .container.contacts__container
           h2.contacts__title Контакты
           .grid.grid-contacts
-            .map.grid-contacts__map
-              #map.map__container
+            #map.map.grid-contacts__map
             #contact-card.contact-card.grid-contacts__card.flex
               +btnClose()(id="contact-card__btn-close", class="contact-card__btn-close")
               .contact-card__wrap
@@ -161,13 +164,40 @@ html(lang="ru")
                 address.contact-card__address 107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82
                 +contactPhone()
             .grid-contacts__form
-              form(id="application-form", class="application-form__form, flex, flex-column")
+              form(id="application-form", class="application-form__form flex flex-column", novalidate)
                 h4.application-form__title Оставить заявку
                 p.application-form__desc Оставьте ваши данные, указав в графе «Комментарий» желаемые время и дату съёмки или другого мероприятия
-                input#application-form__input-name(type="text", name="", placeholder='Имя').application-form__input
-                input#application-form__input-email(type="email", name="", placeholder='Email').application-form__input
-                textarea#application-form__input-comments(name="", cols="30", rows="6", placeholder='Комментарий').application-form__input.application-form__input_comments
+                label.form__label.application-form__lable
+                  input#application-form__input-name(type="text", name="", placeholder='Имя').application-form__input
+                label.form__label.application-form__lable
+                  input#application-form__input-email(type="email", name="", placeholder='Email').application-form__input
+                label.application-form__lable
+                  textarea#application-form__input-comments(name="", cols="30", rows="6", placeholder='Комментарий').application-form__input.application-form__input_comments
                 +btnPrim('Отправить')(id="application-form__submit", class="application-form__submit", type="submit")
+    footer.footer
+      .container.footer__container
+        .grid.grid-footer
+          .grid-footer__logo.footer__logo.flex.flex-column
+            +logo(class="footer__logo-icon")
+            p.footer__logo-desc Фотостудия High pass®&nbsp;2018–2020
+          .footer__slogan-container.grid-footer__slogan
+            p.footer__slogan Которая из моих фотографий самая любимая? Та, которую я собираюсь снять завтра.<br>© Имоджен Каннингем
+          .grid-footer__social
+            .footer__social-container
+              p.footer__social-desc Больше интересного:
+              ul.footer__social-list.flex
+                li.footer__social-item
+                  a(href="#").footer__social-link
+                    svg.footer__social-icon
+                      use(xlink:href="images/sprite.svg#ok")
+                li.footer__social-item
+                  a(href="#").footer__social-link
+                    svg.footer__social-icon
+                      use(xlink:href="images/sprite.svg#vk")
+
+
+
+
 
 
 

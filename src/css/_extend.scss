@@ -48,6 +48,19 @@
   }
 }
 
+%animation-icon-svg {
+  @extend %transit-c;
+  &:focus:not(:hover) {
+    color: $colorOrange-darken;
+  }
+  &:hover {
+    color: $colorOrange;
+  }
+  &:active {
+    color: $colorOrange-intense;
+  }
+}
+
 %image-set--cover {
   background-repeat: no-repeat;
   background-size: cover;
@@ -172,12 +185,28 @@
     line-height: 25px;
   }
 }
+%Roboto-reg-sl-28-18 {
+  @extend %Roboto-reg-sl;
+  line-height: 28px;
+  @media (max-width: $breakpoint-S) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
 
 %Roboto-reg-sl-22 {
   @extend %Roboto-reg-sl;
   line-height: 22px;
 }
 
+%Roboto-reg-sl-22-18 {
+  @extend %Roboto-reg-sl;
+  line-height: 22px;
+  @media (max-width: $breakpoint-S) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
 %Roboto-reg-sl-22_low {
   @extend %Roboto-reg-sl;
   line-height: 22px;
