@@ -28,3 +28,8 @@ const contactForm = new InputForm({
   inputComment: 'application-form__input-comments',
   btnSubmit: 'application-form__submit',
 })
+
+const aboutForm = new InputForm({
+  form: 'about-form',
+  inputEmail: 'about-form__input-email',
+})

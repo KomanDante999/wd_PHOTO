@@ -13,7 +13,9 @@ class InputForm {
     if ('inputComment' in params) {
       this.$inputComment = document.querySelector(`#${params.inputComment}`)
     }
-    this.$submit = document.querySelector(`#${params.btnSubmit}`)
+    if ('btnSubmit' in params) {
+      this.$submit = document.querySelector(`#${params.btnSubmit}`)
+    }
     this.widthWindow = document.documentElement.clientWidth
 
     // events
@@ -46,28 +48,29 @@ class InputForm {
         required: true,
       })
       this.validator.empty()
+      this.label = input.parentElement
       if (this.validator.valid) {
-        input.classList.remove('invalid-empty');
+        this.label.classList.remove('invalid-empty');
         switch (input.type) {
           case 'text':
             this.validator.alphabet()
             if (this.validator.valid) {
-              input.classList.remove('invalid-contant');
+              this.label.classList.remove('invalid-contant');
             } else {
-              input.classList.add('invalid-contant');
+              this.label.classList.add('invalid-contant');
             }
             break;
           case 'email':
             this.validator.email()
             if (this.validator.valid) {
-              input.classList.remove('invalid-contant');
+              this.label.classList.remove('invalid-contant');
             } else {
-              input.classList.add('invalid-contant');
+              this.label.classList.add('invalid-contant');
             }
             break;
         }
       } else {
-        input.classList.add('invalid-empty');
+        this.label.classList.add('invalid-empty');
       }
     }
   }

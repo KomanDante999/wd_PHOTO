@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body {
   box-sizing: border-box;
   margin: 0;
@@ -346,7 +347,7 @@ th {
   }
 }
 
-.calendar__date, .hashtag, .hero__desc, .application-form__input, .form-about__input-email, .projects__desc-big, .application-form__desc, .footer__social-desc, .footer__slogan, .projects__desc-small, .contact-card__address, .about__desc {
+.form__label::after, .calendar__date, .hashtag, .hero__desc, .application-form__input, .form-about__input-email, .projects__desc-big, .application-form__desc, .footer__social-desc, .footer__slogan, .projects__desc-small, .contact-card__address, .about__desc {
   font-family: "Roboto";
   font-weight: 400;
 }
@@ -423,9 +424,14 @@ th {
   line-height: 22px;
 }
 
+.form__label::after {
+  font-size: 9px;
+  line-height: 11px;
+}
+
 .application-form__input, .form-about__input-email {
   width: 100%;
-  padding: 15px 23px;
+  padding: 15px var(--inputPaddingX);
   border: 1px solid transparent;
 }
 .application-form__input::-moz-placeholder, .form-about__input-email::-moz-placeholder {
@@ -451,7 +457,8 @@ th {
 }
 @media (max-width: 520px) {
   .application-form__input, .form-about__input-email {
-    padding: 10px 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -464,8 +471,17 @@ th {
   background-color: hsl(0deg, 0%, 91%);
 }
 
+.form__label::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 3px;
+  padding-left: var(--inputPaddingX);
+}
+
 :root {
   --containerPaddingX: 31px;
+  --inputPaddingX: 23px;
 }
 @media (max-width: 768px) {
   :root {
@@ -475,6 +491,7 @@ th {
 @media (max-width: 520px) {
   :root {
     --containerPaddingX: 21px;
+    --inputPaddingX: 22px;
   }
 }
 
@@ -657,15 +674,19 @@ th {
 .form__label {
   position: relative;
 }
+.form__label_dark::after {
+  color: hsl(0deg, 82%, 67%);
+}
+.form__label_light::after {
+  color: hsl(0deg, 100%, 59%);
+}
 
 .invalid-empty::after {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 20px;
-  background-color: blueviolet;
-  top: 0;
-  left: 0;
+  content: "Обязательное поле!";
+}
+
+.invalid-contant::after {
+  content: "Недопустимый формат!";
 }
 
 .grid {
@@ -1293,7 +1314,7 @@ th {
   }
 }
 
-.about__desc, .contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .hero__desc, .form-about__input-email, .application-form__input, .hashtag, .calendar__date {
+.about__desc, .contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .hero__desc, .form-about__input-email, .application-form__input, .hashtag, .calendar__date, .form__label::after {
   font-family: "Roboto";
   font-weight: 400;
 }
@@ -1370,9 +1391,14 @@ th {
   line-height: 22px;
 }
 
+.form__label::after {
+  font-size: 9px;
+  line-height: 11px;
+}
+
 .form-about__input-email, .application-form__input {
   width: 100%;
-  padding: 15px 23px;
+  padding: 15px var(--inputPaddingX);
   border: 1px solid transparent;
 }
 .form-about__input-email::-moz-placeholder, .application-form__input::-moz-placeholder {
@@ -1398,7 +1424,8 @@ th {
 }
 @media (max-width: 520px) {
   .form-about__input-email, .application-form__input {
-    padding: 10px 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -1409,6 +1436,14 @@ th {
 
 .application-form__input {
   background-color: hsl(0deg, 0%, 91%);
+}
+
+.form__label::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 3px;
+  padding-left: var(--inputPaddingX);
 }
 
 @media (max-width: 962px) {
@@ -1733,7 +1768,7 @@ th {
   }
 }
 
-.about__desc, .contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .hero__desc, .form-about__input-email, .application-form__input, .hashtag, .calendar__date {
+.about__desc, .contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .hero__desc, .form-about__input-email, .application-form__input, .hashtag, .calendar__date, .form__label::after {
   font-family: "Roboto";
   font-weight: 400;
 }
@@ -1810,9 +1845,14 @@ th {
   line-height: 22px;
 }
 
+.form__label::after {
+  font-size: 9px;
+  line-height: 11px;
+}
+
 .form-about__input-email, .application-form__input {
   width: 100%;
-  padding: 15px 23px;
+  padding: 15px var(--inputPaddingX);
   border: 1px solid transparent;
 }
 .form-about__input-email::-moz-placeholder, .application-form__input::-moz-placeholder {
@@ -1838,7 +1878,8 @@ th {
 }
 @media (max-width: 520px) {
   .form-about__input-email, .application-form__input {
-    padding: 10px 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -1849,6 +1890,14 @@ th {
 
 .application-form__input {
   background-color: hsl(0deg, 0%, 91%);
+}
+
+.form__label::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 3px;
+  padding-left: var(--inputPaddingX);
 }
 
 .hero__container {
@@ -2175,7 +2224,7 @@ th {
   }
 }
 
-.about__desc, .contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .form-about__input-email, .application-form__input, .hashtag, .calendar__date, .hero__desc {
+.about__desc, .contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .form-about__input-email, .application-form__input, .hashtag, .calendar__date, .form__label::after, .hero__desc {
   font-family: "Roboto";
   font-weight: 400;
 }
@@ -2252,9 +2301,14 @@ th {
   line-height: 22px;
 }
 
+.form__label::after {
+  font-size: 9px;
+  line-height: 11px;
+}
+
 .form-about__input-email, .application-form__input {
   width: 100%;
-  padding: 15px 23px;
+  padding: 15px var(--inputPaddingX);
   border: 1px solid transparent;
 }
 .form-about__input-email::-moz-placeholder, .application-form__input::-moz-placeholder {
@@ -2280,7 +2334,8 @@ th {
 }
 @media (max-width: 520px) {
   .form-about__input-email, .application-form__input {
-    padding: 10px 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -2291,6 +2346,14 @@ th {
 
 .application-form__input {
   background-color: hsl(0deg, 0%, 91%);
+}
+
+.form__label::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 3px;
+  padding-left: var(--inputPaddingX);
 }
 
 .about__container {
@@ -2382,17 +2445,17 @@ th {
     flex-direction: column;
   }
 }
-.form-about__input-email {
+.form-about__lable {
+  width: 100%;
   margin-right: 30px;
 }
 @media (max-width: 1024px) {
-  .form-about__input-email {
+  .form-about__lable {
     max-width: 342px;
     margin-right: auto;
     margin-bottom: 20px;
   }
 }
-
 .btn {
   transition-property: color border-color background-color;
   transition-duration: 500ms;
@@ -2575,7 +2638,7 @@ th {
   }
 }
 
-.contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .application-form__input, .hashtag, .calendar__date, .hero__desc, .about__desc, .form-about__input-email {
+.contact-card__address, .footer__social-desc, .footer__slogan, .projects__desc-small, .application-form__desc, .projects__desc-big, .application-form__input, .hashtag, .calendar__date, .form__label::after, .hero__desc, .about__desc, .form-about__input-email {
   font-family: "Roboto";
   font-weight: 400;
 }
@@ -2652,9 +2715,14 @@ th {
   line-height: 22px;
 }
 
+.form__label::after {
+  font-size: 9px;
+  line-height: 11px;
+}
+
 .application-form__input, .form-about__input-email {
   width: 100%;
-  padding: 15px 23px;
+  padding: 15px var(--inputPaddingX);
   border: 1px solid transparent;
 }
 .application-form__input::-moz-placeholder, .form-about__input-email::-moz-placeholder {
@@ -2680,7 +2748,8 @@ th {
 }
 @media (max-width: 520px) {
   .application-form__input, .form-about__input-email {
-    padding: 10px 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -2691,6 +2760,14 @@ th {
 
 .application-form__input {
   background-color: hsl(0deg, 0%, 91%);
+}
+
+.form__label::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 3px;
+  padding-left: var(--inputPaddingX);
 }
 
 .projects__container {
@@ -3104,7 +3181,7 @@ th {
   }
 }
 
-.contact-card__address, .footer__social-desc, .footer__slogan, .application-form__desc, .application-form__input, .hashtag, .calendar__date, .hero__desc, .about__desc, .form-about__input-email, .projects__desc-small, .projects__desc-big {
+.contact-card__address, .footer__social-desc, .footer__slogan, .application-form__desc, .application-form__input, .hashtag, .calendar__date, .form__label::after, .hero__desc, .about__desc, .form-about__input-email, .projects__desc-small, .projects__desc-big {
   font-family: "Roboto";
   font-weight: 400;
 }
@@ -3181,9 +3258,14 @@ th {
   line-height: 22px;
 }
 
+.form__label::after {
+  font-size: 9px;
+  line-height: 11px;
+}
+
 .application-form__input, .form-about__input-email {
   width: 100%;
-  padding: 15px 23px;
+  padding: 15px var(--inputPaddingX);
   border: 1px solid transparent;
 }
 .application-form__input::-moz-placeholder, .form-about__input-email::-moz-placeholder {
@@ -3209,7 +3291,8 @@ th {
 }
 @media (max-width: 520px) {
   .application-form__input, .form-about__input-email {
-    padding: 10px 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -3220,6 +3303,14 @@ th {
 
 .application-form__input {
   background-color: hsl(0deg, 0%, 91%);
+}
+
+.form__label::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 3px;
+  padding-left: var(--inputPaddingX);
 }
 
 .contacts__container {
@@ -3561,7 +3652,7 @@ th {
   }
 }
 
-.footer__social-desc, .footer__slogan, .hashtag, .calendar__date, .hero__desc, .about__desc, .form-about__input-email, .projects__desc-small, .projects__desc-big, .contact-card__address, .application-form__desc, .application-form__input {
+.footer__social-desc, .footer__slogan, .hashtag, .calendar__date, .form__label::after, .hero__desc, .about__desc, .form-about__input-email, .projects__desc-small, .projects__desc-big, .contact-card__address, .application-form__desc, .application-form__input {
   font-family: "Roboto";
   font-weight: 400;
 }
@@ -3638,9 +3729,14 @@ th {
   line-height: 22px;
 }
 
+.form__label::after {
+  font-size: 9px;
+  line-height: 11px;
+}
+
 .form-about__input-email, .application-form__input {
   width: 100%;
-  padding: 15px 23px;
+  padding: 15px var(--inputPaddingX);
   border: 1px solid transparent;
 }
 .form-about__input-email::-moz-placeholder, .application-form__input::-moz-placeholder {
@@ -3666,7 +3762,8 @@ th {
 }
 @media (max-width: 520px) {
   .form-about__input-email, .application-form__input {
-    padding: 10px 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -3677,6 +3774,14 @@ th {
 
 .application-form__input {
   background-color: hsl(0deg, 0%, 91%);
+}
+
+.form__label::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 3px;
+  padding-left: var(--inputPaddingX);
 }
 
 .footer {

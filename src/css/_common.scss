@@ -4,6 +4,7 @@
 
 :root {
   --containerPaddingX: 31px;
+  --inputPaddingX: 23px;
 
   @media (max-width: $breakpoint-L) {
   }
@@ -14,6 +15,7 @@
 
   @media (max-width: $breakpoint-S) {
     --containerPaddingX: 21px;
+    --inputPaddingX: 22px;
   }
 }
 
@@ -205,23 +207,28 @@
 .form {
   &__label {
     position: relative;
+    &::after {
+      @extend %invalid-messange;
+    }
+    &_dark {
+      &::after {
+        color: $colorDanger-dark;
+      }
+    }
+    &_light {
+      &::after {
+        color: $colorDanger;
+      }
+    }
   }
-
 }
-
 .invalid-empty {
   &::after {
-    content: '';
-    position: absolute;
-    width: 200px;
-    height: 20px;
-    background-color: blueviolet;
-    top: 0;
-    left: 0;
-
+    content: 'Обязательное поле!';
   }
 }
-
 .invalid-contant {
-
+  &::after {
+    content: 'Недопустимый формат!';
+  }
 }
