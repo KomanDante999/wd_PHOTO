@@ -1,0 +1,16 @@
+section#about.about
+  .container.about__container
+    .grid.grid-about
+      .grid-about__left
+        .about__articl-left.flex.flex-column
+          h2.about__title О студии
+          p.about__desc В рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует необходимость распределения внутренних резервов и ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально-технической и кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и нарушающими общечеловеческие нормы этики.
+      .grid-about__right
+        .about__articl-right.flex.flex-column
+          .about__img-1.img-set--cover.about__img-inset_1
+          form(id="about-form", class="about__form form-about form", novalidate)
+            h4.form-about__title Подписаться на рассылку
+            .form-about__wrap-input.flex
+              label.form__label.form__label_dark.form-about__lable
+                input#about-form__input-email(type="email", name="", placeholder='Email').form-about__input-email
+              +btnPrim('Отправить')(id="about-form__submit", class="form-about__submit", type="submit")

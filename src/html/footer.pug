@@ -1,0 +1,20 @@
+footer.footer
+  .container.footer__container
+    .grid.grid-footer
+      .grid-footer__logo.footer__logo.flex.flex-column
+        +logo(class="footer__logo-icon")
+        p.footer__logo-desc Фотостудия High pass®&nbsp;2018–2020
+      .footer__slogan-container.grid-footer__slogan
+        p.footer__slogan Которая из моих фотографий самая любимая? Та, которую я собираюсь снять завтра.<br>© Имоджен Каннингем
+      .grid-footer__social
+        .footer__social-container
+          p.footer__social-desc Больше интересного:
+          ul.footer__social-list.flex
+            li.footer__social-item
+              a(href="#").footer__social-link
+                svg.footer__social-icon
+                  use(xlink:href="img/sprite.svg#ok")
+            li.footer__social-item
+              a(href="#").footer__social-link
+                svg.footer__social-icon
+                  use(xlink:href="img/sprite.svg#vk")

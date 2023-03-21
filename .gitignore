@@ -1,7 +1,8 @@
-# .vscode/
+.vscode/
 Compiled-HTML/
 dist/
 node_modules/
-# package-lock.json
+*.zip
+package-lock.json
 # package.json
 # .editorconfig

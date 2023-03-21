@@ -1,0 +1,234 @@
+@import '_variables.scss';
+@import '_extend.scss';
+
+
+:root {
+  --containerPaddingX: 31px;
+  --inputPaddingX: 23px;
+
+  @media (max-width: $breakpoint-L) {
+  }
+
+  @media (max-width: $breakpoint-M) {
+    --containerPaddingX: 27px;
+  }
+
+  @media (max-width: $breakpoint-S) {
+    --containerPaddingX: 21px;
+    --inputPaddingX: 22px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  opacity: 0;
+}
+
+
+.display-none {
+  display: none;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.is-disable {
+  pointer-events: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.fit-content-childs > * {
+  width: fit-content;
+}
+
+.container {
+  max-width: $containerMaxWidth;
+  min-width: $containerMinWidth;
+  padding: {
+    right: var(--containerPaddingX);
+    left: var(--containerPaddingX)
+  }
+  margin: 0 auto;
+}
+
+.img-set--cover {
+  @extend %image-set--cover;
+}
+
+.hashtag {
+  width: fit-content;
+  height: fit-content;
+  padding: 7px 15px;
+  @extend %Roboto-reg-s-117;
+  text-align: center;
+  color: $colorText-lite;
+  background-color: $colorBacground-dark;
+  @extend %animation-btn-up1;
+  @media (max-width: $breakpoint-S) {
+    padding: 4px 7px;
+  }
+}
+
+.calendar {
+  width: fit-content;
+  align-items: center;
+  color: $colorText-gray-60;
+  &__icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+  }
+  &__date {
+    @extend %Roboto-reg-ss-22;
+    color: inherit;
+  }
+}
+
+.btn {
+  width: fit-content;
+  padding: {
+    top: 13px;
+    bottom: 12px;
+    left: 19px;
+    right: 20px;
+  }
+  @extend %Roboto-bold-sl-117;
+  text-align: center;
+  color: $colorText-lite;
+  border: 3px solid transparent;
+  @extend %transit-c-bc-brd;
+  @media (max-width: $breakpoint-S) {
+    padding: {
+      top: 9px;
+      bottom: 9px;
+    }
+  }
+
+}
+
+.btn__prim {
+  background-color: $colorOrange;
+  &:focus:not(:hover) {
+    border-color: $colorOrange-intense;
+  }
+  &:hover {
+    background-color: $colorOrange-darken;
+  }
+  &:active {
+    background-color: $colorOrange-intense;
+  }
+}
+
+.btn__sec {
+  background-color: transparent;
+  border-color: $colorOrange;
+
+  &:focus:not(:hover) {
+    background-color: $colorOrange-darken;
+  }
+  &:hover {
+    background-color: $colorOrange;
+  }
+  &:active {
+    background-color: $colorOrange-intense;
+    border-color: $colorOrange-intense;
+  }
+}
+
+.contact-phone {
+  display: inline-block;
+  @extend %Neue-med-sl-129;
+  color: $colorOrange;
+  border-bottom: 2px solid transparent;
+  @extend %animation-link-up1;
+  &__contant {
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+  }
+}
+
+.btn-close {
+  width: 23px;
+  height: 23px;
+
+  @media (max-width: $breakpoint-S) {
+    width: 18px;
+    height: 18px;
+  }
+
+  & svg {
+    & circle, & rect {
+      transition-property: fill;
+      transition-duration: $duration-btn;
+    }
+  }
+
+  &:focus svg circle {
+    fill: $colorOrange;
+  }
+  &:focus svg rect {
+    fill: $colorBacground-dark;
+  }
+  &:hover svg circle {
+    fill: $colorOrange;
+  }
+  &:hover svg rect {
+    fill: $colorBacground-dark;
+  }
+  &:active svg circle {
+    fill: $colorBacground-gray-50;
+  }
+  &:active svg rect {
+    fill: $colorOrange-intense;
+  }
+}
+
+.form {
+  &__label {
+    position: relative;
+    &::after {
+      @extend %invalid-messange;
+    }
+    &_dark {
+      &::after {
+        color: $colorDanger-dark;
+      }
+    }
+    &_light {
+      &::after {
+        color: $colorDanger;
+      }
+    }
+  }
+}
+.invalid-empty {
+  &::after {
+    content: 'Обязательное поле!';
+  }
+}
+.invalid-contant {
+  &::after {
+    content: 'Недопустимый формат!';
+  }
+}

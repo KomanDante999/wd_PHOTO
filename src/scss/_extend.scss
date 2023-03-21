@@ -1,0 +1,289 @@
+@import '_variables.scss';
+
+%transit-c-bc-brd {
+  transition-property: color border-color background-color;
+  transition-duration: $duration-btn;
+}
+
+%transit-c-brd-trf {
+  transition-property: color border-color transform;
+  transition-duration: $duration-btn;
+}
+
+%transit-c {
+  transition-property: color;
+  transition-duration: $duration-btn;
+}
+
+%transit-brd {
+  transition-property: border-color;
+  transition-duration: $duration-btn;
+}
+
+%animation-link-up1 {
+  @extend %transit-c-brd-trf;
+  &:focus {
+    border-color: $colorOrange;
+  }
+  &:hover {
+    transform: translate(4px, -4px);
+  }
+  &:active {
+    color: $colorOrange-intense;
+    border-color: $colorOrange-intense;
+  }
+}
+
+%animation-btn-up1 {
+  @extend %transit-c-brd-trf;
+  &:focus:not(:hover) {
+    border-color: $colorOrange-darken;
+  }
+  &:hover {
+    color: $colorOrange;
+    transform: translate(4px, -4px);
+  }
+  &:active {
+    color: $colorOrange-intense;
+  }
+}
+
+%animation-icon-svg {
+  @extend %transit-c;
+  &:focus:not(:hover) {
+    color: $colorOrange-darken;
+  }
+  &:hover {
+    color: $colorOrange;
+  }
+  &:active {
+    color: $colorOrange-intense;
+  }
+}
+
+%image-set--cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: $colorBacground-gray;
+}
+
+// tipography  size: l-36, m-24, sl-16, s-14, ss-12
+// --- Neue
+%Neue-bold {
+  font-family: $font-Neue;
+  font-weight: 700;
+}
+
+%Neue-bold-l {
+  @extend %Neue-bold;
+  font-size: 36px;
+  line-height: 104%;
+  @media (max-width: $breakpoint-L) {
+    font-size: 34px;
+  }
+  @media (max-width: $breakpoint-S) {
+    font-size: 24px;
+  }
+}
+
+%Neue-bold-m {
+  @extend %Neue-bold;
+  font-size: 24px;
+}
+
+%Neue-bold-m-129 {
+  @extend %Neue-bold-m;
+  line-height: 129%;
+  @media (max-width: $breakpoint-S) {
+    font-size: 18px;
+  }
+}
+
+%Neue-bold-m-104 {
+  @extend %Neue-bold-m;
+  line-height: 104%;
+  @media (max-width: $breakpoint-M) {
+    font-size: 22px;
+  }
+  @media (max-width: $breakpoint-S) {
+    font-size: 18px;
+  }
+}
+
+%Neue-bold-m-lh24 {
+  @extend %Neue-bold-m;
+  line-height: 100%;
+}
+
+%Neue-med-sl-129 {
+  font-family: $font-Neue;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 129%;
+  @media (max-width: $breakpoint-S) {
+    font-size: 14px;
+  }
+}
+
+%Neue-reg {
+  font-family: $font-Neue;
+  font-weight: 400;
+}
+%Neue-reg-m {
+  @extend %Neue-reg;
+  font-size: 24px;
+  @media (max-width: $breakpoint-S) {
+    font-size: 18px;
+  }
+}
+%Neue-reg-m-22 {
+  @extend %Neue-reg-m;
+  line-height: 22px;
+}
+%Neue-reg-sl {
+  @extend %Neue-reg;
+  font-size: 16px;
+  line-height: 129%
+}
+%Neue-reg-s {
+  @extend %Neue-reg;
+  font-size: 14px;
+  line-height: 129%;
+  @media (max-width: $breakpoint-S) {
+    font-size: 10px;
+  }
+}
+// ---Roboto
+%Roboto-bold {
+  font-family: $font-Roboto;
+  font-weight: 700;
+}
+%Roboto-bold-sl-117 {
+  @extend %Roboto-bold;
+  font-size: 16px;
+  line-height: 117%;
+  @media (max-width: $breakpoint-S) {
+    font-size: 14px;
+  }
+}
+
+%Roboto-reg {
+  font-family: $font-Roboto;
+  font-weight: 400;
+}
+%Roboto-reg-sl {
+  @extend %Roboto-reg;
+  font-size: 16px;
+}
+
+%Roboto-reg-sl-28 {
+  @extend %Roboto-reg-sl;
+  line-height: 28px;
+  @media (max-width: $breakpoint-S) {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+%Roboto-reg-sl-28-18 {
+  @extend %Roboto-reg-sl;
+  line-height: 28px;
+  @media (max-width: $breakpoint-S) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+%Roboto-reg-sl-22 {
+  @extend %Roboto-reg-sl;
+  line-height: 22px;
+}
+
+%Roboto-reg-sl-22-18 {
+  @extend %Roboto-reg-sl;
+  line-height: 22px;
+  @media (max-width: $breakpoint-S) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+%Roboto-reg-sl-22_low {
+  @extend %Roboto-reg-sl;
+  line-height: 22px;
+  @media (max-width: $breakpoint-S) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+%Roboto-reg-sl-117 {
+  @extend %Roboto-reg-sl;
+  line-height: 117%;
+  @media (max-width: $breakpoint-S) {
+    font-size: 14px;
+  }
+}
+%Roboto-reg-s-117 {
+  @extend %Roboto-reg;
+  font-size: 14px;
+  line-height: 117%;
+  @media (max-width: $breakpoint-S) {
+    font-size: 12px;
+  }
+}
+%Roboto-reg-ss-22 {
+  @extend %Roboto-reg;
+  font-size: 12px;
+  line-height: 22px;
+}
+%Roboto-reg-sss-11 {
+  @extend %Roboto-reg;
+  font-size: 9px;
+  line-height: 11px;
+  }
+
+
+%input {
+  width: 100%;
+  padding: 15px var(--inputPaddingX);
+  @extend %Roboto-reg-sl-117;
+  border: 1px solid transparent;
+  @extend %transit-brd;
+  &::placeholder {
+    color: $colorText-gray;
+    @extend %transit-c;
+  }
+  &:focus:not(:hover) {
+    border-color: $colorOrange;
+  }
+  &:hover::placeholder {
+    color: $colorOrange;
+  }
+  @media (max-width: $breakpoint-S) {
+    padding: {
+      top: 10px;
+      bottom: 10px;
+    };
+  }
+}
+
+%input-dark {
+  @extend %input;
+  color: $colorText-lite;
+  background-color: $colorBacground-gray;
+}
+
+%input-light {
+  @extend %input;
+  background-color: $colorBacground-gray-90;
+}
+
+%invalid-messange {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: {
+    top: 3px;
+    left: var(--inputPaddingX);
+  }
+  @extend %Roboto-reg-sss-11;
+}

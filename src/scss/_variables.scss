@@ -1,0 +1,41 @@
+$breakpoints-base: 1920, 1024, 768, 520;
+
+$breakpoint-LX: 1110px;
+$breakpoint-L: 1024px;
+$breakpoint-MX: 962px;
+$breakpoint-M: 768px;
+$breakpoint-MS: 728px;
+$breakpoint-S: 520px;
+$breakpoint-SS: 320px;
+
+
+
+$containerMaxWidth: 1352px;
+$containerMinWidth: 278px;
+
+$colorBacground-dark: hsla(0, 0%, 13%, 1);
+$colorBacground-gray: hsla(0, 0%, 29%, 1);
+$colorBacground-gray-50: hsla(0, 0%, 50%, 1);
+$colorBacground-gray-90: hsla(0, 0%, 91%, 1);
+$colorOrange: hsla(18, 100%, 59%, 1);
+$colorOrange-intense: hsla(18, 93%, 42%, 1);
+$colorOrange-darken: hsla(18, 63%, 45%, 1);
+$colorText-lite: hsla(0, 0%, 100%, 1);
+$colorText-gray: hsla(0, 0%, 79%, 1);
+$colorText-gray-90: hsla(0, 0%, 91%, 1);
+$colorText-gray-60: hsla(0, 0%, 60%, 1);
+$colorDanger: hsla(0, 100%, 59%, 1);
+$colorDanger-dark: hsla(0, 82%, 67%, 1);
+
+$duration-btn: 500ms;
+
+$font-Neue: "TT Firs Neue";
+$font-Roboto: "Roboto";
+
+$urlImages: '../img/';
+$urlImages-1920: '../img/1920/';
+$urlImages-1024: '../img/1024/';
+$urlImages-768: '../img/768/';
+$urlImages-320: '../img/320/';
+
+

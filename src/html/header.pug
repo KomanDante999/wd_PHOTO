@@ -1,0 +1,24 @@
+header.header
+  .container.header__container.grid.grid-header
+    .header__logo.logo.grid-header__item-1
+      +logo()
+    h1.visually-hidden фотостудия High pass
+    #burger-menu.header__menu.menu.grid-header__item-2
+      button(type='button')#burger-menu__btn-open.menu__btn-open
+        svg.menu__icon-open
+          use(xlink:href="img/sprite.svg#burger")
+      nav#burger-menu__wrap-list.menu__wrap-list
+        +btnClose()(id="burger-menu__btn-close", class="menu__btn-close")
+        ul#burger-menu__list.menu__list.grid.grid-menu
+          each item in menuItems
+            li.menu__item
+              a(href="#").menu__link= item
+        #burger-menu__contact-phone.menu__contact-phone
+          +contactPhone()
+    .header__search.search.grid-header__item-3
+      button#header-search__btn-open(type='button').search__btn-open
+        svg.search__icon
+          use(xlink:href="img/sprite.svg#search")
+      form#header-search__form.search__form.display-none
+        input#header-search__input(type="search", name="search", placeholder='Что будем иcкать?').search__input
+        +btnClose()(id="header-search__btn-close", class="search__btn-close")

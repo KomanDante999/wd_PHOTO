@@ -1,0 +1,37 @@
+@import '_variables.scss';
+
+.header {
+  background-color: $colorBacground-dark;
+
+  &__container {
+    padding: {
+      top: 22px;
+      bottom: 23px;
+    };
+    @media (max-width: $breakpoint-MX) {
+      padding: {
+        bottom: 0;
+      };
+    }
+    @media (max-width: $breakpoint-S) {
+      padding: {
+        top: 19px;
+      };
+    }
+  }
+  &__menu {
+    @media (max-width: $breakpoint-MX) {
+      margin-top: 26px;
+    }
+    @media (max-width: $breakpoint-M) {
+      margin-top: 23px;
+    }
+    @media (max-width: $breakpoint-S) {
+      margin-top: 19px;
+    }
+  }
+  &__search {
+    margin-right: -5px;
+
+  }
+}

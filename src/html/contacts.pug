@@ -1,0 +1,22 @@
+section#contacts.contacts
+  .container.contacts__container
+    h2.contacts__title Контакты
+    .grid.grid-contacts
+      #map.map.grid-contacts__map
+      #contact-card.contact-card.grid-contacts__card.flex
+        +btnClose()(id="contact-card__btn-close", class="contact-card__btn-close")
+        .contact-card__wrap
+          h4.contact-card__title Студия «High pass»
+          address.contact-card__address 107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82
+          +contactPhone()
+      .grid-contacts__form
+        form(id="application-form", class="application-form__form flex flex-column form", novalidate)
+          h4.application-form__title Оставить заявку
+          p.application-form__desc Оставьте ваши данные, указав в графе «Комментарий» желаемые время и дату съёмки или другого мероприятия
+          label.form__label.form__label_light.application-form__lable
+            input#application-form__input-name(type="text", name="", placeholder='Имя').application-form__input
+          label.form__label.form__label_light.application-form__lable
+            input#application-form__input-email(type="email", name="", placeholder='Email').application-form__input
+          label.application-form__lable
+            textarea#application-form__input-comments(name="", cols="30", rows="6", placeholder='Комментарий').application-form__input.application-form__input_comments
+          +btnPrim('Отправить')(id="application-form__submit", class="application-form__submit", type="submit")

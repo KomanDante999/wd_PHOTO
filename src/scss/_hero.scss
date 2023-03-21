@@ -1,0 +1,101 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '_extend.scss';
+
+.hero {
+  &__container {
+    padding: {
+      top: 41px;
+      bottom: 68px;
+    };
+    @media (max-width: $breakpoint-L) {
+      padding-top: 34px;
+    }
+    @media (max-width: $breakpoint-M) {
+      padding: {
+        top: 36px;
+        bottom: 67px;
+      }
+    }
+    @media (max-width: $breakpoint-S) {
+      padding: {
+        top: 30px;
+        bottom: 50px;
+      }
+    }
+  }
+
+  &__item_main {
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: {
+      top: 15px;
+      bottom: 60px;
+      left: 58px;
+      right: 15px;
+    }
+    @media (max-width: $breakpoint-L) {
+      padding: {
+        bottom: 30px;
+        left: 30px;
+      };
+    }
+    @media (max-width: $breakpoint-S) {
+      padding: {
+        top: 6px;
+        right: 6px;
+      };
+    }
+  }
+
+  &__hashTag {
+    align-self: flex-end;
+    margin-bottom: auto;
+  }
+
+  &__desc {
+    margin-bottom: 3px;
+    @extend %Roboto-reg-sl-117;
+    color: $colorText-lite;
+    @media (max-width: $breakpoint-LX) {
+      margin-bottom: 9px;
+    }
+    @media (max-width: $breakpoint-M) {
+      margin-bottom: 10px;
+    }
+    @media (max-width: $breakpoint-S) {
+      margin-bottom: 9px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @extend %Neue-bold-l;
+    color: $colorText-lite;
+    @media (max-width: $breakpoint-M) {
+      margin-bottom: 15px;
+    }
+    @media (max-width: ($breakpoint-MS)) {
+      margin: {
+        bottom: 14px;
+        right: 6px;
+      };
+    }
+    @media (max-width: ($breakpoint-S)) {
+      margin: {
+        bottom: 17px;
+      };
+    }
+  }
+
+  &__subtitle {
+    @extend %Neue-bold-m-104;
+  }
+}
+
+@include image-inset ($urlImages, $breakpoints-base, 4, 'hero')
+
+
+
+
+

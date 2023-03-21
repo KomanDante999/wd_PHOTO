@@ -1,0 +1,87 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '_extend.scss';
+
+.about {
+  &__container {
+    padding: {
+      top: 32px;
+      bottom: 68px;
+    }
+    background-color: $colorBacground-dark;
+    @media (max-width: $breakpoint-L) {
+      padding-bottom: 81px;
+    }
+    @media (max-width: $breakpoint-M) {
+      padding-bottom: 60px;
+    }
+    @media (max-width: $breakpoint-S) {
+      padding: {
+        top: 32px;
+      }
+    }
+  }
+  &__title {
+    @extend %Neue-bold-m-129;
+    color: $colorText-lite;
+    margin-bottom: 5px;
+  }
+  &__desc {
+    @extend %Roboto-reg-sl-28;
+    color: $colorText-gray;
+  }
+  &__img-1 {
+    width: 100%;
+    height: 255px;
+    margin: {
+      top: 31px;
+      bottom: 25px;
+    }
+    @media (max-width: $breakpoint-L) {
+      height: 332px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: $breakpoint-M) {
+      height: 569px;
+    }
+    @media (max-width: $breakpoint-MS) {
+      margin-top: 0;
+    }
+    @media (max-width: $breakpoint-S) {
+      height: 278px;
+      margin-bottom: 26px;
+    }
+  }
+}
+
+@include image-inset ($urlImages, $breakpoints-base, 1, 'about');
+
+.form-about {
+  &__title {
+    margin-bottom: 16px;
+    @extend %Neue-reg-m-22;
+    color: $colorText-lite;
+    @media (max-width: $breakpoint-S) {
+      margin-bottom: 17px;
+    }
+  }
+  &__wrap-input {
+    @media (max-width: $breakpoint-L) {
+      flex-direction: column;
+    }
+  }
+  &__lable {
+    width: 100%;
+    margin-right: 30px;
+    @media (max-width: $breakpoint-L) {
+      max-width: 342px;
+      margin: {
+        right: auto;
+        bottom: 20px;
+      }
+    }
+  }
+  &__input-email {
+    @extend %input-dark;
+  }
+}
